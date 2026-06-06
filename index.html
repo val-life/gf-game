@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>轮回 Lunhui · 异世轮回录 精神续作</title>
+  <meta name="description" content="一部以东方仙侠为背景的文字冒险。纯 HTML/CSS/JS 实现。" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/combat.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <!-- Use system fonts that have CJK glyphs; no CDN required.
+       We rely on the user OS: PingFang/Noto/Microsoft YaHei/SimSun. -->
+</head>
+<body>
+  <!-- ============== TOP BAR ============== -->
+  <header id="topbar" class="topbar">
+    <div class="brand">
+      <span class="brand-mark">卐</span>
+      <span class="brand-title">轮　回</span>
+      <span class="brand-sub">Lunhui</span>
+    </div>
+    <nav class="topnav" aria-label="主菜单">
+      <button class="navbtn" data-action="open-inventory" title="背包 (I)">囊</button>
+      <button class="navbtn" data-action="open-skills"   title="功法 (K)">功</button>
+      <button class="navbtn" data-action="open-save"     title="存档 (S)">存</button>
+      <button class="navbtn" data-action="open-load"     title="读档 (L)">读</button>
+      <button class="navbtn" data-action="open-achievements" title="成就 (A)">录</button>
+      <button class="navbtn" data-action="open-settings" title="设置">设</button>
+    </nav>
+  </header>
+
+  <!-- ============== MAIN LAYOUT ============== -->
+  <main id="app" class="app">
+
+    <!-- LEFT: SIDEBAR (status) -->
+    <aside id="sidebar" class="sidebar" aria-label="角色状态">
+      <div class="paper">
+        <div class="char-name" id="charName">— —</div>
+        <div class="char-sub"  id="charSub">游魂</div>
+
+        <div class="realm-line">
+          <span class="realm-label">境界</span>
+          <span class="realm-val"   id="realmVal">凡人</span>
+          <span class="layer-val"   id="layerVal">·零层</span>
+        </div>
+        <div class="cult-bar"><div class="cult-fill" id="cultFill"></div><span id="cultText">修为 0/100</span></div>
+
+        <div class="bar">
+          <div class="bar-label"><span>气血 HP</span><span id="hpText">0/0</span></div>
+          <div class="bar-track"><div class="bar-fill hp"  id="hpFill"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-label"><span>灵力 MP</span><span id="mpText">0/0</span></div>
+          <div class="bar-track"><div class="bar-fill mp"  id="mpFill"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-label"><span>寿元</span><span id="ageText">0/80 岁</span></div>
+          <div class="bar-track"><div class="bar-fill life" id="ageFill"></div></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><span class="k">根骨</span><span class="v" id="statGengu">0</span></div>
+          <div class="stat"><span class="k">悟性</span><span class="v" id="statWuxing">0</span></div>
+          <div class="stat"><span class="k">气运</span><span class="v" id="statQiyun">0</span></div>
+          <div class="stat"><span class="k">魅力</span><span class="v" id="statMeili">0</span></div>
+        </div>
+
+        <div class="derived">
+          <div><span>攻击</span><b id="dAtk">0</b></div>
+          <div><span>防御</span><b id="dDef">0</b></div>
+          <div><span>法术</span><b id="dMag">0</b></div>
+          <div><span>速度</span><b id="dSpd">0</b></div>
+          <div><span>暴击</span><b id="dCrit">0%</b></div>
+          <div><span>灵石</span><b id="lingshi">0</b></div>
+        </div>
+
+        <div class="spirit-line">灵根：<span id="spiritRoot">—</span></div>
+        <div class="equip-line" id="equipLine">武器 — · 护甲 —</div>
+        <div class="status-effects" id="statusBox"></div>
+      </div>
+    </aside>
+
+    <!-- CENTER: NARRATIVE PANEL -->
+    <section class="stage">
+      <article id="narrative" class="narrative paper">
+        <h2 class="scene-title" id="sceneTitle">— —</h2>
+        <div class="scene-text" id="sceneText"></div>
+        <div class="choices" id="choices"></div>
+        <div class="scene-foot" id="sceneFoot"></div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- ============== COMBAT OVERLAY ============== -->
+  <section id="combat" class="combat hidden" aria-label="战斗">
+    <div class="combat-arena paper">
+      <div class="combat-side enemy">
+        <div class="portrait" id="enemyPortrait">妖</div>
+        <div class="cname" id="enemyName">—</div>
+        <div class="cinfo" id="enemyInfo"></div>
+        <div class="bar"><div class="bar-label"><span>气血</span><span id="eHpText">0/0</span></div>
+          <div class="bar-track"><div class="bar-fill hp" id="eHpFill"></div></div></div>
+        <div class="bar"><div class="bar-label"><span>灵力</span><span id="eMpText">0/0</span></div>
+          <div class="bar-track"><div class="bar-fill mp" id="eMpFill"></div></div></div>
+        <div class="status-effects" id="eStatus"></div>
+      </div>
+      <div class="combat-mid">
+        <div class="combat-log" id="combatLog"></div>
+      </div>
+      <div class="combat-side player">
+        <div class="portrait" id="playerPortrait">人</div>
+        <div class="cname" id="playerName">—</div>
+        <div class="cinfo" id="playerInfo"></div>
+        <div class="bar"><div class="bar-label"><span>气血</span><span id="pHpText">0/0</span></div>
+          <div class="bar-track"><div class="bar-fill hp" id="pHpFill"></div></div></div>
+        <div class="bar"><div class="bar-label"><span>灵力</span><span id="pMpText">0/0</span></div>
+          <div class="bar-track"><div class="bar-fill mp" id="pMpFill"></div></div></div>
+        <div class="status-effects" id="pStatus"></div>
+      </div>
+    </div>
+    <div class="combat-actions" id="combatActions"></div>
+  </section>
+
+  <!-- ============== MODAL ROOT ============== -->
+  <div id="modalRoot" class="modal-root hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-action="close-modal"></div>
+    <div class="modal paper" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal-head">
+        <h3 id="modalTitle">—</h3>
+        <button class="navbtn" data-action="close-modal" aria-label="关闭">×</button>
+      </header>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot" id="modalFoot"></div>
+    </div>
+  </div>
+
+  <!-- ============== TOAST ============== -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- ============== SCRIPT TAGS (classic, ordered) ============== -->
+  <script src="js/utils.js"></script>
+  <script src="js/data/realms.js"></script>
+  <script src="js/data/skills.js"></script>
+  <script src="js/data/items.js"></script>
+  <script src="js/data/enemies.js"></script>
+  <script src="js/data/scenes.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>
