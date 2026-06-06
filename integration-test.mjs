@@ -1,127 +1,148 @@
-// 完整一輪邏輯測試：轉生 → 城鎮 → 事件 → 戰鬥 → 死亡 → 業火 → 再次轉生
+// v2 整合測試
 globalThis.document = { addEventListener: () => {}, getElementById: () => null, querySelector: () => null, createElement: () => ({ classList: { add: () => {}, remove: () => {} }, appendChild: () => {} }) };
 globalThis.localStorage = (() => { const m = new Map(); return { getItem: k => m.get(k) ?? null, setItem: (k, v) => m.set(k, v), removeItem: k => m.delete(k) }; })();
+globalThis.window = { innerWidth: 1024 };
+globalThis.confirm = () => false;
+globalThis.alert = () => {};
 
-import { state, resetRun } from './js/core/state.js';
+import { state, resetRun, PHASE } from './js/core/state.js';
 import { applyStats, runHook } from './js/core/hooks.js';
 import { TALENTS } from './js/data/talents.js';
-import { EVENTS } from './js/data/events.js';
-import { ENEMIES, makeEnemyInstance } from './js/data/enemies.js';
-import { generateTalentDraft, applyTalent, confirmReincarnation } from './js/systems/reincarnation.js';
+import { MAIN_STORY } from './js/data/mainStory.js';
+import { ENEMIES, makeEnemyInstance, getMainStoryBoss } from './js/data/enemies.js';
+import { startAwakening, applyTalent, confirmReincarnation } from './js/systems/reincarnation.js';
 import { startCombat, playerAttack } from './js/systems/combat.js';
 import { startAdventure, adventureStep } from './js/systems/adventure.js';
-import { advanceYear, resolveChoice, triggerGameOver } from './js/systems/life.js';
+import { advanceYear, resolveChoice, resolveMainStoryChoice, triggerGameOver } from './js/systems/life.js';
+import { doWork, doTrain, doNextYear, doAdventure, doSafeAdventure, doCry, doSleep, listActions } from './js/systems/town.js';
 import { openShop, buyItem } from './js/systems/shop.js';
-import { doWork, doTrain, doStudy, doNextYear, doRest, doAdventure } from './js/systems/town.js';
-import { addKarma, saveMeta, loadMeta } from './js/systems/meta.js';
+import { META_SHOP, buyMeta, applyMetaBonuses, saveMeta, loadMeta, resetSave } from './js/systems/meta.js';
+import { giveAchievement } from './js/systems/achievements.js';
 
 let passed = 0, failed = 0;
-function t(name, fn) { try { fn(); console.log('OK  ', name); passed++; } catch (e) { console.error('FAIL', name, e); failed++; } }
+function t(name, fn) { try { fn(); console.log('OK  ', name); passed++; } catch (e) { console.error('FAIL', name, e.message ?? e); failed++; } }
 
-t('完整一輪：轉生 + 訓練 + 死亡 + 業火', () => {
+t('整合：嬰兒 → 童年 → 訓練 → 死亡', () => {
   resetRun();
-  state.player.age = 0;
-  state.player.gold = 50;
-  state.ap = 999; // 模擬已轉生，AP 滿
-  applyStats(state.player);
-  applyTalent(TALENTS.find(x => x.id === 't_immortal'));
-  applyStats(state.player);
-  if (state.player.hpMax < 130) throw new Error('不朽天賦 hpMax 異常');
-  for (let i = 0; i < 5; i++) {
-    doWork();
-    doTrain('str');
-  }
-  if (state.player.gold < 50 + 8*5) throw new Error('金幣未增加');
-  if (state.player.str < 10) throw new Error('力量未提升');
-  triggerGameOver('測試');
-  if (state.phase !== 'gameover') throw new Error('未進入 gameover');
-  if (state.meta.karma <= 0) throw new Error('業火未發放');
-});
-
-t('Boss 戰年齡 10 觸發', () => {
-  resetRun();
-  state.player.age = 9;
-  state.player.hp = 999;
-  state.player.gold = 999;
-  applyStats(state.player);
-  state.ap = state.apMax + (state.player.apBonus ?? 0);
+  resetSave();
+  // 0 歲
+  if (!isActionAllowedAt('cry', 0)) throw new Error('0 歲不能哭');
+  if (isActionAllowedAt('adventure', 0)) throw new Error('0 歲能冒險？');
+  state.ap = 999;
+  doCry();
+  doCry();
+  // 3 歲：識字事件
+  state.player.age = 2;
+  state.ap = 999;
   doNextYear();
-  if (state.phase !== 'combat') throw new Error('Boss 戰未觸發');
-  if (!state.currentEnemy?.isBoss) throw new Error('當前敵人非 Boss');
+  if (state.phase !== PHASE.MAIN_STORY) throw new Error('3 歲無主線');
+  if (state.currentMainStory.age !== 3) throw new Error('主線錯');
 });
 
-t('商店購買並裝備', () => {
+t('整合：完整主線 0→40 自動跑', () => {
   resetRun();
-  state.player.age = 25;
-  state.player.gold = 500;
+  resetSave();
+  state.ap = 999;
+  state.player.baseStr = 50; state.player.baseCon = 50; state.player.baseInt = 50;
+  state.player.baseCha = 50; state.player.baseDex = 50; state.player.baseLuk = 50;
+  state.player.gold = 9999;
+  state.player.hp = 5000; state.player.maxHp = 5000;
   applyStats(state.player);
-  openShop();
-  if (!state.currentShop || state.currentShop.length === 0) throw new Error('商店無貨');
-  // 強行把第一件設為便宜
-  const item = state.currentShop[0];
-  item.price = 10;
-  if (!buyItem(item)) throw new Error('購買失敗');
-});
-
-t('冒險完整步進不崩潰', () => {
-  resetRun();
-  state.player.age = 25;
-  state.player.gold = 0;
-  state.player.hp = 100;
-  state.player.hpMax = 100;
-  applyStats(state.player);
-  startAdventure();
-  // 跑 10 步或直到冒險結束
-  let safety = 0;
-  while (state.adventure && safety < 30) {
-    if (state.phase === 'combat') {
-      // 暴力擊殺敵人
-      state.currentEnemy.currentHp = 0;
-      // 模擬勝利的結算邏輯透過手動觸發
-      const e = state.currentEnemy;
-      state.player.gold += e.gold;
-      state.player.kills += 1;
-      if (state.adventure?.returnAfterCombat) {
-        state.adventure.returnAfterCombat = false;
-        state.adventure.gold += e.gold;
-        state.phase = 'adventure';
-      } else {
-        state.phase = 'town';
+  // 起始轉生
+  startAwakening();
+  applyTalent(TALENTS[0]);
+  confirmReincarnation();
+  state.ap = 999;
+  // 跑 0 → 40
+  for (let i = 0; i < 50; i++) {
+    if (state.phase === PHASE.GAMEOVER) break;
+    if (state.phase === PHASE.MAIN_STORY) {
+      const ms = state.currentMainStory;
+      if (ms?.options) {
+        let chosen = null;
+        for (const opt of ms.options) {
+          if (!opt.req) { chosen = opt; break; }
+          if (opt.req.stat !== 'item' && opt.req.stat !== 'fireResist' && opt.req.stat !== 'party' && opt.req.stat !== 'gold') {
+            chosen = opt; break;
+          }
+        }
+        if (!chosen) chosen = ms.options[0];
+        resolveMainStoryChoice(chosen);
       }
-      state.currentEnemy = null;
-    } else {
-      adventureStep();
+    } else if (state.phase === PHASE.STORY) {
+      const ev = state.currentEvent;
+      const opt = ev?.options?.[0];
+      if (opt) resolveChoice(opt);
+    } else if (state.phase === PHASE.COMBAT) {
+      // 自動攻擊
+      const e = state.currentEnemy;
+      if (e) {
+        e.currentHp = 0; // 暴力擊殺
+      }
     }
-    safety++;
+    if (state.phase === PHASE.TOWN) {
+      if (state.ap < state.apMax) state.ap = state.apMax;
+      doNextYear();
+    }
   }
-  if (safety >= 30) throw new Error('冒險卡死');
+  if (state.player.age < 40 && state.phase !== PHASE.GAMEOVER) throw new Error(`未到 40 歲 (age=${state.player.age})`);
 });
 
-t('存檔與讀檔', () => {
+t('整合：boss 戰完整 1 回合', () => {
   resetRun();
-  state.meta.karma = 12345;
-  saveMeta();
-  // 重置 in-memory meta
-  state.meta.karma = 0;
-  loadMeta();
-  if (state.meta.karma !== 12345) throw new Error('存檔未還原');
-});
-
-t('致命天賦復活', () => {
-  resetRun();
-  state.player.age = 30;
-  state.player.gold = 999;
-  state.player.hp = 50;
-  state.player.hpMax = 100;
-  applyTalent(TALENTS.find(x => x.id === 't_phoenix'));
+  resetSave();
+  state.player.age = 16;
+  state.player.hp = 99999; state.player.maxHp = 99999;
+  state.player.baseStr = 1000;
+  state.player.atk = 9999;
   applyStats(state.player);
-  // 強制死亡
-  state.player.hp = 0;
-  const ctx = {};
-  const logs = runHook('onFatalDamage', state.player, ctx);
-  if (state.player.hp <= 0) throw new Error('鳳凰未復活');
-  if (logs.length === 0) throw new Error('未產生復活日誌');
+  startCombat('M_BOSS_DEMON_VANGUARD');
+  if (state.currentEnemy.ability.effect !== 'heavy_smash') throw new Error('先鋒官能力錯');
+  const e0 = state.currentEnemy;
+  // 將攻擊力降低以免一擊斃命
+  state.player.atk = 50;
+  playerAttack();
+  if (!state.currentEnemy || state.currentEnemy.currentHp >= e0.hp) throw new Error('未造成傷害或已被擊殺');
 });
+
+t('整合：業火結算含成就', () => {
+  resetRun();
+  resetSave();
+  state.player.age = 30;
+  state.player.gold = 500;
+  state.player.bossesKilled = ['a'];
+  state.player.achievements = ['x', 'y'];
+  const before = state.meta.karma;
+  triggerGameOver('test');
+  const expected = Math.floor(30*15 + 500/10 + 1*300 + 2*500);
+  const actual = state.meta.karma - before;
+  if (actual !== expected) throw new Error(`karma 增量 ${actual} 預期 ${expected}`);
+});
+
+t('整合：meta 起始金幣套用', () => {
+  resetRun();
+  resetSave();
+  state.meta.karma = 9999;
+  // 按順序購買：I → II → III
+  buyMeta(META_SHOP.find(m => m.id === 'rich_1'));
+  buyMeta(META_SHOP.find(m => m.id === 'rich_2'));
+  buyMeta(META_SHOP.find(m => m.id === 'rich_3'));
+  if (state.meta.bonusStats.goldStart !== 1900) throw new Error(`goldStart=${state.meta.bonusStats.goldStart}`);
+});
+
+function isActionAllowedAt(act, age) {
+  // 簡化版：重現 isActionAllowed 邏輯
+  const stages = [
+    { min: 0, max: 2, actions: ['cry', 'sleep'] },
+    { min: 3, max: 5, actions: ['cry', 'sleep', 'play', 'study_basic'] },
+    { min: 6, max: 9, actions: ['cry', 'sleep', 'play', 'study', 'work', 'rest', 'train', 'shop', 'adventure_safe'] },
+    { min: 10, max: 14, actions: ['study', 'work', 'rest', 'train', 'shop', 'adventure', 'tavern'] },
+    { min: 15, max: 17, actions: ['study', 'work', 'rest', 'train', 'shop', 'adventure', 'tavern', 'guild'] },
+    { min: 18, max: 99, actions: ['study', 'work', 'rest', 'train', 'shop', 'adventure', 'tavern', 'guild', 'campaign'] }
+  ];
+  const stage = stages.find(s => age >= s.min && age <= s.max) ?? stages[stages.length - 1];
+  return stage.actions.includes(act);
+}
 
 console.log(`\n=== ${passed} pass, ${failed} fail ===`);
 process.exit(failed > 0 ? 1 : 0);

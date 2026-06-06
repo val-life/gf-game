@@ -19,6 +19,9 @@ export function closeShopAction() {
 export function buyItem(item) {
   const p = state.player;
   let price = item.price ?? 0;
+  // 魅力折扣
+  const chaDiscount = p.shopDiscount ?? 0;
+  price = Math.floor(price * (1 - chaDiscount));
   runHook('onShopPrice', p, { price });
   if (p.gold < price) {
     log('金幣不足！', 'warn');
@@ -26,10 +29,9 @@ export function buyItem(item) {
   }
   p.gold -= price;
   if (item.type === 'weapon' || item.type === 'armor' || item.type === 'accessory') {
-    // 裝備替換
     const slot = item.type === 'weapon' ? 'weapon' : item.type === 'armor' ? 'armor' : 'accessory';
     const old = p.equipment[slot];
-    p.equipment[slot] = { ...item, instanceId: item.instanceId };
+    p.equipment[slot] = { ...item };
     if (old) p.inventory.push({ ...old });
     applyStats(p);
     log(`你裝備了【${item.name}】。`, 'good');
@@ -38,7 +40,6 @@ export function buyItem(item) {
     log(`你購買了【${item.name}】。`, 'good');
   }
   shakeGold();
-  // 從商店移除
   state.currentShop = state.currentShop.filter(x => x.instanceId !== item.instanceId);
   return true;
 }
@@ -50,8 +51,8 @@ export function useConsumable(itemInstance) {
   if (!it?.effect) return false;
   switch (it.effect.type) {
     case 'heal': {
-      const heal = it.effect.value >= 9999 ? p.hpMax - p.hp : it.effect.value;
-      p.hp = Math.min(p.hpMax, p.hp + heal);
+      const heal = it.effect.value >= 9999 ? p.maxHp - p.hp : it.effect.value;
+      p.hp = Math.min(p.maxHp, p.hp + heal);
       log(`你服下【${it.name}】。HP +${heal}。`, 'good');
       break;
     }
@@ -76,7 +77,6 @@ export function useConsumable(itemInstance) {
       break;
     }
   }
-  // 從背包移除
   p.inventory = p.inventory.filter(x => x.instanceId !== itemInstance.instanceId);
   return true;
 }

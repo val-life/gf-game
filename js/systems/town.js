@@ -1,10 +1,9 @@
-// 城鎮行為。消耗 AP
-import { state } from '../core/state.js';
+// 城鎮行為（v2：歲數門檻）
+import { state, isActionAllowed, getAgeStage } from '../core/state.js';
 import { log } from '../ui/log.js';
 import { applyStats, runHook } from '../core/hooks.js';
 import { openShop } from './shop.js';
 import { startAdventure } from './adventure.js';
-import { startCombat } from './combat.js';
 import { advanceYear } from './life.js';
 import { shakeStat } from '../ui/juice.js';
 
@@ -17,7 +16,49 @@ function spendAP(n) {
   return true;
 }
 
-// 訓練：花 1 AP，可選提升
+function lockedReason(action) {
+  const stage = getAgeStage(state.player.age);
+  return `你的歲數階段【${stage.name}】尚不能做這件事`;
+}
+
+// ========== 嬰兒/幼兒專屬 ==========
+export function doCry() {
+  if (!isActionAllowed('cry', state.player.age)) return;
+  log('你嚎啕大哭。父母急忙來安撫你。體質 +1。', 'good');
+  state.player.baseCon += 1;
+  applyStats(state.player);
+  state.ap = Math.max(0, state.ap); // 嬰兒不消耗 AP
+}
+
+export function doSleep() {
+  if (!isActionAllowed('sleep', state.player.age)) { log(lockedReason('sleep'), 'warn'); return; }
+  if (!spendAP(1)) return;
+  const heal = Math.floor(state.player.maxHp * 0.3);
+  state.player.hp = Math.min(state.player.maxHp, state.player.hp + heal);
+  log(`安睡一日，HP +${heal}。`, 'good');
+}
+
+export function doPlay() {
+  if (!isActionAllowed('play', state.player.age)) { log(lockedReason('play'), 'warn'); return; }
+  if (!spendAP(1)) return;
+  const p = state.player;
+  const choice = Math.random() < 0.5 ? 'dex' : 'cha';
+  p[`base${choice.charAt(0).toUpperCase()}${choice.slice(1)}`] = (p[`base${choice.charAt(0).toUpperCase()}${choice.slice(1)}`] ?? 0) + 1;
+  applyStats(p);
+  log(`你與鄰家孩子嬉戲。${choice.toUpperCase()} +1。`, 'good');
+  shakeStat(choice);
+}
+
+export function doStudyBasic() {
+  if (!isActionAllowed('study_basic', state.player.age)) { log(lockedReason('study_basic'), 'warn'); return; }
+  if (!spendAP(1)) return;
+  const p = state.player;
+  p.baseInt = (p.baseInt ?? 0) + 1;
+  applyStats(p);
+  log('你跟著母親學認字。智力 +1。', 'good');
+}
+
+// ========== 通用 ==========
 export function doTrain(stat) {
   if (!spendAP(1)) return;
   const p = state.player;
@@ -38,6 +79,7 @@ export function doWork() {
 }
 
 export function doStudy() {
+  if (!isActionAllowed('study', state.player.age)) { log(lockedReason('study'), 'warn'); return; }
   let cost = 1;
   runHook('onStudyCost', state.player, { cost });
   if (!spendAP(cost)) return;
@@ -50,12 +92,13 @@ export function doStudy() {
 }
 
 export function doTavern() {
+  if (!isActionAllowed('tavern', state.player.age)) { log(lockedReason('tavern'), 'warn'); return; }
   if (!spendAP(1)) return;
   const p = state.player;
   p.gold = Math.max(0, p.gold - 8);
   const roll = Math.random();
   if (roll < 0.4) {
-    p.baseLck += 1;
+    p.baseLuk += 1;
     applyStats(p);
     log('酒館奇遇！幸運 +1。', 'good');
   } else if (roll < 0.7) {
@@ -74,19 +117,23 @@ export function doRest() {
   log(`你休息一日。HP +${heal}。`, 'good');
 }
 
-export function doEnterShop() {
-  if (!spendAP(1)) return;
-  openShop();
-}
-
-export function doEnterTavern() {
-  if (!spendAP(1)) return;
-  doTavern();
-}
-
 export function doAdventure() {
+  if (!isActionAllowed('adventure', state.player.age)) {
+    log(lockedReason('adventure') + '。', 'warn');
+    log('提示：童年可使用「安全冒險」（單 AP、低風險）。', 'neutral');
+    return;
+  }
   if (!spendAP(2)) return;
   startAdventure();
+}
+
+export function doSafeAdventure() {
+  if (!isActionAllowed('adventure_safe', state.player.age)) { log(lockedReason('adventure_safe'), 'warn'); return; }
+  if (!spendAP(1)) return;
+  // 簡化：低風險冒險，少量金幣
+  const earn = 5 + Math.floor(Math.random() * 10);
+  state.player.gold += earn;
+  log(`你採集野菜與藥草，賣得 ${earn} 金幣。`, 'good');
 }
 
 export function doNextYear() {
@@ -97,5 +144,23 @@ export function doNextYear() {
   advanceYear();
 }
 
-// 訓練選擇介面用：列出當前可訓練屬性
-export const TRAINABLE_STATS = ['str', 'agi', 'int', 'vit', 'lck'];
+export const TRAINABLE_STATS = ['str', 'con', 'dex', 'int', 'cha', 'luk'];
+
+// 列出當前階段可用與鎖定動作
+export function listActions() {
+  const allActions = [
+    { id: 'cry', label: '哭泣', ap: 0 },
+    { id: 'sleep', label: '安睡', ap: 1 },
+    { id: 'play', label: '嬉戲', ap: 1 },
+    { id: 'study_basic', label: '認字', ap: 1 },
+    { id: 'train', label: '訓練', ap: 1 },
+    { id: 'work', label: '勞作', ap: 1 },
+    { id: 'study', label: '求學', ap: 1 },
+    { id: 'rest', label: '休息', ap: 1 },
+    { id: 'shop', label: '商店', ap: 1 },
+    { id: 'tavern', label: '酒館', ap: 1 },
+    { id: 'adventure_safe', label: '採集冒險', ap: 1 },
+    { id: 'adventure', label: '深度冒險', ap: 2 }
+  ];
+  return allActions.map(a => ({ ...a, allowed: isActionAllowed(a.id, state.player.age) }));
+}
