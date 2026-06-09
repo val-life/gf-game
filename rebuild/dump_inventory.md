@@ -1,10 +1,12 @@
-# Dump Inventory — `Dump/` directory
+# Dump Inventory — `Dump/` directory + Wave 3 UnityPy extracts
 
-> **Last updated**: 2026-6-9
+> **Last updated**: 2026-6-9 (Wave 3: UnityPy raw-blob extraction)
 > **Source**: AssetStudio export of `data.unity3d` (87.9 MB) + `resources.resource` (10.6 MB)
 > **Game**: 異世輪迴錄 1.20 — Unity 2019.4.17 + IL2CPP (`global-metadata.dat` 6.78 MB, `libil2cpp.so` 34.4 MB ARM64)
 
 Catalogs every asset bucket in `Dump/` and flags which contain real data versus stub headers.
+
+For the **Wave 3** programmatic extraction with UnityPy (which goes deeper than the AssetStudio dump), see `wave3_extraction.md`.
 
 ---
 
@@ -165,38 +167,45 @@ That is, **only the script PathID + the object name** were exported. The actual 
 fields (XNode positions, event text, monster stats, etc.) were skipped because AssetStudio
 needs **TypeTree** info from a fresh Il2CppInspector dump to know how to walk them.
 
-### 2.1 Script PathID → class catalog (top 30)
+> **Wave 3 update**: `dump_unity3d.py` re-walks the same file with UnityPy and dumps the
+> raw tail bytes of every MonoBehaviour into `data/monobehaviour_blobs.bin` (2.34 MB).
+> `extract_mb_strings.py` then recovers **8,310 embedded Chinese strings** across 2,372
+> instances by pattern-matching the Unity string serialization format. See
+> `wave3_extraction.md` and `data/monobehaviour_strings.json`.
 
-Counting MonoBehaviour stubs by their script PathID reveals the live-instance count of
-every class in the game:
+### 2.1 Script PathID → class catalog (authoritative from MonoScript table)
 
-| Script PathID | Count | Inferred class |
+> **Wave 3 update**: counts below are confirmed by reading the actual `MonoScript`
+> objects (780 of them) via UnityPy. The class names are no longer inferred from MB
+> object names — they come straight from `MonoScript.m_ClassName + m_Namespace`.
+> Full mapping is in `data/monoscript_catalog.json`.
+
+| Script PathID | Count | Class (authoritative) |
 |---:|---:|---|
-| 687 | 3,728 | UIAnimation |
-| 658 | 2,353 | FDImage |
-| 735 | 1,285 | FDText |
-| 194 | 526 | EventResultNode |
-| 452 | 417 | MainEventNode |
-| 480 | 386 | FDButton |
-| 410 | 178 | EquipmentGrid |
-| 180 | 167 | BattleEventNode |
-| 152 | 91 | Mask |
-| 612 | 83 | StoryLineNode |
-| 775 | 71 | Image |
-| 678 | 69 | ConditionSwichNode |
-| 745 | 52 | ConditionCheckerNode |
-| 467 | 48 | TeamPosDisplay |
-| 637 | 45 | ChestEventNode |
-| 91, 304 | 34 ea | Text / ScrollRect |
-| 764, 462 | 32 ea | GridLayoutDisplay / GridLayoutGroup |
-| 325, 721 | 31 ea | DisplayBar / EventCardDisplay |
-| 39 | 25 | MapObjectNode |
-| 548 | 24 | GameObjectAnimator |
-| 151 | 23 | RestEventNode |
-| 208, 272 | 22 ea | SelectMonsterDisplay / EventLineInfoNode |
-| 121 | 15 | GreatCollectionNode |
-| 130 | 13 | Adventure Area Info |
-| 319, 274, 548 | a few | AdventureArea, MapAreasSetting, GodnessWord |
+| 687 | 3,728 | `UIAnimation` |
+| 658 | 2,353 | `FDFramwork.FDImage` |
+| 735 | 1,285 | `FDFramwork.FDText` |
+| 194 | 526 | `XNode.EventLine.Nodes.EventResultNode` |
+| 452 | 417 | `XNode.EventLine.Nodes.MainEventNode` |
+| 480 | 386 | `FDFramwork.FDButton` |
+| 410 | 178 | `EquipmentGrid` |
+| 180 | 167 | `XNode.AdventureEvent.Nodes.BattleEventNode` |
+| 152 | 91 | `UnityEngine.UI.Mask` |
+| 612 | 83 | `XNode.EventLine.Nodes.StoryLineNode` |
+| 775 | 71 | `UnityEngine.UI.Image` |
+| 678 | 69 | `XNode.EventLine.Nodes.ConditionSwichNode` |
+| 745 | 52 | `XNode.EventLine.Nodes.ConditionCheckerNode` |
+| 467 | 48 | `TeamPosDisplay` |
+| 637 | 45 | `XNode.AdventureEvent.Nodes.ChestEventNode` |
+| 39 | 25 | `XNode.MapAreasSetting.Nodes.MapObjectNode` |
+| 548 | 24 | `GameObjectAnimator` |
+| 151 | 23 | `XNode.AdventureEvent.Nodes.RestEventNode` |
+| 208 | 22 | `SelectMonsterDisplay` |
+| 272 | 22 | `XNode.EventLine.Nodes.EventLineInfoNode` |
+| 121 | 15 | `XNode.AdventureEvent.Nodes.GreatCollectionNode` |
+| 130 | 13 | `XNode.AdventureEvent.Nodes.AdventureAreaInfoNode` |
+| 699 | 6 | `XNode.MapAreasSetting.Nodes.MapAreasNode` |
+| 355 | 5 | `XNode.CharacterSetting.Nodes.CharacterInfoNode` |
 
 ### 2.2 XNode-style scene-graph nodes (1,467 total)
 
@@ -219,7 +228,9 @@ The XNode event graph from previous extraction is fully represented as stubs in 
 | CharacterInfoNode | 5 | 5 | ✅ |
 | Adventure Area Info | 13 | — | new |
 
-**Implication**: the count matches the previous XNode extraction precisely, but **the body fields are not in this dump**. To recover the per-node prefix/suffix integer arrays (HP/ATK/DEF/count/flags) you still need either:
+**Implication**: the count matches the previous XNode extraction precisely, but **the body fields are not in this dump**. ✅ **Wave 3 RESOLVED**: `dump_unity3d.py` (UnityPy) re-reads the same `data.unity3d` and saves the per-node raw bytes to `data/monobehaviour_blobs.bin`. `parse_battle_events.py` then decodes 164/167 `BattleEventNode` records into structured JSON at `data/battle_events.json`. The remaining XNode types (ChestEventNode, RestEventNode, MainEventNode, EventResultNode, StoryLineNode, etc.) have their embedded Chinese text recovered in `data/monobehaviour_strings.json`.
+
+> Other extraction paths that don't depend on TypeTrees:
 
 1. Re-run AssetStudio with the TypeTree dumps from `Il2CppInspectorRedux.GUI` (already in `Tool/`)
 2. Re-extract from `data.unity3d` with the Python parser described in `rebuild/todo.md` §2
@@ -324,14 +335,16 @@ For Web rebuild, drop the SDF and use any web-loadable CJK font (`Noto Sans SC`,
 | Relic effect values | `TextAsset/RelicSettingJS.txt` | ✅ canonical JSON in `data/RelicSettingJS.json` |
 | Equipment property pools | `TextAsset/WeaponSettingJS.txt` | ✅ canonical JSON in `data/WeaponSettingJS.json` |
 | Adventure-card weights | `TextAsset/EventCardTypeSettingJS.txt` | ✅ canonical JSON in `data/EventCardTypeSettingJS.json` |
-| Monster stats (HP/ATK/DEF) | (not here) — XNode body | ❌ still need TypeTree dump or Frida |
+| Monster stats (HP/ATK/DEF) | (not here) — XNode body | ⚠️ partial: monster names per battle in `data/battle_events.json`, raw HP/ATK/DEF still needs Frida or dummy DLLs |
 | Skill scaling | (not here) — see `chinese_strings.txt` | ✅ in `extracted_game_data.md` §5 |
 | Buff formulas | (not here) — see `chinese_strings.txt` | ✅ in `extracted_game_data.md` §1 |
 | Ending NPCs & triggers | (not here) — see `chinese_strings.txt` | ✅ in `extracted_game_data.md` §6 |
-| XNode body integers | (not here) — MonoBehaviour stubs lack TypeTree | ❌ still need TypeTree dump |
-| Damage formula constants | (not here) — IL2CPP invoker stubs | ❌ still need Frida or AssetStudio TypeTree |
-| Sprite UV / rect | `Sprite/*.txt` | ✅ if needed |
-| UI animation frames | `AnimationClip/*.txt` | ✅ if needed |
+| XNode narrative text | MB stubs lack TypeTree | ✅ **Wave 3** — `data/monobehaviour_strings.json` (8,310 strings) |
+| BattleEventNode → world + monster slots | MB stubs lack TypeTree | ✅ **Wave 3** — `data/battle_events.json` (164/167 parsed) |
+| MonoScript catalog (PathID → class) | MB stubs lack TypeTree | ✅ **Wave 3** — `data/monoscript_catalog.json` (780 entries) |
+| Damage formula constants | (not here) — IL2CPP invoker stubs | ❌ still need Frida or dummy DLLs |
+| Sprite UV / rect | `Sprite/*.txt` | ✅ also re-extracted via UnityPy at `data/sprite_index.json` |
+| UI animation frames | `AnimationClip/*.txt` | ✅ also re-extracted via UnityPy at `data/animationclip_index.json` |
 
 ---
 
@@ -339,16 +352,14 @@ For Web rebuild, drop the SDF and use any web-loadable CJK font (`Noto Sans SC`,
 
 To convert the remaining ❌ items above into ✅:
 
-1. **TypeTree-aware AssetStudio re-dump** (1-2 hrs)
+1. ✅ **Wave 3 done** — `dump_unity3d.py` + `extract_mb_strings.py` + `parse_battle_events.py` (see `wave3_extraction.md`)
+
+2. **Dummy-DLL-aware re-dump** (1-2 hrs) — needed for fully-structured MB decoding:
    - Load `Tool/Il2CppInspectorRedux.GUI` → File → Load IL2CPP → point to `libil2cpp.so` + `global-metadata.dat`
    - Export → Generate C# dummy DLL set with TypeTrees
-   - Re-open AssetStudio → Options → enable "Use Cpp2IL TypeTree" / load the dummy DLLs
+   - Re-open `Tool/AssetStudioModGUI_net9_win64` → Options → load the dummy DLLs / enable "Use Cpp2IL TypeTree"
    - Export MonoBehaviours again → this time the field values will populate
-
-2. **Direct binary parse of `data.unity3d`** (30 min if you have the Python helper)
-   - Use `UnityPy` library: `pip install UnityPy`
-   - `env = UnityPy.load("data.unity3d")` then walk `objects` for `MonoBehaviour` with TypeTree
-   - Dump as JSON
+   - This is the only way to get the full structured layout of every MB without Frida
 
 3. **Frida runtime hook** (2-4 hrs, needs rooted Android device)
    - Hook `CaculateBaseAttack`, `CaculateNewMaxExp`, `CaculateGainSoulNum` to capture
@@ -359,15 +370,30 @@ To convert the remaining ❌ items above into ✅:
 
 ## 12. Files in `rebuild/data/`
 
-After this dump pass, the following canonical data files are ready for direct import:
+After Wave 1 + Wave 2 + Wave 3, every data file ready for direct import lives here:
 
 ```
 rebuild/data/
-├── RelicSettingJS.json          51 relics + artifacts + potions
-├── WeaponSettingJS.json         26 equipment items
-└── EventCardTypeSettingJS.json  4 adventure-deck card weights
+├── (Wave 2 — canonical balance config decoded from Dump/TextAsset/)
+│   ├── RelicSettingJS.json                  51 relics + artifacts + potions
+│   ├── WeaponSettingJS.json                 26 equipment items
+│   └── EventCardTypeSettingJS.json          4 adventure-deck card weights
+│
+└── (Wave 3 — programmatic extraction via UnityPy from data.unity3d)
+    ├── monoscript_catalog.json              780 PathID → Class.Namespace.Assembly
+    ├── monobehaviour_index.json             10,246 MB instance records
+    ├── monobehaviour_blobs.bin              2.3 MB raw tail bytes
+    ├── monobehaviour_blobs_index.json       6,509 pid → offset/length entries
+    ├── monobehaviour_strings.json           8,310 CJK strings from 2,372 MBs
+    ├── battle_events.json                   164/167 BattleEventNodes (intro + monsters)
+    ├── sprite_index.json                    568 sprite rect/atlas refs
+    ├── texture2d_index.json                 362 texture dimension/storage refs
+    ├── animationclip_index.json             6 keyframe clips
+    ├── audioclip_index.json                 13 audio refs
+    ├── animator_index.json                  24 controllers
+    └── animatorcontroller_index.json        6 controller state refs
 ```
 
-These supersede the partial entries in `extracted_game_data.md` §3 (relics) — that section
-has been updated to point readers at the JSON for authoritative values, while keeping the
-prose summary for browse-ability.
+These supersede the partial entries in `extracted_game_data.md` §3 (relics) —
+that section has been updated to point readers at the JSON for authoritative
+values, while keeping the prose summary for browse-ability.

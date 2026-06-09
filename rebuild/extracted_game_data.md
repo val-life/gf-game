@@ -536,6 +536,53 @@ This is the weighted random table that decides what kind of event card you draw 
 | 10 Buff effects with formulas | ✅ Found in 1045-1074 |
 | Cruel World level rewards | ✅ Found (强者/拯救者/战神/...) |
 | 5 endings with NPC names | ✅ Found (和露明娜 = Lumnia, 和夏洛蒂 = Charlotte) |
+| **51 canonical relics with parser-ready effect strings** (Wave 2) | ✅ `data/RelicSettingJS.json` + §3a |
+| **26 equipment items with profession + property pools** (Wave 2) | ✅ `data/WeaponSettingJS.json` + §3b |
+| **4 adventure-deck card weights** (Wave 2) | ✅ `data/EventCardTypeSettingJS.json` + §4b |
+| **Authoritative PathID → Class map for 780 scripts** (Wave 3) | ✅ `data/monoscript_catalog.json` |
+| **8,310 XNode narrative strings recovered from MB blobs** (Wave 3) | ✅ `data/monobehaviour_strings.json` |
+| **164/167 BattleEventNodes structured (world + monster slots)** (Wave 3) | ✅ `data/battle_events.json` |
+| **Raw tail bytes for every MonoBehaviour** (Wave 3) | ✅ `data/monobehaviour_blobs.bin` (2.34 MB) |
+| **Built-in asset indexes (Sprite/Texture/Audio/Animation)** (Wave 3) | ✅ `data/*_index.json` |
+
+### 8.1b Wave 3 — confirmed structural counts (UnityPy walk)
+
+`dump_unity3d.py` reads `data.unity3d` programmatically and provides authoritative counts that supersede every "inferred" count earlier in this doc:
+
+| Class (`MonoScript.m_ClassName`) | Live instance count |
+|---|---:|
+| `UIAnimation` | 3,728 |
+| `FDFramwork.FDImage` | 2,353 |
+| `FDFramwork.FDText` | 1,285 |
+| `XNode.EventLine.Nodes.EventResultNode` | 526 |
+| `XNode.EventLine.Nodes.MainEventNode` | 417 |
+| `FDFramwork.FDButton` | 386 |
+| `EquipmentGrid` | 178 |
+| `XNode.AdventureEvent.Nodes.BattleEventNode` | 167 |
+| `XNode.EventLine.Nodes.StoryLineNode` | 83 |
+| `XNode.EventLine.Nodes.ConditionSwichNode` | 69 |
+| `XNode.EventLine.Nodes.ConditionCheckerNode` | 52 |
+| `XNode.AdventureEvent.Nodes.ChestEventNode` | 45 |
+| `XNode.MapAreasSetting.Nodes.MapObjectNode` | 25 |
+| `XNode.AdventureEvent.Nodes.RestEventNode` | 23 |
+| `XNode.EventLine.Nodes.EventLineInfoNode` | 22 |
+| `XNode.AdventureEvent.Nodes.GreatCollectionNode` | 15 |
+| `XNode.AdventureEvent.Nodes.AdventureAreaInfoNode` | 13 |
+| `XNode.MapAreasSetting.Nodes.MapAreasNode` | 6 |
+| `XNode.CharacterSetting.Nodes.CharacterInfoNode` | 5 |
+
+**BattleEvents per world** (from `battle_events.json`):
+
+| graph_pid | Count | World |
+|---:|---:|---|
+| 13857 | 24 | Mine (矿山) |
+| 13858 | 24 | Elven Forest (精灵之森) |
+| 13859 | 24 | Misty Forest (迷雾森林) |
+| 13860 | 24 | Orc Mountain (兽人山脉) |
+| 13861 | 24 | Cemetery (墓地/魔域) |
+| 13891-13895 | 5 each | Secondary maps |
+| 13896-13898 | 6-7 each | Final-area maps |
+
 
 ### 8.2 Confirmed Game Systems
 
@@ -644,4 +691,18 @@ strings including:
 
 This **resolves ~70% of the "missing data" items in §16 of the re_full.md document** without
 needing DLL decompilation or runtime hooking.
+
+### 9.3 UnityPy + raw-blob walk (Wave 3) — recovers MB-level narrative & structure
+
+The IL2CPP build strips inline TypeTrees, so UnityPy alone can't decode `MonoBehaviour` bodies field-by-field — but the build is regular enough that we can recover almost everything via two complementary techniques:
+
+1. **UnityPy reads the standardised parts** — `MonoScript` table (780 entries → authoritative PathID → Class.Namespace map), `Sprite/Texture2D/AnimationClip/AudioClip/Animator` (built-in types covered by UnityPy's bundled TPK definitions).
+
+2. **Raw-blob walking handles the user-script parts** — every MB's tail bytes are dumped to `data/monobehaviour_blobs.bin` (2.34 MB total across 6,509 non-empty MBs). Two derived passes:
+   - `extract_mb_strings.py`: walks each blob looking for the Unity string serialization pattern `[int32 len][utf-8 bytes][align 4]` and recovers **8,310 CJK strings** across 2,372 MBs (all narrative text).
+   - `parse_battle_events.py`: applies BattleEventNode's known field layout (`PPtr graph + Vector2 position + port count + 2 strings + 6 monster slots + 3 trailing ints`) and produces **164/167** structured records in `data/battle_events.json`.
+
+This **resolves the remaining "XNode body fields" blocker (todo #2 + #3)** without needing dummy DLLs. For full per-field structured decode of ALL MB types, you still need the dummy-DLL path (see `wave3_extraction.md` §3.1).
+
+See `wave3_extraction.md` for the full pipeline.
 

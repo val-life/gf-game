@@ -1,17 +1,22 @@
 ﻿# 异世轮回录 (Otherworld Samsara Record) — Web Rebuild Guide
 
-> **Source**: Unity 2019.4.17 + IL2CPP (`libil2cpp.so` + `global-metadata.dat`) + AssetStudio dump of `data.unity3d` (Wave 2, 2026-6-9)
+> **Source**: Unity 2019.4.17 + IL2CPP (`libil2cpp.so` + `global-metadata.dat`) + AssetStudio dump of `data.unity3d` (Wave 2, 2026-6-9) + UnityPy programmatic walk (Wave 3, 2026-6-9)
 > **Purpose**: Game-design reference for building a simpler web-based version
 > **Files in this dir**:
 > - `rebuild_guide.md` (this file) — game design & systems
-> - `extracted_game_data.md` — decoded game data (talents, items, monsters, skills, buffs, achievements, endings, equipment, event-deck)
-> - `dump_inventory.md` — catalogue of the 11,271 `Dump/*` files by bucket
+> - `extracted_game_data.md` — decoded game data (talents, items, monsters, skills, buffs, achievements, endings, equipment, event-deck, Wave 3 counts)
+> - `dump_inventory.md` — catalogue of the 11,271 `Dump/*` files by bucket (Wave 2, updated for Wave 3)
+> - `wave3_extraction.md` — UnityPy pipeline + per-output schemas (Wave 3)
 > - `chinese_strings.txt` — raw 1,834 Chinese strings from `global-metadata.dat`
 > - `extraction_summary.md` — what was extracted & how
 > - `data/RelicSettingJS.json` — canonical 51-relic balance dataset
 > - `data/WeaponSettingJS.json` — canonical 26-equipment dataset
 > - `data/EventCardTypeSettingJS.json` — canonical 4-card adventure-deck weights
-> - `final_extract.py` — Python script that re-runs the metadata scan
+> - `data/monoscript_catalog.json` — authoritative 780-entry PathID → Class.Namespace.Assembly map
+> - `data/monobehaviour_*.{json,bin}` — 10,246 MB instance records + 2.34 MB raw tail blobs + 8,310 CJK strings + 164 structured BattleEvents
+> - `data/sprite_index.json`, `data/texture2d_index.json`, etc. — built-in asset indexes
+> - `dump_unity3d.py`, `extract_mb_strings.py`, `parse_battle_events.py` — Wave 3 scripts
+> - `final_extract.py` — Wave 1 metadata-scan script
 
 ---
 
@@ -528,11 +533,17 @@ Data files (JSON):
 
 ## 8. Cross-References
 
-- **`extracted_game_data.md`** — All decoded game data (talents, items, monsters, skills, buffs, achievements, equipment, event-deck)
+- **`extracted_game_data.md`** — All decoded game data (talents, items, monsters, skills, buffs, achievements, equipment, event-deck, Wave 3 counts)
 - **`dump_inventory.md`** — Catalogue of the 11,271 `Dump/*` files; what each bucket gives the rebuild
+- **`wave3_extraction.md`** — UnityPy pipeline + per-output schemas
 - **`data/RelicSettingJS.json`** — Canonical 51-relic dataset (Wave 2)
 - **`data/WeaponSettingJS.json`** — Canonical 26-equipment dataset (Wave 2)
 - **`data/EventCardTypeSettingJS.json`** — Canonical 4-card adventure-deck weights (Wave 2)
+- **`data/monoscript_catalog.json`** — Authoritative 780-entry PathID → Class map (Wave 3)
+- **`data/monobehaviour_index.json` + `monobehaviour_blobs.bin` + `monobehaviour_blobs_index.json`** — 10,246 MB records + 2.34 MB raw tails (Wave 3)
+- **`data/monobehaviour_strings.json`** — 8,310 CJK strings recovered from MB blobs (Wave 3)
+- **`data/battle_events.json`** — 164/167 structured BattleEventNodes with world + monster slots (Wave 3)
+- **`data/{sprite,texture2d,animationclip,audioclip,animator,animatorcontroller}_index.json`** — Built-in asset metadata (Wave 3)
 - **`chinese_strings.txt`** — Raw 1,834 Chinese strings (for any text not in extracted_game_data)
 - **`extraction_summary.md`** — How data was extracted, what was discovered
 - **`todo.md`** — What's still missing for full rebuild

@@ -1,0 +1,146 @@
+[
+  {
+    "path_id": 61,
+    "controller_pid": 12,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 149,
+    "controller_pid": 12,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 150,
+    "controller_pid": 401,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5292,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5293,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5294,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5295,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5296,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5297,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5298,
+    "controller_pid": 400,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5299,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5300,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5301,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5302,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5303,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5304,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5305,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5306,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5307,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5308,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5309,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5310,
+    "controller_pid": 398,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5311,
+    "controller_pid": 399,
+    "has_avatar": false,
+    "enabled": true
+  },
+  {
+    "path_id": 5312,
+    "controller_pid": 402,
+    "has_avatar": false,
+    "enabled": true
+  }
+]

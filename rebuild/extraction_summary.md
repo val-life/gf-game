@@ -1,17 +1,27 @@
-# Ghidra MCP Extraction Summary (2026-6-9)
+# Extraction Summary (2026-6-9)
 
 ## What was extracted
 
-Two waves of extraction, both feeding `rebuild/extracted_game_data.md`:
+Three waves of extraction, all feeding `rebuild/extracted_game_data.md` and the canonical JSON files in `rebuild/data/`:
 
 1. **Wave 1 — `global-metadata.dat` string-literal scan** (Ghidra MCP + custom Python).
    Decoded ~1,800 readable Chinese strings out of the 11,901-entry StringLiteral table.
    Source for talents, monsters, skills, achievements, ending NPCs, system text.
-2. **Wave 2 — `Dump/TextAsset/*` decode** (this pass).
+
+2. **Wave 2 — `Dump/TextAsset/*` decode** (PowerShell base64 + ConvertFrom-Json).
    AssetStudio export of `data.unity3d` produced 11,271 files; three TextAssets contained
    base64-encoded UTF-8 JSON with the **canonical balance dataset** for relics, equipment,
    and the adventure-deck card weights. Decoded into `rebuild/data/*.json` for direct
    import into the web rebuild.
+
+3. **Wave 3 — UnityPy programmatic walk** (`dump_unity3d.py` + `extract_mb_strings.py` + `parse_battle_events.py`).
+   UnityPy reads `data.unity3d` and dumps:
+   - 780-entry MonoScript catalog (authoritative PathID → Class.Namespace.Assembly)
+   - Raw byte blobs for every MonoBehaviour (2.34 MB across 6,509 non-empty MBs)
+   - 8,310 CJK narrative strings recovered from those blobs
+   - 164/167 structured BattleEventNodes (world + monster slots + intro/sneak text)
+   - Built-in asset indexes (Sprite/Texture2D/AnimationClip/AudioClip/Animator)
+   See `wave3_extraction.md` for the full pipeline + schemas.
 
 ## Results
 
@@ -30,6 +40,11 @@ Two waves of extraction, both feeding `rebuild/extracted_game_data.md`:
 | **NPC names** | 1 | Lumnia, Charlotte, Karadog, Karimodo, etc. | §4-6 |
 | **Game system text** | 1 | Maze, fishing, ad, save prompts | §7 |
 | **Asset inventory** | 2 | 11,271 dump files catalogued by type | `dump_inventory.md` |
+| **MonoScript catalog** | 3 | **780** PathID → Class.Namespace.Assembly | `data/monoscript_catalog.json` |
+| **MonoBehaviour raw blobs** | 3 | **2.34 MB** across 6,509 non-empty MBs | `data/monobehaviour_blobs.bin` |
+| **XNode narrative strings** | 3 | **8,310** CJK strings across 2,372 MBs | `data/monobehaviour_strings.json` |
+| **Structured BattleEvents** | 3 | **164/167** with world + monster slots | `data/battle_events.json` |
+| **Built-in asset indexes** | 3 | Sprite (568), Texture2D (362), AudioClip (13), AnimationClip (6), Animator (24), AnimatorController (6) | `data/*_index.json` |
 
 ## Critical findings
 
@@ -45,9 +60,31 @@ holding the live balance config:
 | `EventCardTypeSettingJS.txt` | `rebuild/data/EventCardTypeSettingJS.json` | 4 | (was missing) |
 
 The other 10,000+ files in the dump are stub headers (script PathID + name) — see
-`dump_inventory.md` §2 for the full breakdown. Re-running AssetStudio with the TypeTree
-dumps from `Tool/Il2CppInspectorRedux.GUI` would populate the MonoBehaviour bodies and
-recover XNode per-node integer arrays (HP/ATK/DEF/count/flags for monsters).
+`dump_inventory.md` §2 for the full breakdown.
+
+### 0a. ☆ NEW (Wave 3) — UnityPy walk of `data.unity3d`
+
+UnityPy 1.25.0 (`pip install UnityPy`) loads `data.unity3d` (87.9 MB) and exposes
+all 24,713 objects to Python. IL2CPP builds strip inline TypeTrees, but UnityPy
+ships TPK definitions for built-in types and we can still recover MonoBehaviour
+**raw tail bytes** + walk them for embedded strings. This pass produced:
+
+| Artifact | Records | What it is |
+|---|---:|---|
+| `data/monoscript_catalog.json` | 780 | PathID → Class.Namespace.Assembly (authoritative) |
+| `data/monobehaviour_index.json` | 10,246 | one record per MB with script_pid + name + byte sizes |
+| `data/monobehaviour_blobs.bin` | 2.34 MB | concatenated raw tail bytes |
+| `data/monobehaviour_blobs_index.json` | 6,509 | pid → [offset, length] into the .bin |
+| `data/monobehaviour_strings.json` | 8,310 | CJK strings recovered by pattern-walk |
+| `data/battle_events.json` | 164 / 167 | structured `BattleEventNode` records |
+| `data/sprite_index.json` | 568 | sprite rect + atlas + pivot |
+| `data/texture2d_index.json` | 362 | texture dimensions + storage refs |
+| `data/animationclip_index.json` | 6 | clip metadata |
+| `data/audioclip_index.json` | 13 | audio channels + freq |
+| `data/animator_index.json` | 24 | animator controller refs |
+| `data/animatorcontroller_index.json` | 6 | controller state refs |
+
+See `wave3_extraction.md` for the pipeline + schema.
 
 ### 1. IL2CPP method bodies = invoker stubs (not the formulas)
 
@@ -139,15 +176,26 @@ These tell us the **constant base values** used by `CaculateBase*` methods witho
 
 | File | Purpose |
 |---|---|
-| `extracted_game_data.md` (~45 KB) | Full structured extraction — buffs/talents/relics/equipment/monsters/skills/achievements |
-| `dump_inventory.md` (~16 KB) | Catalogue of the 11,271 `Dump/*` files by bucket; flags which contain real data |
+| `extracted_game_data.md` (~50 KB) | Full structured extraction — buffs/talents/relics/equipment/monsters/skills/achievements + Wave 3 counts |
+| `dump_inventory.md` (~17 KB) | Catalogue of the 11,271 `Dump/*` files by bucket; flags which contain real data |
+| `wave3_extraction.md` (~14 KB) | UnityPy pipeline + per-output schemas (NEW, Wave 3) |
 | `chinese_strings.txt` (122 KB) | All 1,834 Chinese strings with their index in the metadata (Wave 1) |
 | `data/RelicSettingJS.json` (19 KB) | 51-entry canonical relic balance dataset (Wave 2) |
 | `data/WeaponSettingJS.json` (7 KB) | 26-entry canonical equipment dataset (Wave 2) |
 | `data/EventCardTypeSettingJS.json` (<1 KB) | 4-entry adventure-deck weights (Wave 2) |
-| `rebuild_guide.md` (~22 KB) | Web-rebuild design reference + cross-refs |
-| `todo.md` (~9 KB) | Tracker for items still missing |
-| `final_extract.py` | Wave 1 extraction script |
+| `data/monoscript_catalog.json` (145 KB) | 780-entry PathID → Class.Namespace.Assembly map (NEW, Wave 3) |
+| `data/monobehaviour_index.json` (1.7 MB) | 10,246 MB instance records (NEW, Wave 3) |
+| `data/monobehaviour_blobs.bin` (2.3 MB) | Raw concatenated MB tail bytes (NEW, Wave 3) |
+| `data/monobehaviour_blobs_index.json` (272 KB) | pid → [offset, length] into the .bin (NEW, Wave 3) |
+| `data/monobehaviour_strings.json` (1.0 MB) | 8,310 CJK strings recovered from MB blobs (NEW, Wave 3) |
+| `data/battle_events.json` (70 KB) | 164/167 structured BattleEventNodes (NEW, Wave 3) |
+| `data/sprite_index.json`, `texture2d_index.json`, etc. | Built-in asset indexes (NEW, Wave 3) |
+| `rebuild_guide.md` (~24 KB) | Web-rebuild design reference + cross-refs |
+| `todo.md` (~13 KB) | Tracker for items still missing |
+| `dump_unity3d.py` (~6 KB) | Wave 3 master extractor |
+| `extract_mb_strings.py` (~2 KB) | Wave 3 string walker |
+| `parse_battle_events.py` (~3 KB) | Wave 3 BattleEventNode decoder |
+| `final_extract.py` | Wave 1 metadata-scan script |
 
 ## What remains
 
@@ -155,7 +203,8 @@ These tell us the **constant base values** used by `CaculateBase*` methods witho
 |---|---|---|
 | Exact damage formula constants | IL2CPP invoker stubs | Frida hook or reimplement from talent values |
 | Save file JSON schema | Runtime only | Rooted device + 10min play |
-| XNode body integers (per-monster HP/ATK/DEF/count/flags) | MonoBehaviour stubs in `Dump/` lack TypeTree | Re-run AssetStudio with TypeTree dumps from `Tool/Il2CppInspectorRedux.GUI`, OR use `UnityPy` to parse `data.unity3d` directly |
+| Full structured per-field decode of every MB type | UnityPy can't infer user-script TypeTree | Generate dummy DLLs via `Tool/Il2CppInspectorRedux.GUI` → re-export with AssetStudioMod. See `wave3_extraction.md` §3.1 |
+| 3 / 167 BattleEventNodes with boss-fight layouts | Simple parser fails on multi-stage layouts | Hand-decode or write a layout-aware parser |
 | 5 endings full trigger conditions | 5 NPC names + 1 condition known | Read from C# class `EndingEventDirector` |
-| Monster stats (HP/ATK/DEF per-creature) | Same as XNode body issue | Same |
+| Per-monster numeric stats (HP/ATK/DEF per-creature) | `Monster` MB needs structured decoding | Same as full MB decode above |
 | `潜行` (Hunter) profession-locked relics | Profession exists in `WeaponSettingJS` but no `RelicSettingJS` entries are `猎人`-only | The hunter equipment lock is real; the relic pool may genuinely be just `通用`/`战士` |

@@ -1,0 +1,9658 @@
+[
+  {
+    "path_id": 512,
+    "name": "AchivementDisplay_0",
+    "rect": [
+      115.0,
+      144.0,
+      94.0,
+      86.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 903,
+    "name": "AchivementDisplay_1",
+    "rect": [
+      99.0,
+      251.0,
+      341.0,
+      122.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 901,
+    "name": "AchivementDisplay_2",
+    "rect": [
+      213.0,
+      143.0,
+      93.0,
+      87.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 513,
+    "name": "AchivementDisplay_3",
+    "rect": [
+      125.0,
+      52.0,
+      154.0,
+      63.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 594,
+    "name": "adIcon",
+    "rect": [
+      0.0,
+      0.0,
+      53.0,
+      68.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 466,
+    "name": "AdventruePanelUI_0",
+    "rect": [
+      292.0,
+      1806.0,
+      173.0,
+      160.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 483,
+    "name": "AdventruePanelUI_1",
+    "rect": [
+      44.0,
+      1826.0,
+      120.0,
+      120.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 891,
+    "name": "AdventruePanelUI_10",
+    "rect": [
+      801.0,
+      1514.0,
+      170.0,
+      170.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 529,
+    "name": "AdventruePanelUI_11",
+    "rect": [
+      997.0,
+      1519.0,
+      170.0,
+      170.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 446,
+    "name": "AdventruePanelUI_12",
+    "rect": [
+      1218.0,
+      1537.0,
+      86.0,
+      144.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 422,
+    "name": "AdventruePanelUI_13",
+    "rect": [
+      1340.0,
+      1540.0,
+      111.0,
+      197.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 934,
+    "name": "AdventruePanelUI_14",
+    "rect": [
+      669.0,
+      1771.0,
+      774.0,
+      83.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 486,
+    "name": "AdventruePanelUI_15",
+    "rect": [
+      673.0,
+      1880.0,
+      773.0,
+      75.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 929,
+    "name": "AdventruePanelUI_16",
+    "rect": [
+      14.0,
+      842.0,
+      812.0,
+      580.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 502,
+    "name": "AdventruePanelUI_17",
+    "rect": [
+      18.0,
+      247.0,
+      812.0,
+      580.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 404,
+    "name": "AdventruePanelUI_18",
+    "rect": [
+      20.0,
+      112.0,
+      809.0,
+      113.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 886,
+    "name": "AdventruePanelUI_19",
+    "rect": [
+      3.0,
+      43.0,
+      846.0,
+      46.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 870,
+    "name": "AdventruePanelUI_2",
+    "rect": [
+      497.0,
+      1822.0,
+      120.0,
+      120.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 868,
+    "name": "AdventruePanelUI_20",
+    "rect": [
+      862.0,
+      31.0,
+      288.0,
+      71.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 883,
+    "name": "AdventruePanelUI_21",
+    "rect": [
+      881.0,
+      111.0,
+      196.0,
+      184.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 443,
+    "name": "AdventruePanelUI_22",
+    "rect": [
+      1122.0,
+      185.0,
+      352.0,
+      113.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 456,
+    "name": "AdventruePanelUI_23",
+    "rect": [
+      871.0,
+      357.0,
+      612.0,
+      181.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 465,
+    "name": "AdventruePanelUI_24",
+    "rect": [
+      844.0,
+      668.0,
+      656.0,
+      725.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 880,
+    "name": "AdventruePanelUI_26",
+    "rect": [
+      884.0,
+      587.0,
+      50.0,
+      69.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 495,
+    "name": "AdventruePanelUI_3",
+    "rect": [
+      0.0,
+      1596.0,
+      173.0,
+      160.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 956,
+    "name": "AdventruePanelUI_4",
+    "rect": [
+      286.0,
+      1591.0,
+      173.0,
+      160.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 462,
+    "name": "AdventruePanelUI_5",
+    "rect": [
+      557.0,
+      1592.0,
+      173.0,
+      160.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 477,
+    "name": "AdventruePanelUI_6",
+    "rect": [
+      585.0,
+      1466.0,
+      120.0,
+      120.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 524,
+    "name": "AdventruePanelUI_7",
+    "rect": [
+      207.0,
+      1451.0,
+      120.0,
+      120.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 429,
+    "name": "AdventruePanelUI_8",
+    "rect": [
+      445.0,
+      1445.0,
+      120.0,
+      120.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 930,
+    "name": "AdventruePanelUI_9",
+    "rect": [
+      32.0,
+      1465.0,
+      120.0,
+      120.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 882,
+    "name": "AdventruePanelUINew_0",
+    "rect": [
+      131.08480834960938,
+      839.0948486328125,
+      1188.541259765625,
+      1156.2423095703125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 58.514286041259766,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 924,
+    "name": "AdventruePanelUINew_1",
+    "rect": [
+      197.797607421875,
+      483.3280029296875,
+      1044.58203125,
+      297.2525634765625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 58.514286041259766,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 899,
+    "name": "AdventruePanelUINew_2",
+    "rect": [
+      205.4051971435547,
+      318.3177185058594,
+      482.2048034667969,
+      54.41828536987305
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 58.514286041259766,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 869,
+    "name": "AdventruePanelUINew_3",
+    "rect": [
+      793.5311889648438,
+      319.4880065917969,
+      482.2048034667969,
+      59.09942626953125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 58.514286041259766,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 511,
+    "name": "AdventureResultItemBox_0",
+    "rect": [
+      28.0,
+      715.0,
+      496.0,
+      267.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 503,
+    "name": "AdventureResultItemBox_1",
+    "rect": [
+      540.0,
+      714.0,
+      374.0,
+      268.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 526,
+    "name": "AdventureResultItemBox_2",
+    "rect": [
+      30.0,
+      532.0,
+      796.0,
+      141.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 664,
+    "name": "AgeStatIcon",
+    "rect": [
+      0.0,
+      0.0,
+      59.0,
+      38.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 427,
+    "name": "AgeStatPanel_0",
+    "rect": [
+      68.0,
+      884.0,
+      1360.0,
+      1048.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 915,
+    "name": "AgeStatPanel_1",
+    "rect": [
+      1568.0,
+      1523.0,
+      262.0,
+      355.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 453,
+    "name": "AgeStatPanel_2",
+    "rect": [
+      1618.0,
+      1296.0,
+      59.0,
+      38.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 448,
+    "name": "AgeStatPanel_3",
+    "rect": [
+      149.0,
+      616.0,
+      753.0,
+      142.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 871,
+    "name": "AgeStatPanel_4",
+    "rect": [
+      128.0,
+      438.0,
+      526.0,
+      83.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 877,
+    "name": "AgeStatPanel_5",
+    "rect": [
+      1163.0,
+      547.0,
+      277.0,
+      283.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 916,
+    "name": "AgeStatPanel_6",
+    "rect": [
+      1584.0,
+      520.0,
+      274.0,
+      286.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 416,
+    "name": "AgeStatPanel_7",
+    "rect": [
+      823.0,
+      442.0,
+      484.0,
+      81.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 470,
+    "name": "AgeStatPanel_8",
+    "rect": [
+      1580.0,
+      913.0,
+      286.0,
+      291.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 441,
+    "name": "AgeStatPanel_9",
+    "rect": [
+      1551.0,
+      89.0,
+      296.0,
+      286.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 534,
+    "name": "Background",
+    "rect": [
+      0.0,
+      0.0,
+      32.0,
+      32.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 200.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 557,
+    "name": "baseUI",
+    "rect": [
+      0.0,
+      0.0,
+      1792.0001220703125,
+      2048.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 488,
+    "name": "BaseUI_0",
+    "rect": [
+      108.54400634765625,
+      1970.6881103515625,
+      1110.01611328125,
+      23.552001953125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 918,
+    "name": "BaseUI_1",
+    "rect": [
+      107.52000427246094,
+      1758.7200927734375,
+      1113.60009765625,
+      159.74400329589844
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 913,
+    "name": "BaseUI_10",
+    "rect": [
+      107.52000427246094,
+      208.89601135253906,
+      89.08800506591797,
+      79.87200164794922
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 949,
+    "name": "BaseUI_13",
+    "rect": [
+      1271.80810546875,
+      1754.6240234375,
+      61.44000244140625,
+      59.39200210571289
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 515,
+    "name": "BaseUI_14",
+    "rect": [
+      1425.4080810546875,
+      1758.7200927734375,
+      47.10400390625,
+      56.83200454711914
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 423,
+    "name": "BaseUI_16",
+    "rect": [
+      1345.0240478515625,
+      1761.280029296875,
+      62.46400451660156,
+      45.05600357055664
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 953,
+    "name": "BaseUI_17",
+    "rect": [
+      1528.320068359375,
+      1764.35205078125,
+      123.90400695800781,
+      41.98400115966797
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 419,
+    "name": "BaseUI_2",
+    "rect": [
+      1290.7520751953125,
+      1825.280029296875,
+      47.10400390625,
+      66.04800415039062
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 517,
+    "name": "BaseUI_3",
+    "rect": [
+      1356.2880859375,
+      1830.400146484375,
+      52.73600387573242,
+      57.34400177001953
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 479,
+    "name": "BaseUI_39",
+    "rect": [
+      128.5120086669922,
+      1564.672119140625,
+      351.2320251464844,
+      129.0240020751953
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 516,
+    "name": "BaseUI_4",
+    "rect": [
+      1430.528076171875,
+      1837.568115234375,
+      46.08000183105469,
+      50.176002502441406
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 961,
+    "name": "BaseUI_40",
+    "rect": [
+      485.37603759765625,
+      1564.672119140625,
+      351.2320251464844,
+      129.0240020751953
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 531,
+    "name": "BaseUI_41",
+    "rect": [
+      844.2880249023438,
+      1564.672119140625,
+      352.2560119628906,
+      129.0240020751953
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 855,
+    "name": "BaseUI_42",
+    "rect": [
+      1222.656005859375,
+      1643.52001953125,
+      175.6160125732422,
+      84.99200439453125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 487,
+    "name": "BaseUI_43",
+    "rect": [
+      1488.384033203125,
+      1691.6480712890625,
+      260.09600830078125,
+      45.05600357055664
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 908,
+    "name": "BaseUI_44",
+    "rect": [
+      1488.384033203125,
+      1646.592041015625,
+      260.09600830078125,
+      41.98400115966797
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 857,
+    "name": "BaseUI_45",
+    "rect": [
+      1229.31201171875,
+      1556.4801025390625,
+      54.272003173828125,
+      68.09600067138672
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 894,
+    "name": "BaseUI_46",
+    "rect": [
+      1301.5040283203125,
+      1557.5040283203125,
+      57.85600280761719,
+      65.02400207519531
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 959,
+    "name": "BaseUI_47",
+    "rect": [
+      1488.384033203125,
+      1575.424072265625,
+      263.1679992675781,
+      35.84000015258789
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 426,
+    "name": "BaseUI_48",
+    "rect": [
+      155.64801025390625,
+      1418.7520751953125,
+      73.7280044555664,
+      103.93600463867188
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 951,
+    "name": "BaseUI_49",
+    "rect": [
+      520.7040405273438,
+      1415.6800537109375,
+      68.60800170898438,
+      103.93600463867188
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 928,
+    "name": "BaseUI_5",
+    "rect": [
+      1518.592041015625,
+      1829.3760986328125,
+      176.6400146484375,
+      81.92000579833984
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 887,
+    "name": "BaseUI_50",
+    "rect": [
+      876.5440673828125,
+      1405.4400634765625,
+      110.08000183105469,
+      98.30400085449219
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 509,
+    "name": "BaseUI_51",
+    "rect": [
+      1194.49609375,
+      1333.760009765625,
+      267.7760009765625,
+      133.6320037841797
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 508,
+    "name": "BaseUI_52",
+    "rect": [
+      1485.31201171875,
+      1531.904052734375,
+      263.6800231933594,
+      34.816001892089844
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 484,
+    "name": "BaseUI_53",
+    "rect": [
+      108.54400634765625,
+      1133.5679931640625,
+      1067.008056640625,
+      240.1280059814453
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 938,
+    "name": "BaseUI_54",
+    "rect": [
+      1488.384033203125,
+      1371.6480712890625,
+      263.1679992675781,
+      35.84000015258789
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 507,
+    "name": "BaseUI_55",
+    "rect": [
+      1198.592041015625,
+      1245.696044921875,
+      66.04800415039062,
+      67.58399963378906
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 865,
+    "name": "BaseUI_56",
+    "rect": [
+      1276.416015625,
+      1247.2320556640625,
+      52.224002838134766,
+      70.14400482177734
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 485,
+    "name": "BaseUI_57",
+    "rect": [
+      1340.416015625,
+      1245.696044921875,
+      53.24800109863281,
+      65.02400207519531
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 451,
+    "name": "BaseUI_58",
+    "rect": [
+      1492.4801025390625,
+      1302.528076171875,
+      250.8800048828125,
+      34.816001892089844
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 522,
+    "name": "BaseUI_59",
+    "rect": [
+      1202.6881103515625,
+      1179.6480712890625,
+      54.78400421142578,
+      58.880001068115234
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 418,
+    "name": "BaseUI_6",
+    "rect": [
+      107.00800323486328,
+      485.8880310058594,
+      67.58399963378906,
+      45.56800079345703
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 866,
+    "name": "BaseUI_60",
+    "rect": [
+      1271.2960205078125,
+      1180.6719970703125,
+      66.04800415039062,
+      52.73600387573242
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 873,
+    "name": "BaseUI_61",
+    "rect": [
+      1499.1361083984375,
+      990.7200317382812,
+      228.864013671875,
+      276.99200439453125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 409,
+    "name": "BaseUI_62",
+    "rect": [
+      1484.800048828125,
+      1468.416015625,
+      263.6800231933594,
+      50.68800354003906
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 435,
+    "name": "BaseUI_63",
+    "rect": [
+      111.10400390625,
+      849.9200439453125,
+      1067.008056640625,
+      240.6400146484375
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 425,
+    "name": "BaseUI_64",
+    "rect": [
+      1533.4400634765625,
+      791.0400390625,
+      159.2320098876953,
+      176.6400146484375
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 406,
+    "name": "BaseUI_67",
+    "rect": [
+      108.54400634765625,
+      591.8720092773438,
+      1067.008056640625,
+      206.84800720214844
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 410,
+    "name": "BaseUI_68",
+    "rect": [
+      1473.5360107421875,
+      672.7680053710938,
+      281.0880126953125,
+      100.35200500488281
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 498,
+    "name": "BaseUI_7",
+    "rect": [
+      212.99200439453125,
+      485.37603759765625,
+      36.35200119018555,
+      61.44000244140625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 958,
+    "name": "BaseUI_8",
+    "rect": [
+      109.0560073852539,
+      322.5600280761719,
+      264.7040100097656,
+      135.16799926757812
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 935,
+    "name": "BaseUI_9",
+    "rect": [
+      471.0400085449219,
+      319.4880065917969,
+      269.8240051269531,
+      137.72801208496094
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 856,
+    "name": "battlePanelUI_0",
+    "rect": [
+      24.0,
+      327.0,
+      936.0,
+      450.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 432,
+    "name": "battlePanelUI_1",
+    "rect": [
+      16.0,
+      249.0,
+      364.0,
+      53.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 963,
+    "name": "battlePanelUI_10",
+    "rect": [
+      238.0,
+      18.0,
+      66.0,
+      65.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 957,
+    "name": "battlePanelUI_2",
+    "rect": [
+      37.0,
+      191.0,
+      154.0,
+      21.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 884,
+    "name": "battlePanelUI_3",
+    "rect": [
+      35.0,
+      155.0,
+      157.0,
+      25.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 861,
+    "name": "battlePanelUI_4",
+    "rect": [
+      35.0,
+      120.0,
+      158.0,
+      25.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 940,
+    "name": "battlePanelUI_5",
+    "rect": [
+      36.0,
+      97.0,
+      156.0,
+      14.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 896,
+    "name": "battlePanelUI_6",
+    "rect": [
+      35.0,
+      70.0,
+      159.0,
+      15.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 506,
+    "name": "battlePanelUI_7",
+    "rect": [
+      38.0,
+      50.0,
+      153.0,
+      10.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 948,
+    "name": "battlePanelUI_8",
+    "rect": [
+      222.0,
+      102.0,
+      157.0,
+      138.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 867,
+    "name": "battlePanelUI_9",
+    "rect": [
+      387.0,
+      102.0,
+      163.0,
+      137.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 747,
+    "name": "battlePanelUIBG",
+    "rect": [
+      0.0,
+      0.0,
+      2034.0,
+      1550.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 563,
+    "name": "BOSS_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 562,
+    "name": "BOSS_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 661,
+    "name": "ButtonType1",
+    "rect": [
+      0.0,
+      0.0,
+      683.0,
+      249.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 463,
+    "name": "CharacterPanel_0",
+    "rect": [
+      9.727387428283691,
+      682.4960327148438,
+      1072.060546875,
+      1349.632080078125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 893,
+    "name": "CharacterPanel_1",
+    "rect": [
+      651.2230224609375,
+      460.8000183105469,
+      152.05442810058594,
+      23.552001953125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 947,
+    "name": "CharacterPanel_10",
+    "rect": [
+      1453.4765625,
+      1217.5360107421875,
+      129.01588439941406,
+      52.73600387573242
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 454,
+    "name": "CharacterPanel_11",
+    "rect": [
+      1785.74365234375,
+      1216.5120849609375,
+      128.50390625,
+      52.73600387573242
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 931,
+    "name": "CharacterPanel_12",
+    "rect": [
+      1152.951416015625,
+      796.6720581054688,
+      826.8279418945312,
+      308.2240295410156
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 431,
+    "name": "CharacterPanel_13",
+    "rect": [
+      127.991943359375,
+      410.6240234375,
+      174.5810089111328,
+      230.91201782226562
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 941,
+    "name": "CharacterPanel_14",
+    "rect": [
+      545.7576293945312,
+      560.1280517578125,
+      152.56639099121094,
+      76.28800201416016
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 923,
+    "name": "CharacterPanel_15",
+    "rect": [
+      708.0514526367188,
+      559.6160278320312,
+      153.59033203125,
+      76.80000305175781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 888,
+    "name": "CharacterPanel_16",
+    "rect": [
+      869.833251953125,
+      560.1280517578125,
+      152.56639099121094,
+      76.28800201416016
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 514,
+    "name": "CharacterPanel_17",
+    "rect": [
+      596.4424438476562,
+      461.31201171875,
+      46.07709884643555,
+      66.04800415039062
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 875,
+    "name": "CharacterPanel_19",
+    "rect": [
+      824.2681274414062,
+      460.8000183105469,
+      59.38826370239258,
+      65.53600311279297
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 421,
+    "name": "CharacterPanel_2",
+    "rect": [
+      1129.912841796875,
+      1579.52001953125,
+      782.2867431640625,
+      53.24800109863281
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 863,
+    "name": "CharacterPanel_21",
+    "rect": [
+      1068.476806640625,
+      460.28802490234375,
+      52.2207145690918,
+      66.04800415039062
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 433,
+    "name": "CharacterPanel_23",
+    "rect": [
+      143.35098266601562,
+      183.80801391601562,
+      152.56639099121094,
+      208.38400268554688
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 864,
+    "name": "CharacterPanel_24",
+    "rect": [
+      592.3467407226562,
+      385.5360107421875,
+      53.24464797973633,
+      67.07200622558594
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 500,
+    "name": "CharacterPanel_26",
+    "rect": [
+      830.4117431640625,
+      383.4880065917969,
+      53.75661849975586,
+      56.83200454711914
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 528,
+    "name": "CharacterPanel_28",
+    "rect": [
+      1067.96484375,
+      389.63201904296875,
+      63.484004974365234,
+      50.68800354003906
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 960,
+    "name": "CharacterPanel_3",
+    "rect": [
+      1131.44873046875,
+      1213.9520263671875,
+      128.50390625,
+      64.51200103759766
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 440,
+    "name": "CharacterPanel_30",
+    "rect": [
+      388.0715637207031,
+      292.3520202636719,
+      206.32301330566406,
+      59.90400314331055
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 467,
+    "name": "CharacterPanel_31",
+    "rect": [
+      667.60595703125,
+      295.42401123046875,
+      336.8747863769531,
+      60.928001403808594
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 872,
+    "name": "CharacterPanel_4",
+    "rect": [
+      1270.1920166015625,
+      1213.4400634765625,
+      127.47998046875,
+      65.53600311279297
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.19677734375,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 622,
+    "name": "city",
+    "rect": [
+      0.0,
+      0.0,
+      1920.0,
+      1080.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 804,
+    "name": "DeathEscape",
+    "rect": [
+      0.0,
+      0.0,
+      45.0,
+      100.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 560,
+    "name": "EquipmentGrid",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 582,
+    "name": "EquipmentGrid1",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 585,
+    "name": "EquipmentGrid2",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 672,
+    "name": "EquipmentGrid_Blue",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 798,
+    "name": "EquipmentGrid_Pinple",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 655,
+    "name": "EquipmentGrid_Red",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 591,
+    "name": "EquipmentGrid_Withte",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 792,
+    "name": "EquipmentGrid_Yellow",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 802,
+    "name": "EquipmentGridSeleteBG",
+    "rect": [
+      0.0,
+      0.0,
+      220.0,
+      220.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 945,
+    "name": "EquipmentLabel_0",
+    "rect": [
+      1.0,
+      0.0,
+      183.0,
+      55.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 910,
+    "name": "EventContentUI_0",
+    "rect": [
+      0.0,
+      1139.0,
+      619.0,
+      82.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 879,
+    "name": "EventContentUI_2",
+    "rect": [
+      2.0,
+      416.0,
+      1718.0,
+      719.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 408,
+    "name": "EventContentUI_3",
+    "rect": [
+      133.0,
+      191.0,
+      634.0,
+      182.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 525,
+    "name": "EventContentUI_4",
+    "rect": [
+      975.0,
+      191.0,
+      634.0,
+      182.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 449,
+    "name": "EventContentUI_5",
+    "rect": [
+      133.0,
+      0.0,
+      634.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 490,
+    "name": "EventContentUI_6",
+    "rect": [
+      975.0,
+      0.0,
+      634.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 902,
+    "name": "EventPanel_1",
+    "rect": [
+      36.0,
+      587.0,
+      1859.0,
+      1413.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 420,
+    "name": "EventPanel_2",
+    "rect": [
+      100.0,
+      310.0,
+      665.0,
+      194.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 692,
+    "name": "EvilCrystal",
+    "rect": [
+      0.0,
+      0.0,
+      1416.0,
+      488.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 501,
+    "name": "EvilCrystal_0",
+    "rect": [
+      0.0,
+      272.0,
+      164.0,
+      216.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 439,
+    "name": "EvilCrystal_1",
+    "rect": [
+      50.0,
+      94.0,
+      1317.0,
+      63.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 954,
+    "name": "EvilCrystalPng_0",
+    "rect": [
+      0.0,
+      272.0,
+      164.0,
+      216.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 530,
+    "name": "EvilCrystalPng_1",
+    "rect": [
+      76.0,
+      208.0,
+      1269.0,
+      36.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 907,
+    "name": "EvilCrystalPng_2",
+    "rect": [
+      50.0,
+      94.0,
+      1317.0,
+      63.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 962,
+    "name": "EvilCrystalPng_3",
+    "rect": [
+      76.0,
+      20.0,
+      1269.0,
+      38.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 858,
+    "name": "EvilCrystalPng_4",
+    "rect": [
+      202.0,
+      287.0,
+      465.0,
+      188.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 617,
+    "name": "fram11",
+    "rect": [
+      0.0,
+      0.0,
+      128.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 405,
+    "name": "FriendsPanel_0",
+    "rect": [
+      587.3469848632812,
+      1657.4398193359375,
+      567.009521484375,
+      213.18077087402344
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 496,
+    "name": "FriendsPanel_1",
+    "rect": [
+      298.55450439453125,
+      1142.3885498046875,
+      488.1000061035156,
+      418.224853515625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 936,
+    "name": "FriendsPanel_11",
+    "rect": [
+      810.2459716796875,
+      203.41676330566406,
+      273.33599853515625,
+      314.0754699707031
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 518,
+    "name": "FriendsPanel_12",
+    "rect": [
+      1141.3404541015625,
+      425.5478820800781,
+      324.58648681640625,
+      91.94437408447266
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 499,
+    "name": "FriendsPanel_14",
+    "rect": [
+      226.1529998779297,
+      200.16209411621094,
+      245.677001953125,
+      286.4107971191406
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 926,
+    "name": "FriendsPanel_15",
+    "rect": [
+      525.52099609375,
+      221.31744384765625,
+      223.71249389648438,
+      262.00079345703125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 481,
+    "name": "FriendsPanel_2",
+    "rect": [
+      871.2584838867188,
+      870.623779296875,
+      103.31449890136719,
+      89.50337982177734
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 922,
+    "name": "FriendsPanel_3",
+    "rect": [
+      1184.4559326171875,
+      857.6051025390625,
+      60.198997497558594,
+      113.09972381591797
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 909,
+    "name": "FriendsPanel_4",
+    "rect": [
+      1339.02099609375,
+      1279.8983154296875,
+      146.42999267578125,
+      164.36074829101562
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 921,
+    "name": "FriendsPanel_5",
+    "rect": [
+      1025.823486328125,
+      876.3193969726562,
+      57.75849914550781,
+      74.043701171875
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 407,
+    "name": "FriendsPanel_6",
+    "rect": [
+      512.5050048828125,
+      785.188720703125,
+      58.571998596191406,
+      75.67103576660156
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 442,
+    "name": "FriendsPanel_7",
+    "rect": [
+      143.17599487304688,
+      606.99560546875,
+      1366.679931640625,
+      115.54072570800781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 482,
+    "name": "FriendsPanel_8",
+    "rect": [
+      1324.3779296875,
+      1113.91015625,
+      183.8509979248047,
+      126.93206024169922
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 493,
+    "name": "FriendsPanel_9",
+    "rect": [
+      1302.4134521484375,
+      956.0587768554688,
+      235.10150146484375,
+      123.6773910522461
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 81.3499984741211,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 19,
+    "name": "GainSoulBtn",
+    "rect": [
+      0.0,
+      0.0,
+      176.0,
+      137.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 758,
+    "name": "ICON",
+    "rect": [
+      0.0,
+      0.0,
+      512.0,
+      512.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 675,
+    "name": "ICONStyle2",
+    "rect": [
+      0.0,
+      0.0,
+      512.0,
+      512.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 464,
+    "name": "InfoWindow_0",
+    "rect": [
+      6.0,
+      375.0,
+      682.0,
+      593.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 412,
+    "name": "InfoWindow_1",
+    "rect": [
+      213.0,
+      273.0,
+      264.0,
+      94.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 494,
+    "name": "InfoWindow_4",
+    "rect": [
+      63.0,
+      78.0,
+      552.0,
+      148.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 535,
+    "name": "InputFieldBackground",
+    "rect": [
+      0.0,
+      0.0,
+      32.0,
+      32.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 200.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 476,
+    "name": "ItemDescriptPanel_0",
+    "rect": [
+      42.0,
+      9.0,
+      417.0,
+      567.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 914,
+    "name": "ItemDescriptPanelRight_0",
+    "rect": [
+      33.0,
+      9.0,
+      417.0,
+      567.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 943,
+    "name": "LearnNewSkillPanel_0",
+    "rect": [
+      108.0,
+      704.0,
+      568.0,
+      744.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 942,
+    "name": "LearnNewSkillPanel_1",
+    "rect": [
+      184.0,
+      384.0,
+      432.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 952,
+    "name": "LearnNewSkillPanel_2",
+    "rect": [
+      262.0,
+      131.0,
+      254.0,
+      197.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 606,
+    "name": "LightBull",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      226.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 434,
+    "name": "LoadGameSceneElement_0",
+    "rect": [
+      45.04500198364258,
+      1204.9066162109375,
+      763.0350341796875,
+      817.8346557617188
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 473,
+    "name": "LoadGameSceneElement_1",
+    "rect": [
+      832.6500244140625,
+      1933.31201171875,
+      49.82250213623047,
+      51.20000076293945
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 415,
+    "name": "LoadGameSceneElement_10",
+    "rect": [
+      69.61499786376953,
+      214.35733032226562,
+      586.9500122070312,
+      57.343997955322266
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 413,
+    "name": "LoadGameSceneElement_11",
+    "rect": [
+      833.33251953125,
+      1783.8079833984375,
+      105.1050033569336,
+      106.49600219726562
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 457,
+    "name": "LoadGameSceneElement_12",
+    "rect": [
+      83.26499938964844,
+      97.62133026123047,
+      79.16999816894531,
+      84.65066528320312
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 510,
+    "name": "LoadGameSceneElement_13",
+    "rect": [
+      271.635009765625,
+      28.671998977661133,
+      92.13749694824219,
+      148.8213348388672
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 491,
+    "name": "LoadGameSceneElement_14",
+    "rect": [
+      385.61248779296875,
+      29.354665756225586,
+      92.13749694824219,
+      148.138671875
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 504,
+    "name": "LoadGameSceneElement_15",
+    "rect": [
+      495.4949951171875,
+      29.354665756225586,
+      92.81999969482422,
+      148.138671875
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 489,
+    "name": "LoadGameSceneElement_16",
+    "rect": [
+      603.3300170898438,
+      29.354665756225586,
+      92.81999969482422,
+      148.138671875
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 436,
+    "name": "LoadGameSceneElement_17",
+    "rect": [
+      715.260009765625,
+      29.354665756225586,
+      92.81999969482422,
+      148.138671875
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 925,
+    "name": "LoadGameSceneElement_18",
+    "rect": [
+      829.9199829101562,
+      1654.101318359375,
+      120.80249786376953,
+      88.74666595458984
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 905,
+    "name": "LoadGameSceneElement_19",
+    "rect": [
+      987.5775146484375,
+      1654.101318359375,
+      15.697500228881836,
+      36.181331634521484
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 520,
+    "name": "LoadGameSceneElement_2",
+    "rect": [
+      946.6275024414062,
+      1934.6773681640625,
+      45.04500198364258,
+      47.78666687011719
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 874,
+    "name": "LoadGameSceneElement_20",
+    "rect": [
+      1042.8599853515625,
+      1655.4666748046875,
+      119.4375,
+      85.33333587646484
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 881,
+    "name": "LoadGameSceneElement_21",
+    "rect": [
+      970.5150146484375,
+      1774.933349609375,
+      120.12000274658203,
+      122.19733428955078
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 21,
+    "name": "LoadGameSceneElement_22",
+    "rect": [
+      1130.219970703125,
+      1776.9813232421875,
+      95.55000305175781,
+      101.71733093261719
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 16,
+    "name": "LoadGameSceneElement_23",
+    "rect": [
+      1137.0450439453125,
+      1914.197265625,
+      206.79750061035156,
+      92.15999603271484
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 505,
+    "name": "LoadGameSceneElement_24",
+    "rect": [
+      523.4774780273438,
+      329.0453186035156,
+      45.04500198364258,
+      44.37333297729492
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 906,
+    "name": "LoadGameSceneElement_25",
+    "rect": [
+      1041.4949951171875,
+      821.2479858398438,
+      204.75,
+      103.76533508300781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 519,
+    "name": "LoadGameSceneElement_26",
+    "rect": [
+      1042.177490234375,
+      690.858642578125,
+      204.75,
+      103.76533508300781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 932,
+    "name": "LoadGameSceneElement_27",
+    "rect": [
+      1042.177490234375,
+      552.27734375,
+      204.75,
+      103.76533508300781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 904,
+    "name": "LoadGameSceneElement_28",
+    "rect": [
+      1042.177490234375,
+      415.06134033203125,
+      204.75,
+      103.76533508300781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 430,
+    "name": "LoadGameSceneElement_29",
+    "rect": [
+      1042.177490234375,
+      279.8933410644531,
+      204.75,
+      103.76533508300781
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 889,
+    "name": "LoadGameSceneElement_3",
+    "rect": [
+      1052.4150390625,
+      1933.31201171875,
+      51.1875,
+      51.882667541503906
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 15,
+    "name": "LoadGameSceneElement_4",
+    "rect": [
+      62.790000915527344,
+      1088.170654296875,
+      392.4375,
+      95.57333374023438
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 933,
+    "name": "LoadGameSceneElement_5",
+    "rect": [
+      833.33251953125,
+      19.797332763671875,
+      114.66000366210938,
+      168.61866760253906
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 521,
+    "name": "LoadGameSceneElement_6",
+    "rect": [
+      456.5924987792969,
+      318.8053283691406,
+      48.45750045776367,
+      57.343997955322266
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 927,
+    "name": "LoadGameSceneElement_7",
+    "rect": [
+      36.85499954223633,
+      417.7919921875,
+      756.8925170898438,
+      611.6693115234375
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 885,
+    "name": "LoadGameSceneElement_8",
+    "rect": [
+      63.47249984741211,
+      298.3253173828125,
+      178.81500244140625,
+      89.42932891845703
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 944,
+    "name": "LoadGameSceneElement_9",
+    "rect": [
+      283.23748779296875,
+      347.4773254394531,
+      120.12000274658203,
+      17.749332427978516
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 711,
+    "name": "LOCK_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 950,
+    "name": "MapAreaEventDisplay_0",
+    "rect": [
+      7.0,
+      111.0,
+      90.0,
+      77.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 472,
+    "name": "MapAreaEventDisplay_1",
+    "rect": [
+      126.0,
+      108.0,
+      90.0,
+      77.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 939,
+    "name": "MapAreaOptionPanel1_0",
+    "rect": [
+      88.35636901855469,
+      698.822509765625,
+      1060.9947509765625,
+      1238.201416015625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 468,
+    "name": "MapAreaOptionPanel1_1",
+    "rect": [
+      129.302001953125,
+      408.6639099121094,
+      945.34130859375,
+      233.4196319580078
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 900,
+    "name": "MapAreaOptionPanel1_10",
+    "rect": [
+      1669.4324951171875,
+      655.0114135742188,
+      191.07962036132812,
+      200.38177490234375
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 860,
+    "name": "MapAreaOptionPanel1_11",
+    "rect": [
+      1907.9228515625,
+      667.2210693359375,
+      75.4261703491211,
+      69.66678619384766
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 411,
+    "name": "MapAreaOptionPanel1_12",
+    "rect": [
+      1446.02734375,
+      1062.2388916015625,
+      341.213623046875,
+      53.147857666015625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 474,
+    "name": "MapAreaOptionPanel1_13",
+    "rect": [
+      1444.5906982421875,
+      939.4242553710938,
+      341.213623046875,
+      56.020713806152344
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 475,
+    "name": "MapAreaOptionPanel1_14",
+    "rect": [
+      1443.154052734375,
+      1005.5,
+      341.93194580078125,
+      53.147857666015625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 897,
+    "name": "MapAreaOptionPanel1_15",
+    "rect": [
+      1444.5906982421875,
+      879.8125,
+      341.93194580078125,
+      51.71142578125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 862,
+    "name": "MapAreaOptionPanel1_2",
+    "rect": [
+      1157.9713134765625,
+      474.02142333984375,
+      136.48544311523438,
+      109.88678741455078
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 424,
+    "name": "MapAreaOptionPanel1_3",
+    "rect": [
+      141.51385498046875,
+      81.87642669677734,
+      160.19081115722656,
+      65.35749816894531
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 459,
+    "name": "MapAreaOptionPanel1_4",
+    "rect": [
+      176.71273803710938,
+      193.9178466796875,
+      334.0301818847656,
+      139.3335723876953
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 859,
+    "name": "MapAreaOptionPanel1_5",
+    "rect": [
+      1068.896484375,
+      86.9039306640625,
+      160.19081115722656,
+      63.202857971191406
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 447,
+    "name": "MapAreaOptionPanel1_6",
+    "rect": [
+      554.5618896484375,
+      190.3267822265625,
+      948.2146606445312,
+      178.1171417236328
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 523,
+    "name": "MapAreaOptionPanel1_7",
+    "rect": [
+      1349.7691650390625,
+      443.1382141113281,
+      188.2062530517578,
+      134.3060760498047
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 458,
+    "name": "MapAreaOptionPanel1_8",
+    "rect": [
+      1596.161376953125,
+      203.9728546142578,
+      131.45703125,
+      193.19964599609375
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 460,
+    "name": "MapAreaOptionPanel1_9",
+    "rect": [
+      1439.562255859375,
+      646.392822265625,
+      211.19326782226562,
+      220.4917755126953
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 71.82142639160156,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 912,
+    "name": "NewEventPanel_0",
+    "rect": [
+      176.0,
+      132.0,
+      173.0,
+      164.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 892,
+    "name": "NewEventPanel_1",
+    "rect": [
+      71.0,
+      1063.0,
+      1173.0,
+      900.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 895,
+    "name": "NewEventPanel_2",
+    "rect": [
+      1360.0,
+      1872.0,
+      48.0,
+      53.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 438,
+    "name": "NewEventPanel_3",
+    "rect": [
+      1495.0,
+      1853.0,
+      297.0,
+      106.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 878,
+    "name": "NewEventPanel_4",
+    "rect": [
+      392.0,
+      150.0,
+      97.0,
+      138.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 437,
+    "name": "NewEventPanel_5",
+    "rect": [
+      1323.0,
+      806.0,
+      55.0,
+      170.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 946,
+    "name": "NewEventPanel_6",
+    "rect": [
+      840.0,
+      392.0,
+      1017.0,
+      104.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 428,
+    "name": "NewEventPanel_7",
+    "rect": [
+      838.0,
+      69.0,
+      1058.0,
+      254.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 414,
+    "name": "NewEventPanel_8",
+    "rect": [
+      138.0,
+      672.0,
+      1056.0,
+      328.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 497,
+    "name": "NewEventPanel_9",
+    "rect": [
+      167.0,
+      362.0,
+      458.0,
+      133.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 919,
+    "name": "NewInfoPanel_0",
+    "rect": [
+      0.0,
+      370.0,
+      1236.0,
+      826.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 480,
+    "name": "NewInfoPanel_1",
+    "rect": [
+      8.0,
+      195.0,
+      554.0,
+      161.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 478,
+    "name": "NewInfoPanel_2",
+    "rect": [
+      657.0,
+      214.0,
+      387.0,
+      138.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 22,
+    "name": "NewInfoPanel_3",
+    "rect": [
+      1076.0,
+      218.0,
+      87.0,
+      78.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 17,
+    "name": "NewInfoPanel_4",
+    "rect": [
+      680.0,
+      43.0,
+      170.0,
+      152.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 911,
+    "name": "NewInfoPanel_5",
+    "rect": [
+      43.0,
+      37.0,
+      69.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 452,
+    "name": "NewInfoPanel_6",
+    "rect": [
+      177.0,
+      24.0,
+      95.0,
+      148.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 492,
+    "name": "NewInfoPanel_7",
+    "rect": [
+      370.0,
+      21.0,
+      96.0,
+      149.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 917,
+    "name": "NewInfoPanel_8",
+    "rect": [
+      897.0,
+      45.0,
+      300.0,
+      98.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 695,
+    "name": "Portrait_Hero_农民_少年期",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 706,
+    "name": "Portrait_Hero_农民_幼年期",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 821,
+    "name": "Portrait_Hero_农民_成年期",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 687,
+    "name": "Portrait_Hero_农民_童年期",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 632,
+    "name": "RegionCloud2",
+    "rect": [
+      0.0,
+      0.0,
+      2000.0,
+      810.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 532,
+    "name": "RegionCloud_0",
+    "rect": [
+      0.0,
+      630.6149291992188,
+      736.7111206054688,
+      1058.295166015625
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 94.81481170654297,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 876,
+    "name": "RegionCloud_1",
+    "rect": [
+      1256.2962646484375,
+      634.4081420898438,
+      705.4221801757812,
+      1056.3985595703125
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 94.81481170654297,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 828,
+    "name": "RelicGrid1",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 471,
+    "name": "RewardItemBox_0",
+    "rect": [
+      24.0,
+      1100.0,
+      280.0,
+      172.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 417,
+    "name": "RewardItemBox_1",
+    "rect": [
+      19.0,
+      446.0,
+      1878.0,
+      646.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 920,
+    "name": "RewardItemBox_2",
+    "rect": [
+      0.0,
+      0.0,
+      1878.0,
+      438.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 827,
+    "name": "SettingBtn",
+    "rect": [
+      0.0,
+      0.0,
+      160.0,
+      81.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 595,
+    "name": "SettingIcon",
+    "rect": [
+      0.0,
+      0.0,
+      149.0,
+      148.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 630,
+    "name": "SkillDIsplay",
+    "rect": [
+      0.0,
+      0.0,
+      747.0,
+      217.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 20,
+    "name": "Temple",
+    "rect": [
+      0.0,
+      0.0,
+      1080.0,
+      2000.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 461,
+    "name": "TimeFlowPanelElement_0",
+    "rect": [
+      64.29347229003906,
+      791.8419189453125,
+      1219.4088134765625,
+      676.2445678710938
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 72.23986053466797,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 445,
+    "name": "TimeFlowPanelElement_1",
+    "rect": [
+      182.766845703125,
+      716.7036743164062,
+      52.7350959777832,
+      52.01881408691406
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 72.23986053466797,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 898,
+    "name": "TimeFlowPanelElement_2",
+    "rect": [
+      163.2620849609375,
+      447.21728515625,
+      210.21798706054688,
+      210.96517944335938
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 72.23986053466797,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 937,
+    "name": "TimeFlowPanelElement_3",
+    "rect": [
+      505.67901611328125,
+      471.78173828125,
+      104.74779510498047,
+      156.77891540527344
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 72.23986053466797,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 444,
+    "name": "TradePanel_0",
+    "rect": [
+      484.0,
+      664.0,
+      630.0,
+      323.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 527,
+    "name": "TradePanel_1",
+    "rect": [
+      40.0,
+      67.0,
+      1520.0,
+      555.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 955,
+    "name": "TradePanel_2",
+    "rect": [
+      30.0,
+      665.0,
+      380.0,
+      309.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 890,
+    "name": "UIBg_0",
+    "rect": [
+      0.0,
+      1623.5521240234375,
+      1106.0,
+      424.4480285644531
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 469,
+    "name": "UIBg_1",
+    "rect": [
+      0.0,
+      0.0,
+      1106.0,
+      950.2720336914062
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 51.20000076293945,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 536,
+    "name": "UIMask",
+    "rect": [
+      0.0,
+      0.0,
+      32.0,
+      32.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 200.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 533,
+    "name": "UISprite",
+    "rect": [
+      0.0,
+      0.0,
+      32.0,
+      32.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 200.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 844,
+    "name": "Unlock_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 455,
+    "name": "UpgradePanel_0",
+    "rect": [
+      0.0,
+      376.0,
+      1236.0,
+      816.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 450,
+    "name": "UpgradePanel_1",
+    "rect": [
+      58.0,
+      275.0,
+      53.0,
+      68.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 849,
+    "name": "village",
+    "rect": [
+      0.0,
+      0.0,
+      1920.0,
+      1080.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 790,
+    "name": "villageLarge",
+    "rect": [
+      0.0,
+      0.0,
+      1920.0,
+      1300.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 682,
+    "name": "一些金币_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 645,
+    "name": "上古魔神（残缺体）_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 847,
+    "name": "不屈_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 809,
+    "name": "不灭之铠_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 701,
+    "name": "中毒_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 691,
+    "name": "体力_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 648,
+    "name": "体力_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 550,
+    "name": "体质_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 654,
+    "name": "僵尸_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 731,
+    "name": "免疫宝石_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 781,
+    "name": "兴奋药剂_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 751,
+    "name": "兽人_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 789,
+    "name": "兽人山脉_AdventruePlaceImg",
+    "rect": [
+      0.0,
+      0.0,
+      800.0,
+      571.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 671,
+    "name": "兽人巫医_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 831,
+    "name": "兽人战士_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 600,
+    "name": "兽人行刑官_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 673,
+    "name": "冒险_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 766,
+    "name": "冒险体力_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 709,
+    "name": "农民_Attack",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 788,
+    "name": "农民_GetHurt",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 638,
+    "name": "农民_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 854,
+    "name": "农田_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 564,
+    "name": "冰凉宝石_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 601,
+    "name": "剑圣披风_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 813,
+    "name": "剑盾_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 832,
+    "name": "力量戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 768,
+    "name": "力量护符_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 808,
+    "name": "功夫秘籍_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 641,
+    "name": "勇猛_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 577,
+    "name": "半兽人_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 612,
+    "name": "卡拉·堕落的精灵女王_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 565,
+    "name": "卡拉多格_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 713,
+    "name": "卡里摩多·剑圣_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 681,
+    "name": "原初魔晶_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 571,
+    "name": "双头猎犬_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 743,
+    "name": "双持_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 626,
+    "name": "反击姿态_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 685,
+    "name": "反击戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 785,
+    "name": "反击盾牌_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 723,
+    "name": "反击石_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 573,
+    "name": "反甲_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 728,
+    "name": "古树守卫_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 643,
+    "name": "古老地图_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 624,
+    "name": "史莱姆_Attack",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 697,
+    "name": "史莱姆_GetHurt",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 735,
+    "name": "史莱姆_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 771,
+    "name": "启迪之书_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 686,
+    "name": "吸血蝙蝠_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 610,
+    "name": "吸血鬼_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 567,
+    "name": "命运之战_AdventruePlaceImg",
+    "rect": [
+      0.0,
+      0.0,
+      800.0,
+      571.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 815,
+    "name": "哥布林_Attack",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 837,
+    "name": "哥布林_GetHurt",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 746,
+    "name": "哥布林_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 744,
+    "name": "哥布林号角_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 631,
+    "name": "哥布林国王_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 761,
+    "name": "哥布林弓箭手_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 637,
+    "name": "哥布林队长_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 640,
+    "name": "嗜血_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 851,
+    "name": "嘲讽_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 776,
+    "name": "噬魂_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 742,
+    "name": "回复_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 558,
+    "name": "回复戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 541,
+    "name": "图腾_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 794,
+    "name": "图腾_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 739,
+    "name": "圣剑剑鞘_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 539,
+    "name": "圣树之种_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 704,
+    "name": "圣树树枝_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 608,
+    "name": "地下室钥匙_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 636,
+    "name": "地底世界_AdventruePlaceImg",
+    "rect": [
+      0.0,
+      0.0,
+      800.0,
+      571.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 730,
+    "name": "地狱犬_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 782,
+    "name": "地精_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 669,
+    "name": "地精火枪手_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 627,
+    "name": "地精科学家_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 779,
+    "name": "地龙幼体_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 683,
+    "name": "地龙王奥凯_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 596,
+    "name": "堕落精灵_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 760,
+    "name": "夏洛蒂_Action",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 830,
+    "name": "夏洛蒂_Stand",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 705,
+    "name": "夏洛蒂_成年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      284.0,
+      351.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 676,
+    "name": "大喝_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 805,
+    "name": "大幽灵_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 574,
+    "name": "女精灵_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 699,
+    "name": "好感度_EventOptionIcon",
+    "rect": [
+      0.0,
+      0.0,
+      150.0,
+      150.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 537,
+    "name": "妖精披风_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 822,
+    "name": "守护吊坠_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 656,
+    "name": "安眠草_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 684,
+    "name": "宝箱_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 807,
+    "name": "宝箱_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 547,
+    "name": "家境_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 578,
+    "name": "密藏_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 724,
+    "name": "密藏_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 846,
+    "name": "小圆盾_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 825,
+    "name": "小屋_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 835,
+    "name": "小精灵_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 708,
+    "name": "尖刺铠甲_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 715,
+    "name": "居民区_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 549,
+    "name": "岩石怪_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 653,
+    "name": "岩石铠甲_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 568,
+    "name": "巨人_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 714,
+    "name": "巨人之血_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 668,
+    "name": "巨人腰带_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 597,
+    "name": "巨剑_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 589,
+    "name": "巨型史莱姆_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 570,
+    "name": "巨型沙虫_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 566,
+    "name": "巨大牛角_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 540,
+    "name": "巨斧_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 783,
+    "name": "巨斧之灵_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 710,
+    "name": "巨斧精通_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 850,
+    "name": "弃甲_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 778,
+    "name": "强化_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 732,
+    "name": "当头一棒_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 625,
+    "name": "很多金币_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 607,
+    "name": "怀表_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 583,
+    "name": "急速_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 736,
+    "name": "愈合宝珠_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 716,
+    "name": "愤怒_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 734,
+    "name": "愤怒之盾_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 770,
+    "name": "战马_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 544,
+    "name": "战鼓_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 554,
+    "name": "护额_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 750,
+    "name": "抵御_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 680,
+    "name": "招财猫_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 842,
+    "name": "捷径_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 642,
+    "name": "捷径_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 662,
+    "name": "撼猛格挡_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 796,
+    "name": "收割者_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 843,
+    "name": "攻击_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 646,
+    "name": "教堂_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 786,
+    "name": "旅行鞋_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 793,
+    "name": "旋风斩_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 616,
+    "name": "无形之剑_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 729,
+    "name": "易伤_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 745,
+    "name": "晕眩",
+    "rect": [
+      0.0,
+      0.0,
+      155.0,
+      165.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 834,
+    "name": "智力_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 738,
+    "name": "智力耳环_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 538,
+    "name": "暂无_Attack",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 800,
+    "name": "暂无_Attack",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 840,
+    "name": "暂无_GetHurt",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 700,
+    "name": "暂无_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 740,
+    "name": "替身娃娃_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 841,
+    "name": "月之石_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 852,
+    "name": "望远镜_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 548,
+    "name": "未标题-1",
+    "rect": [
+      0.0,
+      0.0,
+      984.0,
+      1188.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 586,
+    "name": "未标题-1",
+    "rect": [
+      0.0,
+      0.0,
+      1236.0,
+      1200.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 590,
+    "name": "未标题-1",
+    "rect": [
+      0.0,
+      0.0,
+      1600.0,
+      1000.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 658,
+    "name": "未标题-2",
+    "rect": [
+      0.0,
+      0.0,
+      1365.0,
+      2048.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 68.25,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 727,
+    "name": "札盔_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 693,
+    "name": "村外_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 667,
+    "name": "板甲_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 795,
+    "name": "树精_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 803,
+    "name": "格挡反击_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 759,
+    "name": "格挡戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 823,
+    "name": "桶盔_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 836,
+    "name": "横条",
+    "rect": [
+      0.0,
+      0.0,
+      1525.0,
+      100.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 702,
+    "name": "死里逃生_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 741,
+    "name": "残酷盛宴_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 615,
+    "name": "毒腺_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 603,
+    "name": "水晶_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 824,
+    "name": "水晶_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 674,
+    "name": "水晶护腕_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 791,
+    "name": "河流_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 810,
+    "name": "河流_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 763,
+    "name": "泉水_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 561,
+    "name": "泉水_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 679,
+    "name": "流血_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 817,
+    "name": "液态铠甲_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 688,
+    "name": "淬火鳞片_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 726,
+    "name": "混沌魔力_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 609,
+    "name": "溅伤护符_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 659,
+    "name": "火把_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 720,
+    "name": "火把_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 772,
+    "name": "火焰羽毛_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 598,
+    "name": "灵体披风_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 754,
+    "name": "灵巧_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 748,
+    "name": "灵巧护符_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 553,
+    "name": "灼烧_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 660,
+    "name": "牛头人战士_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 633,
+    "name": "牛头将军_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 663,
+    "name": "狂兽人_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 712,
+    "name": "狂欢匕首_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 719,
+    "name": "狂热宝石_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 737,
+    "name": "王国圣剑_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 670,
+    "name": "王国地图_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 787,
+    "name": "王国士兵_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 780,
+    "name": "王国弓箭手_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 623,
+    "name": "王国骑士_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 819,
+    "name": "王室怨灵_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 572,
+    "name": "玫瑰鱼竿_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 576,
+    "name": "生命_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 773,
+    "name": "生命_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 556,
+    "name": "生命戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 853,
+    "name": "生命护符_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 775,
+    "name": "男主 - (成年期(1)",
+    "rect": [
+      0.0,
+      0.0,
+      2048.0,
+      2048.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 82.58064270019531,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 829,
+    "name": "登山杖_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 797,
+    "name": "皮甲_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 755,
+    "name": "盔甲精通_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 757,
+    "name": "盗宝地精_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 707,
+    "name": "眩晕_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 575,
+    "name": "睡袋_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 756,
+    "name": "矮人护手_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 764,
+    "name": "矮人矿山_AdventruePlaceImg",
+    "rect": [
+      0.0,
+      0.0,
+      800.0,
+      571.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 666,
+    "name": "矮马_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 614,
+    "name": "神殿_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 639,
+    "name": "神殿_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 722,
+    "name": "精灵之森_AdventruePlaceImg",
+    "rect": [
+      0.0,
+      0.0,
+      800.0,
+      571.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 696,
+    "name": "精灵权杖_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 826,
+    "name": "精灵骑士_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 652,
+    "name": "精致便衣_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 593,
+    "name": "精英骷髅_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 801,
+    "name": "精英骷髅_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 602,
+    "name": "纯金王冠_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 634,
+    "name": "终焉之钟_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 833,
+    "name": "经验之书_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 650,
+    "name": "绝命匕首_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 818,
+    "name": "绿甲_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 628,
+    "name": "罗盘_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 579,
+    "name": "聚宝盆_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 649,
+    "name": "聚魂铃铛_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 812,
+    "name": "范围戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 620,
+    "name": "荆棘吊坠_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 592,
+    "name": "血魔之盔_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 644,
+    "name": "贝拉_成年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 777,
+    "name": "财神像_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 588,
+    "name": "轻甲_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 619,
+    "name": "进入战斗_EventOptionIcon",
+    "rect": [
+      0.0,
+      0.0,
+      150.0,
+      150.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 580,
+    "name": "进入死斗_EventOptionIcon",
+    "rect": [
+      0.0,
+      0.0,
+      150.0,
+      150.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 635,
+    "name": "迟缓_BuffIcon",
+    "rect": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 762,
+    "name": "迷雾森林_AdventruePlaceImg",
+    "rect": [
+      0.0,
+      0.0,
+      800.0,
+      571.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 845,
+    "name": "逃跑计划_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 698,
+    "name": "遗迹守卫者_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 753,
+    "name": "重甲_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 752,
+    "name": "重锤_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 584,
+    "name": "野猪_Attack",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 618,
+    "name": "野猪_GetHurt",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 814,
+    "name": "野猪_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 581,
+    "name": "野猪首领_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 784,
+    "name": "金币_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 678,
+    "name": "金币_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 839,
+    "name": "金矿_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 811,
+    "name": "金矿_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 629,
+    "name": "钓鱼竿_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 552,
+    "name": "钻石鱼钩_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 611,
+    "name": "铁匠_MapAreaOptionIcon",
+    "rect": [
+      0.0,
+      0.0,
+      150.0,
+      150.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 551,
+    "name": "铆钉拳套_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 838,
+    "name": "锯齿利剑_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 848,
+    "name": "长剑_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 767,
+    "name": "长枪_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 816,
+    "name": "闪耀魔晶_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 543,
+    "name": "防御_Icon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      130.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 721,
+    "name": "防御戒指_Equipment",
+    "rect": [
+      0.0,
+      0.0,
+      185.0,
+      191.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 690,
+    "name": "防御护符_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 657,
+    "name": "阿尔塔_成年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 665,
+    "name": "陨铁护臂_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 694,
+    "name": "隔山打牛_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 799,
+    "name": "集市_MapAreaIcon",
+    "rect": [
+      0.0,
+      0.0,
+      125.0,
+      132.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 689,
+    "name": "露明娜_Action",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 765,
+    "name": "露明娜_Stand",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 718,
+    "name": "露明娜_少年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 647,
+    "name": "露明娜_幼年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 820,
+    "name": "露明娜_成年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 599,
+    "name": "露明娜_童年期_CharacterHeadPortrait",
+    "rect": [
+      0.0,
+      0.0,
+      307.0,
+      352.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 587,
+    "name": "顺劈_SkillImg",
+    "rect": [
+      0.0,
+      0.0,
+      300.0,
+      250.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 604,
+    "name": "预知魔眼_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 703,
+    "name": "骨头鱼钩_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 749,
+    "name": "骷髅_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 717,
+    "name": "骷髅_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 569,
+    "name": "骷髅_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 806,
+    "name": "骷髅射手_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 605,
+    "name": "骷髅将军_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 613,
+    "name": "魂冢_EventCardImg",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 546,
+    "name": "魂冢_EventCardImgSelectable",
+    "rect": [
+      0.0,
+      0.0,
+      180.0,
+      180.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 725,
+    "name": "魅力_PropertyIcon",
+    "rect": [
+      0.0,
+      0.0,
+      130.0,
+      131.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 545,
+    "name": "魔王II（史莱姆形）_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 677,
+    "name": "魔王I（史莱姆形）_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 559,
+    "name": "魔王眷属_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 542,
+    "name": "魔神侍从_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 621,
+    "name": "魔神子体_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 774,
+    "name": "魔神护卫_Normal",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 769,
+    "name": "鲜血圣杯_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 651,
+    "name": "黄金匕首_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 733,
+    "name": "黄金甲_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 18,
+    "name": "黑底Final-Forever D studio logo-20210114",
+    "rect": [
+      0.0,
+      0.0,
+      2048.0,
+      910.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 69.65986633300781,
+    "is_polygon": false,
+    "atlas_tags": []
+  },
+  {
+    "path_id": 555,
+    "name": "龙之心_Relic",
+    "rect": [
+      0.0,
+      0.0,
+      400.0,
+      400.0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "pixels_per_unit": 100.0,
+    "is_polygon": false,
+    "atlas_tags": []
+  }
+]

@@ -1,7 +1,7 @@
 # TODO — Missing Information for Web Rebuild
 
-> **Last updated**: 2026-6-9 (Wave 2: AssetStudio dump processed)
-> **Source of truth**: `rebuild_guide.md` + `extracted_game_data.md` + `dump_inventory.md` (this dir)
+> **Last updated**: 2026-6-9 (Wave 3: UnityPy raw-blob extraction)
+> **Source of truth**: `rebuild_guide.md` + `extracted_game_data.md` + `dump_inventory.md` + `wave3_extraction.md` (this dir)
 
 This file tracks what we **don't have** for the web rebuild. Items here are blockers or nice-to-haves, sorted by impact.
 
@@ -12,22 +12,34 @@ This file tracks what we **don't have** for the web rebuild. Items here are bloc
 | Item | Source | Status |
 |---|---|---|
 | Class catalog (67 game classes) | `il2cpp_extracted.md` (orig folder) | ✅ complete |
+| **Authoritative PathID → Class map (780 scripts)** | `data/monoscript_catalog.json` | ✅ NEW (Wave 3) |
 | Field/method names & types | `il2cpp_extracted.md` | ✅ complete |
 | Method RVAs | `il2cpp_extracted.md` | ✅ complete |
 | 30+ Talents with exact effect values | `extracted_game_data.md` §2 | ✅ complete |
-| **51 canonical Relics with parser-ready effect strings** | `data/RelicSettingJS.json` + §3a | ✅ NEW (Wave 2) |
-| **26 Equipment items with profession + property pools** | `data/WeaponSettingJS.json` + §3b | ✅ NEW (Wave 2) |
+| 51 canonical Relics with parser-ready effect strings | `data/RelicSettingJS.json` + §3a | ✅ (Wave 2) |
+| 26 Equipment items with profession + property pools | `data/WeaponSettingJS.json` + §3b | ✅ (Wave 2) |
 | 40+ Boss-drop Artifacts with combat-tick effects | §3c | ✅ complete |
-| **4 Adventure-deck card weights** | `data/EventCardTypeSettingJS.json` + §4b | ✅ NEW (Wave 2) |
+| 4 Adventure-deck card weights | `data/EventCardTypeSettingJS.json` + §4b | ✅ (Wave 2) |
 | 50+ Monsters with abilities | §4 | ✅ complete |
 | 20+ Skills with 3-level scaling | §5 | ✅ complete |
 | 10 Buff types with formulas | §1 | ✅ complete |
 | 100+ Achievements/Endings/CW levels | §6 | ✅ complete |
 | 5 Endings with NPC names | §6 | ✅ complete |
 | All 1,477 XNode event graph (positions/edges) | `xnode_edges.json` (orig folder) | ✅ exists |
-| All Chinese text from XNode bodies | (raw extraction in orig folder, needs UTF-8 fix) | ⚠️ partial |
+| **All XNode narrative text (8,310 CJK strings)** | `data/monobehaviour_strings.json` | ✅ NEW (Wave 3) |
+| **164/167 BattleEventNode structured records (world + monster slots)** | `data/battle_events.json` | ✅ NEW (Wave 3) |
+| **Raw MB tail bytes for every MonoBehaviour (2.34 MB)** | `data/monobehaviour_blobs.bin` | ✅ NEW (Wave 3) |
+| Built-in asset indexes (Sprite/Texture/Audio/Animation) | `data/*_index.json` | ✅ NEW (Wave 3) |
 | 1,834 Chinese strings from `global-metadata.dat` | `chinese_strings.txt` | ✅ complete |
-| **Full asset inventory of `Dump/`** | `dump_inventory.md` | ✅ NEW (Wave 2) |
+| Full asset inventory of `Dump/` | `dump_inventory.md` | ✅ (Wave 2) |Wave 2) |
+| 50+ Monsters with abilities | §4 | ✅ complete |
+| 20+ Skills with 3-level scaling | §5 | ✅ complete |
+| 10 Buff types with formulas | §1 | ✅ complete |
+| 100+ Achievements/Endings/CW levels | §6 | ✅ complete |
+| 5 Endings with NPC names | §6 | ✅ complete |
+| All 1,477 XNode event graph (positions/edges) | `xnode_edges.json` (orig folder) | ✅ exists |
+| 1,834 Chinese strings from `global-metadata.dat` | `chinese_strings.txt` | ✅ complete |
+| Full asset inventory of `Dump/` | `dump_inventory.md` | ✅ (Wave 2) |
 
 ---
 
@@ -46,19 +58,24 @@ This file tracks what we **don't have** for the web rebuild. Items here are bloc
 - **For web rebuild**: can use placeholders initially, refine after testing
 
 #### 2. XNode body fields (BattleEventNode prefix/suffix values)
-- **What**: Each BattleEventNode has prefix `[0, 3, 0, 0, 0, 0, 0, 0, 0, 135]` and suffix `[512, 256, 512]` flag values. These encode **per-monster HP, attack, defense, count, and behavior flags**.
-- **Status**: ❌ Identified structure in `异世轮回录_RE_full.md` §12.1 but not fully parsed. The 11,271-file AssetStudio dump (`Dump/`) confirms there are 167 BattleEventNode stubs but does NOT contain their body fields — re-run with TypeTree dumps needed.
-- **How to get**:
-  - **(a)** Re-run AssetStudio with TypeTree dumps from `Tool/Il2CppInspectorRedux.GUI` — this populates the MonoBehaviour bodies
-  - **(b)** Use `UnityPy` Python library to parse `data.unity3d` directly
-  - **(c)** Run `dump_raw_nodes.py` again on the original game data
-- **Estimated work**: 1-2 hours
-- **For web rebuild**: critical for balancing monsters. Currently we have monster NAMES + ABILITIES but not STATS
+- **What**: Each BattleEventNode has a 64-byte XNode header (graph PathID, position, port count) then strings (intro, sneak-intro) then 6 monster name slots then 3 trailing flag ints. The header structure was identified in `异世轮回录_RE_full.md` §12.1; the layout above was confirmed during Wave 3.
+- **Status**: ✅ **RESOLVED (Wave 3)**. `parse_battle_events.py` (using UnityPy + manual struct unpacking) parses 164/167 BattleEventNodes into `data/battle_events.json` with: `graph_pid` (which world), `position`, `intro_normal`, `intro_sneak`, `slot_count`, `monsters` (named slots only), `monster_slots` (all 6 incl. "无"), `trailing` (3 int flags).
+- **Remaining**: per-monster numeric stats (HP/ATK/DEF/CRIT/level) are NOT in BattleEventNode tails — those live in `Monster` MonoBehaviours referenced indirectly, and would need TypeTree-aware decoding to extract. See `wave3_extraction.md` §3.1 for the dummy-DLL path.
+- **For web rebuild**: monster NAMES per battle, sneak text, and post-battle dialogue are all now usable; numeric stats can use placeholders until Frida hooks confirm.
 
 #### 3. Decoded XNode Chinese text (no mojibake)
-- **Status**: ⚠️ Raw text in `xnode_texts.json` (orig folder) has 4-byte UTF-8 chars broken. Note: the in-game `Zh.txt` localization file in `Dump/TextAsset/` is **already** mojibake (every byte 0xEFBFBD — the U+FFFD replacement char), so re-extraction from `chinese_strings.txt` is mandatory.
-- **How to get**: Run the byte-by-byte UTF-8 parser fix described in `异世轮回录_RE_full.md` §16.3
-- **For web rebuild**: needed for in-game narrative display
+- **Status**: ✅ **RESOLVED (Wave 3)**. `extract_mb_strings.py` walks every MonoBehaviour blob and recovers 8,310 clean UTF-8 strings — see `data/monobehaviour_strings.json`. Coverage:
+  - 521 EventResultNode narratives
+  - 417 MainEventNode story-event branches
+  - 167 BattleEventNode intro + sneak + monster slots
+  - 75 StoryLineNode age-ranged arcs
+  - 45 ChestEventNode flavor texts
+  - 43 ConditionCheckerNode branch labels
+  - 25 MapObjectNode names + descriptions
+  - 23 RestEventNode flavor texts
+  - 15 GreatCollectionNode ruin boss intros
+  - 915 FDText UI labels
+- **For web rebuild**: every in-game narrative string is now machine-readable as JSON. No further UTF-8 fix needed.
 
 ### Medium Priority
 
@@ -133,23 +150,20 @@ This file tracks what we **don't have** for the web rebuild. Items here are bloc
 
 For a complete rebuild, work in this order (each block takes 1-3 hours):
 
-1. **AssetStudio TypeTree re-dump** (1-2 hrs) — *promoted to first because it unblocks #2 + #9 + #13*:
+1. ✅ **Wave 3 done** — `dump_unity3d.py` + `extract_mb_strings.py` + `parse_battle_events.py` produced narrative + structured BattleEvent data. See `wave3_extraction.md`.
+
+2. **Dummy-DLL-aware AssetStudio re-dump** (1-2 hrs) — *unblocks #4, #5, #7, #8, #13, partial #2*:
    - Open `Tool/Il2CppInspectorRedux.GUI` → Load IL2CPP → point to `libil2cpp.so` + `global-metadata.dat`
    - Export → Generate C# dummy DLL set **with TypeTrees**
-   - Re-open AssetStudio → Options → load the dummy DLLs / enable Cpp2IL TypeTree
+   - Re-open AssetStudioMod (`Tool/AssetStudioModGUI_net9_win64`) → Options → load the dummy DLLs / enable Cpp2IL TypeTree
    - Re-export MonoBehaviours → field values will populate this time
-   - Compare against existing `Dump/MonoBehaviour/*.txt` stubs
 
-2. **Frida hook session** (4-6 hrs total):
+3. **Frida hook session** (4-6 hrs total):
    - Hook `CaculateBaseAttack` → derive level scaling
    - Hook `CaculateNewMaxExp` → derive XP table
    - Hook `CaculateGainSoulNum` → derive soul formula
    - Hook battle events → log HP/ATK/DEF/CRIT values per monster type
    - Hook `AddRandomProperty` → log per-rarity stat magnitudes
-
-3. **XNode body extraction** (2-3 hrs):
-   - Fix UTF-8 parser (per `异世轮回录_RE_full.md` §16.3)
-   - Re-run on `data.unity3d` to get clean Chinese text + per-monster stat prefix/suffix
 
 4. **Save format** (30 min, requires rooted device):
    - Play 10 min, pull save.json
@@ -208,13 +222,20 @@ Direct-import data is **bold-marked**; everything else is a placeholder.
 ## Files Referenced
 
 - `rebuild_guide.md` — Main guide
-- `extracted_game_data.md` — All decoded game data (with 2026-6-9 wave-2 update)
-- `dump_inventory.md` — Catalogue of the 11,271 files in `Dump/` (NEW, Wave 2)
+- `extracted_game_data.md` — All decoded game data (Wave 1+2)
+- `dump_inventory.md` — Catalogue of the 11,271 files in `Dump/` (Wave 2, updated for Wave 3)
+- `wave3_extraction.md` — UnityPy pipeline + output schema (NEW, Wave 3)
 - `extraction_summary.md` — How data was extracted, what was discovered
 - `chinese_strings.txt` — Raw Chinese strings (Wave 1)
-- `data/RelicSettingJS.json` — 51 canonical relics (NEW, Wave 2)
-- `data/WeaponSettingJS.json` — 26 equipment items (NEW, Wave 2)
-- `data/EventCardTypeSettingJS.json` — 4 adventure-deck card weights (NEW, Wave 2)
+- `data/RelicSettingJS.json` — 51 canonical relics (Wave 2)
+- `data/WeaponSettingJS.json` — 26 equipment items (Wave 2)
+- `data/EventCardTypeSettingJS.json` — 4 adventure-deck card weights (Wave 2)
+- `data/monoscript_catalog.json` — 780 PathID → Class.Namespace.Assembly (NEW, Wave 3)
+- `data/monobehaviour_index.json` — 10,246 MB instance records (NEW, Wave 3)
+- `data/monobehaviour_blobs.bin` + `data/monobehaviour_blobs_index.json` — 2.34 MB raw MB tails (NEW, Wave 3)
+- `data/monobehaviour_strings.json` — 8,310 CJK strings across 2,372 MBs (NEW, Wave 3)
+- `data/battle_events.json` — 164/167 structured BattleEventNodes (NEW, Wave 3)
+- `data/sprite_index.json`, `data/texture2d_index.json`, `data/animationclip_index.json`, `data/audioclip_index.json`, `data/animator_index.json`, `data/animatorcontroller_index.json` — built-in asset indexes (NEW, Wave 3)
 - (Orig folder) `il2cpp_extracted.md` — C# class signatures
 - (Orig folder) `il2cpp.cs` — Full IL2CPP dump (147K lines)
 - (Orig folder) `异世轮回录_RE_full.md` — Original analysis (before cleanup)

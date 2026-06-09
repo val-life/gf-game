@@ -1,0 +1,3497 @@
+[
+  {
+    "path_id": 13133,
+    "graph_pid": 13857,
+    "position": [
+      824.0,
+      1304.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13135,
+    "graph_pid": 13857,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 480,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13214,
+    "graph_pid": 13857,
+    "position": [
+      744.0,
+      -504.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 480,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13255,
+    "graph_pid": 13857,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 384,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13385,
+    "graph_pid": 13857,
+    "position": [
+      760.0,
+      376.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 484,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13478,
+    "graph_pid": 13857,
+    "position": [
+      120.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 648,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13496,
+    "graph_pid": 13857,
+    "position": [
+      104.0,
+      1288.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13588,
+    "graph_pid": 13857,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 556,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13625,
+    "graph_pid": 13857,
+    "position": [
+      488.0,
+      1304.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 632,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13729,
+    "graph_pid": 13857,
+    "position": [
+      -200.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 392,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13825,
+    "graph_pid": 13857,
+    "position": [
+      456.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 564,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13827,
+    "graph_pid": 13857,
+    "position": [
+      -200.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 556,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14048,
+    "graph_pid": 13857,
+    "position": [
+      104.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 480,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14112,
+    "graph_pid": 13857,
+    "position": [
+      -200.0,
+      1288.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 408,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14170,
+    "graph_pid": 13857,
+    "position": [
+      -200.0,
+      1688.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 560,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14216,
+    "graph_pid": 13857,
+    "position": [
+      1080.0,
+      376.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 468,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14232,
+    "graph_pid": 13857,
+    "position": [
+      1064.0,
+      -504.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14264,
+    "graph_pid": 13857,
+    "position": [
+      -952.0,
+      232.0
+    ],
+    "intro_normal": "淬火鳞片",
+    "intro_sneak": "你击败了地龙王奥凯，它轰然倒地，鳞片不再冒出热气。它倒在地上愤怒地怒吼：“啊！！卑鄙的人类，无耻的小偷。吾之财宝绝不能被他人亵渎。和吾一并永久埋葬于此吧！”说罢，地龙王用最后的力气，发出一阵强力的龙吼。这龙吼让大地开始共振。地下空间开始了崩塌。[段落]地龙王发出龙吼后就像断线的木偶没了生机。坍塌还在持续，你得抓紧时间去搜刮战利品，晚了可就真被埋葬于此了。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 1708,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14297,
+    "graph_pid": 13857,
+    "position": [
+      424.0,
+      -584.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 624,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14312,
+    "graph_pid": 13857,
+    "position": [
+      104.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 648,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14542,
+    "graph_pid": 13857,
+    "position": [
+      120.0,
+      1688.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 656,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14566,
+    "graph_pid": 13857,
+    "position": [
+      1144.0,
+      1304.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 472,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14567,
+    "graph_pid": 13857,
+    "position": [
+      440.0,
+      296.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 632,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14576,
+    "graph_pid": 13857,
+    "position": [
+      488.0,
+      1768.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 572,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13136,
+    "graph_pid": 13858,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 404,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13152,
+    "graph_pid": 13858,
+    "position": [
+      440.0,
+      776.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 464,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13215,
+    "graph_pid": 13858,
+    "position": [
+      744.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13246,
+    "graph_pid": 13858,
+    "position": [
+      760.0,
+      1240.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13256,
+    "graph_pid": 13858,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 504,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13455,
+    "graph_pid": 13858,
+    "position": [
+      104.0,
+      1288.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 408,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13528,
+    "graph_pid": 13858,
+    "position": [
+      -200.0,
+      1688.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 552,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13532,
+    "graph_pid": 13858,
+    "position": [
+      440.0,
+      1240.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 504,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13552,
+    "graph_pid": 13858,
+    "position": [
+      -216.0,
+      776.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 544,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13589,
+    "graph_pid": 13858,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 528,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13607,
+    "graph_pid": 13858,
+    "position": [
+      104.0,
+      776.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 568,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13696,
+    "graph_pid": 13858,
+    "position": [
+      744.0,
+      328.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13713,
+    "graph_pid": 13858,
+    "position": [
+      -200.0,
+      1288.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 520,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13755,
+    "graph_pid": 13858,
+    "position": [
+      120.0,
+      1688.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 576,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13947,
+    "graph_pid": 13858,
+    "position": [
+      1080.0,
+      1240.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 468,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14023,
+    "graph_pid": 13858,
+    "position": [
+      -216.0,
+      376.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 504,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14199,
+    "graph_pid": 13858,
+    "position": [
+      472.0,
+      1688.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 468,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14233,
+    "graph_pid": 13858,
+    "position": [
+      1064.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 460,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14265,
+    "graph_pid": 13858,
+    "position": [
+      -952.0,
+      200.0
+    ],
+    "intro_normal": "月之石",
+    "intro_sneak": "你把魔眼操控女王的所有触须都斩断了，魔眼像一个皮球一样掉在地上滚到你的面前，你立刻抬起脚，把它踩了个稀碎。脱离了魔眼控制的精灵女王跪倒在地，一阵一阵地呕吐。待女王些许缓和后，她挥动权杖，为自己施加了净化和治疗。[段落]治疗完毕后，女王的脸终于回复了些许生机。她低着头静静地呆了很久。你有些担心地走过去，却发现她竟然在悄悄抽泣。“竟然是被。。人类所救。为什么，为什么？”她的哭泣声越来越大。“为什么向人类国王发出的求救石沉大海！为什么你那么强大却现在才来！”[段落]你面前的精灵越来越失控，完全不像是一个女王的模样，她在你的面前哭了很久才平静下来。“精灵族已经陨落了，古老封印不再坚固不催。”她缓缓地从长袍里拿出一件东西放在你的面前。“拿去吧，人类的强者。我不再是女王，但至少还是一个母亲。我要去解救我的女儿们。”说罢，她站起身来，拖着虚弱的身体摇晃着走出门外。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 2220,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14298,
+    "graph_pid": 13858,
+    "position": [
+      424.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 496,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14313,
+    "graph_pid": 13858,
+    "position": [
+      104.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 560,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14373,
+    "graph_pid": 13858,
+    "position": [
+      1064.0,
+      328.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 460,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14540,
+    "graph_pid": 13858,
+    "position": [
+      88.0,
+      376.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 404,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14572,
+    "graph_pid": 13858,
+    "position": [
+      424.0,
+      328.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 496,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13108,
+    "graph_pid": 13859,
+    "position": [
+      1048.0,
+      1224.0
+    ],
+    "intro_normal": "你向深处前进，迷雾中突然冲出一只特别强壮的野猪，看来应该是一只野猪首领。一场恶战不可避免。",
+    "intro_sneak": "你向深处前进，迷雾中你看到一只特别强壮的野猪在酣睡，你放轻脚步，缓缓地向它靠近。",
+    "slot_count": 6,
+    "monsters": [
+      "野猪首领"
+    ],
+    "monster_slots": [
+      "无",
+      "野猪首领",
+      "无",
+      "无",
+      "无",
+      "无"
+    ],
+    "trailing": [
+      2,
+      1,
+      2
+    ],
+    "tail_bytes": 400,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13137,
+    "graph_pid": 13859,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 480,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13168,
+    "graph_pid": 13859,
+    "position": [
+      408.0,
+      392.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 420,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13187,
+    "graph_pid": 13859,
+    "position": [
+      408.0,
+      1224.0
+    ],
+    "intro_normal": "你向深处前进，突然树丛里发出一声嘶哑的叫声，几只野猪冲了出来，对你不断地怒吼。",
+    "intro_sneak": "你向深处前进，翻过一个山头后，你看到山脚下有几只野猪在悠闲地吃着草。",
+    "slot_count": 6,
+    "monsters": [
+      "野猪",
+      "野猪",
+      "野猪"
+    ],
+    "monster_slots": [
+      "野猪",
+      "野猪",
+      "野猪",
+      "无",
+      "无",
+      "无"
+    ],
+    "trailing": [
+      1,
+      0,
+      1
+    ],
+    "tail_bytes": 372,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13216,
+    "graph_pid": 13859,
+    "position": [
+      744.0,
+      -504.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13233,
+    "graph_pid": 13859,
+    "position": [
+      728.0,
+      392.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 460,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13257,
+    "graph_pid": 13859,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 408,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13374,
+    "graph_pid": 13859,
+    "position": [
+      88.0,
+      1608.0
+    ],
+    "intro_normal": "你在林中小路上小心翼翼地前进，突然一队精英哥布林小队从四面八方冲出来，看来已经跟踪你很久了。一场恶战将要爆发。",
+    "intro_sneak": "你在林中小路上小心翼翼地前进，你听到的前方似乎传来细微的交谈声，你躲在迷雾中慢慢接近，你发现是一整队精英哥布林。",
+    "slot_count": 6,
+    "monsters": [
+      "哥布林",
+      "哥布林",
+      "哥布林",
+      "哥布林队长"
+    ],
+    "monster_slots": [
+      "哥布林",
+      "哥布林",
+      "哥布林",
+      "无",
+      "哥布林队长",
+      "无"
+    ],
+    "trailing": [
+      3,
+      2,
+      1
+    ],
+    "tail_bytes": 508,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13435,
+    "graph_pid": 13859,
+    "position": [
+      728.0,
+      1224.0
+    ],
+    "intro_normal": "你在路上走着，突然一只冷箭从你脸颊飞过，你发现三只哥布林弓箭手在山坡上怒狠狠地盯着你。",
+    "intro_sneak": "你来到了一个高点，发现了不远处三个哥布林弓箭手在放哨。它们并没有注意到你。",
+    "slot_count": 6,
+    "monsters": [
+      "哥布林弓箭手",
+      "哥布林弓箭手",
+      "哥布林弓箭手"
+    ],
+    "monster_slots": [
+      "无",
+      "无",
+      "无",
+      "哥布林弓箭手",
+      "哥布林弓箭手",
+      "哥布林弓箭手"
+    ],
+    "trailing": [
+      1,
+      1,
+      1
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13590,
+    "graph_pid": 13859,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 528,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13697,
+    "graph_pid": 13859,
+    "position": [
+      88.0,
+      776.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 548,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13700,
+    "graph_pid": 13859,
+    "position": [
+      -232.0,
+      776.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 532,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13735,
+    "graph_pid": 13859,
+    "position": [
+      408.0,
+      776.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 472,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13946,
+    "graph_pid": 13859,
+    "position": [
+      -232.0,
+      376.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 424,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13949,
+    "graph_pid": 13859,
+    "position": [
+      -232.0,
+      1224.0
+    ],
+    "intro_normal": "你发现了一处魔力浓郁的地方，你正打算休息一下的时候，一只巨型史莱姆从深处出现了。",
+    "intro_sneak": "你在一处魔力浓郁的地方发现一只巨型史莱姆正在休息，你悄悄地接近。",
+    "slot_count": 6,
+    "monsters": [
+      "巨型史莱姆"
+    ],
+    "monster_slots": [
+      "无",
+      "无",
+      "无",
+      "无",
+      "巨型史莱姆",
+      "无"
+    ],
+    "trailing": [
+      2,
+      0,
+      2
+    ],
+    "tail_bytes": 364,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14027,
+    "graph_pid": 13859,
+    "position": [
+      424.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14204,
+    "graph_pid": 13859,
+    "position": [
+      1048.0,
+      392.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14210,
+    "graph_pid": 13859,
+    "position": [
+      -232.0,
+      1608.0
+    ],
+    "intro_normal": "你不小心踏入了一个哥布林部族的领地，在你被藏在树上的哥布林斥候发现后，一整队哥布林小队立马赶到，打算将作为侵略者的你驱逐。",
+    "intro_sneak": "你跟踪着一只哥布林来到了一个小的营地，你看到这里有一整只哥布林小队正在休息。",
+    "slot_count": 6,
+    "monsters": [
+      "哥布林",
+      "哥布林",
+      "哥布林",
+      "哥布林弓箭手",
+      "哥布林弓箭手"
+    ],
+    "monster_slots": [
+      "哥布林",
+      "哥布林",
+      "哥布林",
+      "哥布林弓箭手",
+      "无",
+      "哥布林弓箭手"
+    ],
+    "trailing": [
+      3,
+      2,
+      1
+    ],
+    "tail_bytes": 492,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14234,
+    "graph_pid": 13859,
+    "position": [
+      1064.0,
+      -504.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 412,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14237,
+    "graph_pid": 13859,
+    "position": [
+      408.0,
+      1608.0
+    ],
+    "intro_normal": "你在一处开阔地带遇到了一整群野猪，一只极为强壮的野猪带领猪群把你团团围住。看来是对你的入侵愤怒至极。",
+    "intro_sneak": "你来到一处开阔地带，你观察到一整群野猪都在悠闲地觅食，你赶紧躲在一旁隐藏了起来。",
+    "slot_count": 6,
+    "monsters": [
+      "野猪首领",
+      "野猪",
+      "野猪",
+      "野猪"
+    ],
+    "monster_slots": [
+      "无",
+      "野猪首领",
+      "无",
+      "野猪",
+      "野猪",
+      "野猪"
+    ],
+    "trailing": [
+      3,
+      1,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14266,
+    "graph_pid": 13859,
+    "position": [
+      -952.0,
+      232.0
+    ],
+    "parse_ok": false,
+    "tail_bytes": 1328
+  },
+  {
+    "path_id": 14299,
+    "graph_pid": 13859,
+    "position": [
+      424.0,
+      -504.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 412,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14314,
+    "graph_pid": 13859,
+    "position": [
+      104.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 540,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14380,
+    "graph_pid": 13859,
+    "position": [
+      88.0,
+      1224.0
+    ],
+    "intro_normal": "你小心翼翼地往丛林深处走去，突然你听见一声难听的怒吼。数只哥布林从树上跳下来，对着你张牙舞爪。",
+    "intro_sneak": "你小心翼翼地往丛林深处走去，在你路过一条小溪的时候，你远远地看见有数只哥布林在溪边饮水。",
+    "slot_count": 6,
+    "monsters": [
+      "哥布林",
+      "哥布林",
+      "哥布林"
+    ],
+    "monster_slots": [
+      "哥布林",
+      "哥布林",
+      "哥布林",
+      "无",
+      "无",
+      "无"
+    ],
+    "trailing": [
+      1,
+      1,
+      0
+    ],
+    "tail_bytes": 436,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14598,
+    "graph_pid": 13859,
+    "position": [
+      72.0,
+      376.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 484,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13138,
+    "graph_pid": 13860,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13179,
+    "graph_pid": 13860,
+    "position": [
+      -200.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 408,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13217,
+    "graph_pid": 13860,
+    "position": [
+      744.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 492,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13258,
+    "graph_pid": 13860,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 508,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13482,
+    "graph_pid": 13860,
+    "position": [
+      1080.0,
+      312.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 600,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13591,
+    "graph_pid": 13860,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 400,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13655,
+    "graph_pid": 13860,
+    "position": [
+      424.0,
+      1272.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13680,
+    "graph_pid": 13860,
+    "position": [
+      744.0,
+      1272.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 500,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13698,
+    "graph_pid": 13860,
+    "position": [
+      104.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13724,
+    "graph_pid": 13860,
+    "position": [
+      104.0,
+      1720.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 528,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13933,
+    "graph_pid": 13860,
+    "position": [
+      -216.0,
+      1320.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 508,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13955,
+    "graph_pid": 13860,
+    "position": [
+      440.0,
+      1720.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 520,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13998,
+    "graph_pid": 13860,
+    "position": [
+      88.0,
+      1320.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14056,
+    "graph_pid": 13860,
+    "position": [
+      -216.0,
+      1720.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 416,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14159,
+    "graph_pid": 13860,
+    "position": [
+      440.0,
+      312.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14235,
+    "graph_pid": 13860,
+    "position": [
+      1064.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 600,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14267,
+    "graph_pid": 13860,
+    "position": [
+      -952.0,
+      200.0
+    ],
+    "intro_normal": "嗜血",
+    "intro_sneak": "卡里摩多·剑圣被你击败了。他不停咳血，单脚跪地，用剑支撑着自己的身体。“后生可畏，后生可畏啊。。。看来是老朽的时间到了。”他把剑丢到一旁，双膝跪在你的面前。“本以为老朽经历了上百年的风雨，尘世早已看淡。却没想到依旧有所牵挂。”[段落]“此处的神器你想取便取了，只是老朽请求你，放过吾族年幼的国王吧。他天性善良，定能带领吾族逃离那个悲惨的命运。”剑圣的头重重地抵在地面上，就这样保持着跪姿驾鹤西去了。[段落]你进入宫殿，看到了在王位上泣不成声，瑟瑟发抖的兽人族小孩。这应该就是剑圣所说的年幼的国王。你没有理会他，继续往宝库前进。在宝库里你发现了一件美轮美奂的神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 2064,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14275,
+    "graph_pid": 13860,
+    "position": [
+      120.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 528,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14300,
+    "graph_pid": 13860,
+    "position": [
+      424.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 480,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14315,
+    "graph_pid": 13860,
+    "position": [
+      104.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 520,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14432,
+    "graph_pid": 13860,
+    "position": [
+      1064.0,
+      1272.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 608,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14528,
+    "graph_pid": 13860,
+    "position": [
+      -200.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 508,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14581,
+    "graph_pid": 13860,
+    "position": [
+      760.0,
+      312.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 492,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14582,
+    "graph_pid": 13860,
+    "position": [
+      456.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 512,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13139,
+    "graph_pid": 13861,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 508,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13145,
+    "graph_pid": 13861,
+    "position": [
+      136.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 636,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13191,
+    "graph_pid": 13861,
+    "position": [
+      760.0,
+      1368.0
+    ],
+    "intro_normal": "你走进一个墓地，看来是脚步声过大，几只僵尸从地底钻出来，它们向你蹒跚地走来，渴望你的鲜血。",
+    "intro_sneak": "你走进一个墓地，这里有几只僵尸步履蹒跚地游荡，你有一个先手的机会。",
+    "slot_count": 6,
+    "monsters": [
+      "僵尸",
+      "僵尸",
+      "僵尸",
+      "僵尸"
+    ],
+    "monster_slots": [
+      "僵尸",
+      "僵尸",
+      "僵尸",
+      "无",
+      "僵尸",
+      "无"
+    ],
+    "trailing": [
+      2,
+      0,
+      2
+    ],
+    "tail_bytes": 388,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13198,
+    "graph_pid": 13861,
+    "position": [
+      -184.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 584,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13218,
+    "graph_pid": 13861,
+    "position": [
+      744.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 432,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13228,
+    "graph_pid": 13861,
+    "position": [
+      456.0,
+      312.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 516,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13259,
+    "graph_pid": 13861,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 368,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13328,
+    "graph_pid": 13861,
+    "position": [
+      120.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 516,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13407,
+    "graph_pid": 13861,
+    "position": [
+      -184.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 372,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13485,
+    "graph_pid": 13861,
+    "position": [
+      440.0,
+      1768.0
+    ],
+    "intro_normal": "你发现了一座吸血鬼的城堡，你走进去探索了一番，结果不小心惊动了城堡的主人。城堡的主人从棺材里苏醒，渴望着你送上门的鲜血。",
+    "intro_sneak": "你发现了一座吸血鬼的城堡，你隐藏好气息进去探索了一番，正好遇到了城堡的主人在品味着自己的食物。你缓缓靠近，准备给它一个惊喜。",
+    "slot_count": 6,
+    "monsters": [
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血鬼"
+    ],
+    "monster_slots": [
+      "吸血蝙蝠",
+      "无",
+      "吸血蝙蝠",
+      "无",
+      "吸血鬼",
+      "无"
+    ],
+    "trailing": [
+      3,
+      1,
+      2
+    ],
+    "tail_bytes": 528,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13488,
+    "graph_pid": 13861,
+    "position": [
+      104.0,
+      1368.0
+    ],
+    "intro_normal": "你走进了一个阴森的洞穴，洞穴的顶部栖息着一群吸血蝙蝠，它们闻到了你的味道，纷纷向你袭来。",
+    "intro_sneak": "你走进了一个阴森的洞穴，你隐藏气息，洞穴顶部的吸血蝙蝠没有发现你。你慢慢靠近，它们终于进入了你的攻击范围。",
+    "slot_count": 6,
+    "monsters": [
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠"
+    ],
+    "monster_slots": [
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠",
+      "吸血蝙蝠"
+    ],
+    "trailing": [
+      1,
+      0,
+      1
+    ],
+    "tail_bytes": 476,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13526,
+    "graph_pid": 13861,
+    "position": [
+      -200.0,
+      1768.0
+    ],
+    "intro_normal": "你来到一处古战场，这里尸横遍野，几名骷髅士兵在领头的骷髅将军的带领下向你袭来。看来它们就算死后也不能从生前的那场战斗解脱。",
+    "intro_sneak": "你来到一处古战场，这里尸横遍野，你看到了几名骷髅士兵在领头的骷髅将军的带领下在战场游荡，仿佛在继续生前的那场早已结束的战斗。",
+    "slot_count": 6,
+    "monsters": [
+      "骷髅",
+      "骷髅",
+      "骷髅射手",
+      "骷髅将军",
+      "骷髅射手"
+    ],
+    "monster_slots": [
+      "骷髅",
+      "无",
+      "骷髅",
+      "骷髅射手",
+      "骷髅将军",
+      "骷髅射手"
+    ],
+    "trailing": [
+      4,
+      2,
+      0
+    ],
+    "tail_bytes": 540,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13592,
+    "graph_pid": 13861,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 576,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13788,
+    "graph_pid": 13861,
+    "position": [
+      -200.0,
+      1368.0
+    ],
+    "intro_normal": "一群路边的骷髅突然动了起来，看来你惊扰了他们的沉睡。",
+    "intro_sneak": "你看到前方的墓地里有一群骷髅在游荡，这是你先发制人的好时机。",
+    "slot_count": 6,
+    "monsters": [
+      "骷髅",
+      "骷髅",
+      "骷髅",
+      "骷髅射手"
+    ],
+    "monster_slots": [
+      "骷髅",
+      "骷髅",
+      "骷髅",
+      "无",
+      "骷髅射手",
+      "无"
+    ],
+    "trailing": [
+      1,
+      1,
+      0
+    ],
+    "tail_bytes": 328,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13791,
+    "graph_pid": 13861,
+    "position": [
+      120.0,
+      1768.0
+    ],
+    "intro_normal": "你在一处墓地里小心翼翼地前进，奇怪的是，前进了很久你也没有发现不死族。很快你的疑问就解开了。一只巨大的幽灵向你袭来，这一片看是是它的地盘。",
+    "intro_sneak": "你在一处墓地里小心翼翼地前进，因为很久没有遇到不死族，你警惕的神经蹦到了极点。果然，你在前方发现了一只游荡的大幽灵。那么强的灵魂之力，应该是由强者陨落而来。",
+    "slot_count": 6,
+    "monsters": [
+      "大幽灵"
+    ],
+    "monster_slots": [
+      "无",
+      "无",
+      "无",
+      "无",
+      "大幽灵",
+      "无"
+    ],
+    "trailing": [
+      4,
+      0,
+      3
+    ],
+    "tail_bytes": 588,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14139,
+    "graph_pid": 13861,
+    "position": [
+      440.0,
+      1320.0
+    ],
+    "intro_normal": "你往地底世界深处前进，一发冷箭从你耳边飞过，你看到高处有几只骷髅正在用它们发着幽光的眼睛注视着你。",
+    "intro_sneak": "你往地底世界深处前进，你来到了一处高点观察，正好遇到了几只在这里放哨的骷髅。趁它们没发现你，你可以发动偷袭。",
+    "slot_count": 6,
+    "monsters": [
+      "骷髅",
+      "骷髅",
+      "骷髅",
+      "骷髅射手",
+      "骷髅射手"
+    ],
+    "monster_slots": [
+      "骷髅",
+      "骷髅",
+      "骷髅",
+      "骷髅射手",
+      "无",
+      "骷髅射手"
+    ],
+    "trailing": [
+      2,
+      1,
+      0
+    ],
+    "tail_bytes": 476,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14220,
+    "graph_pid": 13861,
+    "position": [
+      456.0,
+      760.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 560,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14236,
+    "graph_pid": 13861,
+    "position": [
+      1064.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 484,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14268,
+    "graph_pid": 13861,
+    "position": [
+      -952.0,
+      200.0
+    ],
+    "intro_normal": "毒腺",
+    "intro_sneak": "你击败了王室怨灵，怨灵们失去了凝聚成一团的力，开始像一个气球一样不断漏气。无数灵魂从怨灵中飞出，从你的身旁飞过。他们中有老人，有小孩，有男有女。他们在你的耳边留下了低语。[段落]你听着他们的话语。感受到了他们的怨恨，他们的冤情，他们的绝望和死亡。你默默为他们祈祷，希望他们往生平凡而幸福。[段落]怨灵彻底消散后，你在地上找到了一件神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 1548,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14301,
+    "graph_pid": 13861,
+    "position": [
+      424.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 516,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14316,
+    "graph_pid": 13861,
+    "position": [
+      104.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 636,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14344,
+    "graph_pid": 13861,
+    "position": [
+      1080.0,
+      1368.0
+    ],
+    "intro_normal": "你来到一个大型的墓地，这里遍布着僵尸和骷髅，你小心翼翼地前进，但还是吸引了几个不死族的注意。",
+    "intro_sneak": "你来到一个大型墓地，这里遍布着僵尸和骷髅，你远远看到几只不死族在互相攻击，看来你能坐收一波渔翁。",
+    "slot_count": 6,
+    "monsters": [
+      "骷髅",
+      "骷髅",
+      "骷髅",
+      "僵尸",
+      "僵尸"
+    ],
+    "monster_slots": [
+      "骷髅",
+      "骷髅",
+      "骷髅",
+      "僵尸",
+      "无",
+      "僵尸"
+    ],
+    "trailing": [
+      2,
+      1,
+      1
+    ],
+    "tail_bytes": 440,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14352,
+    "graph_pid": 13861,
+    "position": [
+      1096.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 484,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14472,
+    "graph_pid": 13861,
+    "position": [
+      776.0,
+      360.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 432,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13140,
+    "graph_pid": 13891,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 392,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13260,
+    "graph_pid": 13891,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 400,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13593,
+    "graph_pid": 13891,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 436,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14269,
+    "graph_pid": 13891,
+    "position": [
+      -952.0,
+      -168.0
+    ],
+    "intro_normal": "巨斧之灵",
+    "intro_sneak": "牛头将军承受了你的致命一击，它单膝跪地，地面为之一颤。周围的其它魔物侍从们见状纷纷慌不择路地逃命，变成了一群乌合之众。在生命的最后一刻，巴利斯克却在狂笑，那笑声洪亮狂妄，仿佛是它获得了胜利。[段落]“多么强大！多么美妙！这是无上魔君的力量！哈哈，哈哈哈。。。以吾之鲜血为献祭吾主。。何等的荣光，哈哈，哈哈哈！”笑声戛然而止，巴利斯克就这样矗立在那里，像一座雕像，它的生命消逝了。[段落]事后，你清扫战场的时候，在巴利斯克的身上发现了一件强大的神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 1476,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14302,
+    "graph_pid": 13891,
+    "position": [
+      408.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13141,
+    "graph_pid": 13892,
+    "position": [
+      104.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 436,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13261,
+    "graph_pid": 13892,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 444,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13594,
+    "graph_pid": 13892,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14270,
+    "graph_pid": 13892,
+    "position": [
+      -952.0,
+      -168.0
+    ],
+    "intro_normal": "噬魂",
+    "intro_sneak": "上古魔神（残缺体）承受了最后一击，它的魔力像皮球漏气一样从体内崩溃而喷发出来。它的哀嚎震天动地。不一会，上古魔神（残缺体）的魔力消散一空，只留下神父的身体还在魔法阵的中央，已经没有任何生机。[段落]地底发光的魔法阵消散了，一些围绕着魔法阵搭建的人工设施也崩坏了。随着被魔法阵召唤而来的魔物灰飞烟灭。这次的事件也算是告一段落了。你仔细查看了现场，在神父的身边，你发现了一件闪光的神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 1580,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14303,
+    "graph_pid": 13892,
+    "position": [
+      424.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 436,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13142,
+    "graph_pid": 13893,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 468,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13262,
+    "graph_pid": 13893,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13595,
+    "graph_pid": 13893,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 480,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14271,
+    "graph_pid": 13893,
+    "position": [
+      -952.0,
+      -168.0
+    ],
+    "intro_normal": "噬魂",
+    "intro_sneak": "上古魔神（残缺体）承受了最后一击，它的魔力像皮球漏气一样从体内崩溃而喷发出来。它的哀嚎震天动地。不一会，上古魔神（残缺体）的魔力消散一空，只留下神父的身体还在魔法阵的中央，已经没有任何生机。[段落]遮天蔽日的黑暗褪去了，覆盖整个村庄的魔法阵也消散了。随着被魔法阵召唤而来的魔物灰飞烟灭。这次的事件也算是告一段落了。你仔细查看了现场，在神父的身边，你发现了一件闪光的神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 1560,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14304,
+    "graph_pid": 13893,
+    "position": [
+      408.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 452,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13352,
+    "graph_pid": 13894,
+    "position": [
+      504.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13502,
+    "graph_pid": 13894,
+    "position": [
+      184.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 416,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13785,
+    "graph_pid": 13894,
+    "position": [
+      -248.0,
+      -152.0
+    ],
+    "intro_normal": "不屈的骑士团长卡拉多格终于是力尽而半跪在地上。你们这场战斗可谓是惊天动地，这片树林已经变得满目疮痍。“我竟然，输给了一个小毛孩。。。终究是不得不服老了么。”卡拉多格自嘲地说。“怎么，小子，不给我最后一击吗？”你摇了摇头，卡拉多格大笑了起来。[段落]“小毛孩终究是小毛孩。很好，我也还有未尽之事，不想太早就葬送这条老命。”他似乎恢复了一些体力，再次站起来。“你赢了，我会向王国报告你已经死了。这样也好，我本来就看不惯那些教会的老头的懦夫决定。”他转身离开，然后突然想起什么似的回过头来。[段落]“对了，这把剑归你了。只有最强的人类才配使用这把剑，现在最强的人类是你了。”他随意地将王国圣剑丢出来，圣剑精准地插在了你面前的地面上。“永别了，小子。”卡拉多格头也不回地走了，消失在了黑夜中。",
+    "intro_sneak": "",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      6,
+      3,
+      10524646
+    ],
+    "tail_bytes": 1944,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14501,
+    "graph_pid": 13894,
+    "position": [
+      824.0,
+      -568.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 432,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14511,
+    "graph_pid": 13894,
+    "position": [
+      184.0,
+      -168.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 524,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13420,
+    "graph_pid": 13895,
+    "position": [
+      296.0,
+      -472.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 432,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13832,
+    "graph_pid": 13895,
+    "position": [
+      -344.0,
+      -72.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 424,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14207,
+    "graph_pid": 13895,
+    "position": [
+      -344.0,
+      -472.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 416,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14351,
+    "graph_pid": 13895,
+    "position": [
+      -776.0,
+      -56.0
+    ],
+    "intro_normal": "螳螂刀",
+    "intro_sneak": "你越战越勇，卜里奥的再生速度已经跟不上你将他斩断的速度了。你大喊“欧拉欧拉欧拉”，卜里奥被切割成了无限小的细胞，就这样灰飞烟灭了。你精疲力竭倒在地上，就这样晕了过去。等你醒来的时候，阳光将你照得暖洋洋的。在卜里奥消失的地方，你发现了一件神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 880,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14500,
+    "graph_pid": 13895,
+    "position": [
+      -24.0,
+      -472.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13143,
+    "graph_pid": 13896,
+    "position": [
+      88.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 456,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13219,
+    "graph_pid": 13896,
+    "position": [
+      744.0,
+      -504.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13263,
+    "graph_pid": 13896,
+    "position": [
+      -216.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 460,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13596,
+    "graph_pid": 13896,
+    "position": [
+      -216.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14272,
+    "graph_pid": 13896,
+    "position": [
+      -952.0,
+      -168.0
+    ],
+    "intro_normal": "巨斧之灵",
+    "intro_sneak": "牛头将军承受了你的致命一击，它单膝跪地，地面为之一颤。周围的其它魔物侍从们见状纷纷慌不择路地逃命，变成了一群乌合之众。在生命的最后一刻，巴利斯克却在狂笑，那笑声洪亮狂妄，仿佛是它获得了胜利。[段落]“多么强大！多么美妙！这是无上魔君的力量！哈哈，哈哈哈。。。以吾之鲜血为献祭吾主。。何等的荣光，哈哈，哈哈哈！”笑声戛然而止，巴利斯克就这样矗立在那里，像一座雕像，它的生命消逝了。[段落]事后，你清扫战场的时候，在巴利斯克的身上发现了一件强大的神器。",
+    "slot_count": 0,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      0,
+      6,
+      3
+    ],
+    "tail_bytes": 1512,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14305,
+    "graph_pid": 13896,
+    "position": [
+      408.0,
+      -520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 476,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14317,
+    "graph_pid": 13896,
+    "position": [
+      88.0,
+      -120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 488,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13180,
+    "graph_pid": 13897,
+    "position": [
+      1532.0,
+      -38.5
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13317,
+    "graph_pid": 13897,
+    "position": [
+      908.0,
+      -38.5
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13411,
+    "graph_pid": 13897,
+    "position": [
+      1212.0,
+      361.5
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 440,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13426,
+    "graph_pid": 13897,
+    "position": [
+      1212.0,
+      -38.5
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13599,
+    "graph_pid": 13897,
+    "position": [
+      1868.0,
+      -22.5
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 452,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14043,
+    "graph_pid": 13897,
+    "position": [
+      908.0,
+      361.5
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 408,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14504,
+    "graph_pid": 13897,
+    "position": [
+      360.0,
+      124.0
+    ],
+    "parse_ok": false,
+    "tail_bytes": 1412
+  },
+  {
+    "path_id": 13189,
+    "graph_pid": 13898,
+    "position": [
+      888.0,
+      520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 444,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13308,
+    "graph_pid": 13898,
+    "position": [
+      888.0,
+      120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13681,
+    "graph_pid": 13898,
+    "position": [
+      1192.0,
+      520.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 500,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13725,
+    "graph_pid": 13898,
+    "position": [
+      1512.0,
+      120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 448,
+    "parse_ok": true
+  },
+  {
+    "path_id": 13989,
+    "graph_pid": 13898,
+    "position": [
+      340.0,
+      282.5
+    ],
+    "parse_ok": false,
+    "tail_bytes": 1484
+  },
+  {
+    "path_id": 14348,
+    "graph_pid": 13898,
+    "position": [
+      1192.0,
+      120.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 428,
+    "parse_ok": true
+  },
+  {
+    "path_id": 14607,
+    "graph_pid": 13898,
+    "position": [
+      1848.0,
+      136.0
+    ],
+    "intro_normal": "无",
+    "intro_sneak": "无",
+    "slot_count": 3,
+    "monsters": [],
+    "monster_slots": [],
+    "trailing": [
+      3,
+      10524646,
+      3
+    ],
+    "tail_bytes": 452,
+    "parse_ok": true
+  }
+]

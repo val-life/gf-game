@@ -1,0 +1,38 @@
+[
+  {
+    "path_id": 12,
+    "name": "Button",
+    "clip_count": 1,
+    "controller_size": 888
+  },
+  {
+    "path_id": 399,
+    "name": "Image",
+    "clip_count": 1,
+    "controller_size": 888
+  },
+  {
+    "path_id": 398,
+    "name": "Image 1",
+    "clip_count": 1,
+    "controller_size": 888
+  },
+  {
+    "path_id": 400,
+    "name": "MapAreaOptionPanel1_8",
+    "clip_count": 1,
+    "controller_size": 888
+  },
+  {
+    "path_id": 401,
+    "name": "RegionClouds",
+    "clip_count": 1,
+    "controller_size": 1072
+  },
+  {
+    "path_id": 402,
+    "name": "TargetIcon",
+    "clip_count": 1,
+    "controller_size": 888
+  }
+]

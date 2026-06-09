@@ -1,0 +1,62 @@
+[
+  {
+    "path_id": 382,
+    "name": "clouds",
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "legacy": false,
+    "compressed": false,
+    "muscle_clip_size": 3872,
+    "curve_count": 0
+  },
+  {
+    "path_id": 380,
+    "name": "CurrentLocationAni",
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "legacy": false,
+    "compressed": false,
+    "muscle_clip_size": 2832,
+    "curve_count": 0
+  },
+  {
+    "path_id": 11,
+    "name": "New Animation",
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "legacy": false,
+    "compressed": false,
+    "muscle_clip_size": 2668,
+    "curve_count": 0
+  },
+  {
+    "path_id": 383,
+    "name": "rolling",
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "legacy": false,
+    "compressed": false,
+    "muscle_clip_size": 2764,
+    "curve_count": 0
+  },
+  {
+    "path_id": 381,
+    "name": "TargetIconAni",
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "legacy": false,
+    "compressed": false,
+    "muscle_clip_size": 2668,
+    "curve_count": 0
+  },
+  {
+    "path_id": 384,
+    "name": "晕眩_Clip",
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "legacy": false,
+    "compressed": false,
+    "muscle_clip_size": 2968,
+    "curve_count": 0
+  }
+]
