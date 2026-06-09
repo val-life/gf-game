@@ -1,0 +1,512 @@
+﻿[
+    {
+        "RelicName":  "一些金币",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "就是一些金币。",
+        "RelicEffect":  "金币:100",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "很多金币",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "就是很多金币。",
+        "RelicEffect":  "金币:200",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "经验之书",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "记载着很多快速提高等级的思路，似乎是一位神秘冒险者留下的经验之谈。",
+        "RelicEffect":  "经验获取效率:0.03",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "招财猫",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "一只招财猫，放在家里大概可以招财进宝。",
+        "RelicEffect":  "家境:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "古老地图",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "记载了部分区域地形的古老地图，能提高在迷宫中探索的脚程",
+        "RelicEffect":  "脚程:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "力量护符",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "能激发所有者力量的护符。",
+        "RelicEffect":  "勇猛:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "灵巧护符",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "能提高所有者灵巧的护符。",
+        "RelicEffect":  "灵巧:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "智力耳环",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "能提高所有者智力的耳环。",
+        "RelicEffect":  "智力:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "生命护符",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "能提高所有者体质的护符。",
+        "RelicEffect":  "体质:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "防御护符",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "能提高所有者防御的护符。",
+        "RelicEffect":  "防御:2",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "陨铁护臂",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "沉重而坚固的陨铁打造的护臂，极大提升勇猛，极大降低灵巧。",
+        "RelicEffect":  "勇猛:4;灵巧:-2",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "狂热宝石",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "令人陷入狂热的宝石，极大降低体质，提高勇猛和灵巧。",
+        "RelicEffect":  "勇猛:4;灵巧:4;体质:-6",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "圣树之种",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "圣树的种子，不断地释放出治愈的力量，提高生命回复。",
+        "RelicEffect":  "战斗生命回复:3",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "铆钉拳套",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "镶满铆钉的拳套，略微增加每一点勇猛属性值提供的攻击加成。",
+        "RelicEffect":  "每点力量攻击力:0.1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "巨人腰带",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "传说中巨人族打造的腰带，略微增加每一点体质属性值提供的生命加成。",
+        "RelicEffect":  "每点体质生命值:1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "安眠草",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "能够助人快速进入梦乡。",
+        "RelicEffect":  "最大体力:5",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "闪耀魔晶",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "一枚特别闪耀的魔晶，好看极了。",
+        "RelicEffect":  "魅力:3",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "望远镜",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "就是一副望远镜，能让你看清远方的东西。",
+        "RelicEffect":  "偷袭概率:0.1",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "启迪之书",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "能给人极大启迪的书。",
+        "RelicEffect":  "经验获取效率:0.08",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "聚宝盆",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "一个聚宝盆，可以广纳天下财宝。",
+        "RelicEffect":  "家境:5",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "替身娃娃",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "神话",
+        "RelicDiscript":  "当使用者濒死的时候，能代替使用者。",
+        "RelicEffect":  "死里逃生:1",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "矮人护手",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "战士",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "矮人打招的护手，轻便坚固，戴上它应该能提高格挡率。",
+        "RelicEffect":  "格挡:0.05",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "溅伤护符",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "战士",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "能提高所有者溅伤的护符。",
+        "RelicEffect":  "溅伤:0.02",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "骨头鱼钩",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "怪物的骨头做成的鱼钩，美味的骨头能吸引鱼儿来咬钩。",
+        "RelicEffect":  "钓鱼难度:0.15",
+        "AcquisitionMethod":  "Normal",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "魔人权杖",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "代表魔人地位的权杖，会吸引强大的魔物来夺取它。",
+        "RelicEffect":  "怪物每级属性提高:0.3;经验获取效率:0.5",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "登山杖",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "一只登山杖，或许在外冒险能用到。",
+        "RelicEffect":  "脚程:2",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "旅行鞋",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "舒适的旅行鞋，可以减少在迷宫中前进所消耗的体力。",
+        "RelicEffect":  "迷宫前进体力消耗:-1",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "睡袋",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "温暖的睡袋，可以提高在篝火休息回复的体力值。",
+        "RelicEffect":  "篝火体力回复:5",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "百草药学",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "一本记载了各种草药的书，可以提高在篝火疗伤回复的生命值。",
+        "RelicEffect":  "篝火生命回复:0.05",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "疲劳药剂",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "喝下去就会忘掉所有疲劳，本回合内减少在迷宫体力耗尽时前进的生命损失。",
+        "RelicEffect":  "体力耗尽时前进生命损失:-0.05",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "矮马",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "一只矮马，可以减少区域移动的体力消耗。",
+        "RelicEffect":  "区域移动体力消耗:0.3",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "战马",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "一只强壮的战马，可以大幅减少区域移动的体力消耗。",
+        "RelicEffect":  "区域移动体力消耗:0.6",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "飞龙",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "一只飞龙，可以带你飞到任何地方，极大减少区域移动的体力消耗。",
+        "RelicEffect":  "区域移动体力消耗:0.8",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "攻击药剂",
+        "RelicType":  "药剂",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "让人充满力量的药剂，本回合内提高攻击力",
+        "RelicEffect":  "本回合攻击力提高：0.1",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "敏捷药剂",
+        "RelicType":  "药剂",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "让人提高反应力的药剂，本回合内提高攻速",
+        "RelicEffect":  "本回合攻速提高：0.1",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "忍耐药剂",
+        "RelicType":  "药剂",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "让人提高忍耐力的药剂，本回合内提高防御",
+        "RelicEffect":  "本回合防御提高：0.1",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "神秘药水",
+        "RelicType":  "药剂",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "不知道有什么效果的药剂",
+        "RelicEffect":  "神秘药水效果",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "地下室钥匙",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "家里地下室的钥匙",
+        "RelicEffect":  "无",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "幸运护符",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "父亲送给你的礼物，说是能提高佩戴者幸运的护符。",
+        "RelicEffect":  "战利品幸运值:10",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "王国地图",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "一张标注了王国各个地点的粗略地图，可以略微提高冒险的脚程。",
+        "RelicEffect":  "脚程:2",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "罗盘",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "能指明方向的罗盘，能显著提高冒险的脚程。",
+        "RelicEffect":  "脚程:4",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "怀表",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "王城的一名钟表匠制作的怀表，能让人知晓此刻的时间，成为时间管理大师。",
+        "RelicEffect":  "最大体力:10",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "鱼人泪滴",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "传说中鱼人族女王的眼泪化成的水晶，有蛊惑人心的能力。",
+        "RelicEffect":  "魅力:10",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "无眠头环",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "神话",
+        "RelicDiscript":  "能提升佩戴者精力的头环，让人几乎不需要睡觉。",
+        "RelicEffect":  "最大体力:25",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "精致便衣",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "战士",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "由裁缝店老板制作的精致的便衣，比大部分村民身上所穿的粗糙的衣服好看很多。",
+        "RelicEffect":  "魅力:4",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "钓鱼竿",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "稀有",
+        "RelicDiscript":  "就是普通的钓鱼竿，有了钓鱼竿才能去钓鱼。",
+        "RelicEffect":  "无",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "玫瑰鱼竿",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "雕刻着玫瑰花纹的鱼竿，可能真的能让鱼儿上钩吧。。。",
+        "RelicEffect":  "钓鱼难度:0.3",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "钻石鱼钩",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "神话",
+        "RelicDiscript":  "钻石做成的钓钩，鱼儿真的会咬这种钩子吗？",
+        "RelicEffect":  "钓鱼:传说奖励",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "免死金牌",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "神话",
+        "RelicDiscript":  "当使用者濒死的时候，能让使用者免除死亡",
+        "RelicEffect":  "死里逃生:1",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Infinity"
+    },
+    {
+        "RelicName":  "火焰羽毛",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "史诗",
+        "RelicDiscript":  "火焰鸟的羽毛，据说能带来好运。",
+        "RelicEffect":  "战利品幸运值:10",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    },
+    {
+        "RelicName":  "水晶护腕",
+        "RelicType":  "遗物",
+        "AvaliableProfession":  "通用",
+        "Rarity":  "传说",
+        "RelicDiscript":  "变成水晶的护腕，非常坚固。",
+        "RelicEffect":  "防御:8",
+        "AcquisitionMethod":  "Special",
+        "AcquisitionLimit":  "Once"
+    }
+]

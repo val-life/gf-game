@@ -1,0 +1,210 @@
+﻿[
+    {
+        "EquipmentName":  "长剑",
+        "Profession":  "通用",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "攻速",
+        "SecondProperty":  "攻速，攻击，闪避，反击，格挡，溅伤"
+    },
+    {
+        "EquipmentName":  "巨斧",
+        "Profession":  "通用",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "攻击",
+        "SecondProperty":  "攻击，防御，反击，格挡，溅伤，生命"
+    },
+    {
+        "EquipmentName":  "镰刀",
+        "Profession":  "猎人",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "吸血",
+        "SecondProperty":  "攻速，攻击，闪避，反击，溅伤，吸血"
+    },
+    {
+        "EquipmentName":  "重锤",
+        "Profession":  "通用",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "溅伤",
+        "SecondProperty":  "攻击，反击，防御，格挡，溅伤，生命"
+    },
+    {
+        "EquipmentName":  "长枪",
+        "Profession":  "通用",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "反击",
+        "SecondProperty":  "攻速，攻击，闪避，反击，格挡，溅伤"
+    },
+    {
+        "EquipmentName":  "剑盾",
+        "Profession":  "战士",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "防御",
+        "SecondProperty":  "攻速，攻击，防御，反击，格挡，回复"
+    },
+    {
+        "EquipmentName":  "巨剑",
+        "Profession":  "战士",
+        "EquipType":  "武器",
+        "MainProperty":  "攻击",
+        "SubProperty":  "格挡",
+        "SecondProperty":  "攻击，反击，格挡，防御，溅伤，生命"
+    },
+    {
+        "EquipmentName":  "重甲",
+        "Profession":  "通用",
+        "EquipType":  "护甲",
+        "MainProperty":  "防御",
+        "SubProperty":  "防御",
+        "SecondProperty":  "防御，反击，格挡，回复，生命，攻击"
+    },
+    {
+        "EquipmentName":  "皮甲",
+        "Profession":  "猎人",
+        "EquipType":  "护甲",
+        "MainProperty":  "闪避",
+        "SubProperty":  "防御",
+        "SecondProperty":  "防御，反击，闪避，攻击，攻速，生命"
+    },
+    {
+        "EquipmentName":  "轻甲",
+        "Profession":  "通用",
+        "EquipType":  "护甲",
+        "MainProperty":  "防御",
+        "SubProperty":  "闪避",
+        "SecondProperty":  "防御，反击，闪避，攻击，攻速，生命"
+    },
+    {
+        "EquipmentName":  "绿甲",
+        "Profession":  "通用",
+        "EquipType":  "护甲",
+        "MainProperty":  "防御",
+        "SubProperty":  "回复",
+        "SecondProperty":  "防御，反击，回复，闪避，攻击，生命"
+    },
+    {
+        "EquipmentName":  "板甲",
+        "Profession":  "战士",
+        "EquipType":  "护甲",
+        "MainProperty":  "防御",
+        "SubProperty":  "格挡",
+        "SecondProperty":  "防御，反击，回复，格挡，生命"
+    },
+    {
+        "EquipmentName":  "反甲",
+        "Profession":  "战士",
+        "EquipType":  "护甲",
+        "MainProperty":  "防御",
+        "SubProperty":  "反击",
+        "SecondProperty":  "防御，反击，回复，格挡，溅伤"
+    },
+    {
+        "EquipmentName":  "护额",
+        "Profession":  "通用",
+        "EquipType":  "头盔",
+        "MainProperty":  "生命",
+        "SubProperty":  "闪避",
+        "SecondProperty":  "回复，攻击，反击，闪避，攻速，溅伤"
+    },
+    {
+        "EquipmentName":  "面具",
+        "Profession":  "猎人",
+        "EquipType":  "头盔",
+        "MainProperty":  "生命",
+        "SubProperty":  "吸血",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速"
+    },
+    {
+        "EquipmentName":  "札盔",
+        "Profession":  "通用",
+        "EquipType":  "头盔",
+        "MainProperty":  "生命",
+        "SubProperty":  "回复",
+        "SecondProperty":  "回复，攻击，反击，防御，格挡，溅伤"
+    },
+    {
+        "EquipmentName":  "桶盔",
+        "Profession":  "战士",
+        "EquipType":  "头盔",
+        "MainProperty":  "生命",
+        "SubProperty":  "防御",
+        "SecondProperty":  "回复，攻击，反击，防御，格挡，生命"
+    },
+    {
+        "EquipmentName":  "吸血戒指",
+        "Profession":  "猎人",
+        "EquipType":  "饰品",
+        "MainProperty":  "吸血",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "闪避戒指",
+        "Profession":  "猎人",
+        "EquipType":  "饰品",
+        "MainProperty":  "闪避",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "范围戒指",
+        "Profession":  "通用",
+        "EquipType":  "饰品",
+        "MainProperty":  "溅伤",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "力量戒指",
+        "Profession":  "通用",
+        "EquipType":  "饰品",
+        "MainProperty":  "攻击",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "回复戒指",
+        "Profession":  "通用",
+        "EquipType":  "饰品",
+        "MainProperty":  "回复",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "反击戒指",
+        "Profession":  "通用",
+        "EquipType":  "饰品",
+        "MainProperty":  "反击",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "生命戒指",
+        "Profession":  "通用",
+        "EquipType":  "饰品",
+        "MainProperty":  "生命",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "防御戒指",
+        "Profession":  "战士",
+        "EquipType":  "饰品",
+        "MainProperty":  "防御",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    },
+    {
+        "EquipmentName":  "格挡戒指",
+        "Profession":  "战士",
+        "EquipType":  "饰品",
+        "MainProperty":  "格挡",
+        "SubProperty":  "无",
+        "SecondProperty":  "回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡"
+    }
+]

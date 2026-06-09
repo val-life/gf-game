@@ -1,0 +1,18 @@
+﻿[
+    {
+        "EventCardType":  "魔物",
+        "RandomValue":  30.0
+    },
+    {
+        "EventCardType":  "精英魔物",
+        "RandomValue":  15.0
+    },
+    {
+        "EventCardType":  "铁匠",
+        "RandomValue":  15.0
+    },
+    {
+        "EventCardType":  "商人",
+        "RandomValue":  25.0
+    }
+]
