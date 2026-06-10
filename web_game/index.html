@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>异世轮回录 · Web Rebuild</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg bg-a"></div>
+  <div class="bg bg-b"></div>
+  <div class="bg bg-noise"></div>
+
+  <div class="app-shell">
+    <header class="topbar panel">
+      <div>
+        <p class="eyebrow">Otherworld Samsara Record</p>
+        <h1>异世轮回录 Web Rebuild</h1>
+        <p class="subtitle">Data-driven roguelike prototype built from extracted talents, skills, buffs, relics, equipment, boss layouts, and event text.</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="newRunBtn" class="button primary">New Run</button>
+        <button id="continueBtn" class="button ghost">Continue</button>
+        <button id="saveBtn" class="button ghost">Save</button>
+        <button id="resetBtn" class="button ghost danger">Reset</button>
+      </div>
+    </header>
+
+    <section id="statusStrip" class="status-strip panel"></section>
+
+    <main class="layout">
+      <aside class="panel sidebar left">
+        <section id="heroPanel" class="stack"></section>
+        <section id="resourcePanel" class="stack"></section>
+        <section id="worldPanel" class="stack"></section>
+      </aside>
+
+      <section class="panel center">
+        <div id="sceneHeader" class="scene-header"></div>
+        <div id="sceneContent" class="scene-content"></div>
+        <div id="sceneActions" class="scene-actions"></div>
+        <div id="battlePanel" class="battle-panel"></div>
+        <div id="eventLog" class="event-log"></div>
+      </section>
+
+      <aside class="panel sidebar right">
+        <div class="codex-top">
+          <p class="eyebrow">Codex</p>
+          <h2>Data Archive</h2>
+        </div>
+        <div id="codexTabs" class="tab-row"></div>
+        <input id="codexSearch" class="search" type="search" placeholder="Search talents, skills, relics, bosses..." />
+        <div id="codexList" class="codex-list"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
