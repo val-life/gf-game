@@ -1,0 +1,242 @@
+[
+  {
+    "filename": "Map Area Stat #15115.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "虽然简陋而老旧，但也是你温暖的小家。",
+    "areaDescript_chinese": "虽然简陋而老旧，但也是你温暖的小家。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "院子",
+        "Effect": "你家的院子，种有很多稀奇古怪的作物。",
+        "AppearRate": -3.000212830657472e+196,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "\"\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #15131.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "村里的教堂，平静又安详。村民经过的时候都不敢大生喧哗，时不时看到虔诚的人们穿着教服进出。",
+    "areaDescript_chinese": "村里的教堂，平静又安详。村民经过的时候都不敢大生喧哗，时不时看到虔诚的人们穿着教服进出。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\u0006",
+        "ObjectDescript": "",
+        "Effect": "\"!\u0000\u0000\u0000村子里德高望重的神父。\u0000\u0000\u0000"
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #15397.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "这段时间，周游全国的旅行商团来到了村子，他们带来了全国各地的奇珍异宝，吸引着大量村民围观，熙熙攘攘的人群让小小的集市变得拥挤不堪。。",
+    "areaDescript_chinese": "这段时间，周游全国的旅行商团来到了村子，他们带来了全国各地的奇珍异宝，吸引着大量村民围观，熙熙攘攘的人群让小小的集市变得拥挤不堪。。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\"",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": 2.24357372032e-312,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": -6.176212251082434e-277,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": -5.724526599802224e-74,
+        "isHide": true
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #15541.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "你来到教堂，今天的教堂挤满了信徒们。听说，今天是盛大的纪念日，传闻是女神第一次降临人间的日子。",
+    "areaDescript_chinese": "你来到教堂，今天的教堂挤满了信徒们。听说，今天是盛大的纪念日，传闻是女神第一次降临人间的日子。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "女神像",
+        "Effect": "精致而宏伟的女神像，不知为何，你总觉得女神长得有点眼熟。",
+        "AppearRate": -3.0002128306574732e+196,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": 5.299808824e-315,
+        "isHide": false
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #15705.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "村里的集市，小小一块地方坐落着大大小小的商店。可以买到各种日用品，也可以淘到不少稀奇古怪的东西。",
+    "areaDescript_chinese": "村里的集市，小小一块地方坐落着大大小小的商店。可以买到各种日用品，也可以淘到不少稀奇古怪的东西。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\u0006",
+        "ObjectDescript": "",
+        "Effect": "\"B\u0000\u0000\u0000村子里有名的铁匠，据说手艺不输王城里的大师。\u0000\u0000"
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #15939.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "居民区里有各家的老人在树底下乘凉，还有很多小孩子在中央空地里玩耍，一片祥和的生活气息。",
+    "areaDescript_chinese": "居民区里有各家的老人在树底下乘凉，还有很多小孩子在中央空地里玩耍，一片祥和的生活气息。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\u0006",
+        "ObjectDescript": "",
+        "Effect": "\"B\u0000\u0000\u0000村子里有名的铁匠，据说手艺不输王城里的大师。\u0000\u0000"
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #16043.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "广阔的田野，干农活的人稀稀落落，一片安静和祥和。",
+    "areaDescript_chinese": "广阔的田野，干农活的人稀稀落落，一片安静和祥和。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\u0006",
+        "ObjectDescript": "",
+        "Effect": "\"B\u0000\u0000\u0000村子里有名的铁匠，据说手艺不输王城里的大师。\u0000\u0000"
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat #16240.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "这段时间是丰收的季节，田野难得地热闹了很多。",
+    "areaDescript_chinese": "这段时间是丰收的季节，田野难得地热闹了很多。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\"",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": 2.24357372032e-312,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": -6.176212251082434e-277,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": -5.724526599802224e-74,
+        "isHide": true
+      }
+    ]
+  },
+  {
+    "filename": "Map Area Stat.txt",
+    "name": "Map Area Stat",
+    "script_pathid": 61,
+    "areaDescript_parsed": "这段时间，村子正在举办丰收祭，家家户户挂起了象征丰收的绳结。",
+    "areaDescript_chinese": "这段时间，村子正在举办丰收祭，家家户户挂起了象征丰收的绳结。",
+    "mapObjects_raw": [
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "\"",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": 2.24357372032e-312,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": -6.176212251082434e-277,
+        "isHide": true
+      },
+      {
+        "__type__": "MapObject",
+        "__name__": "data",
+        "__kind__": "struct",
+        "ObjectName": "",
+        "ObjectDescript": "",
+        "Effect": "",
+        "AppearRate": -5.724526599802224e-74,
+        "isHide": true
+      }
+    ]
+  }
+]

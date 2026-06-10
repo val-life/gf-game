@@ -228,7 +228,7 @@ The XNode event graph from previous extraction is fully represented as stubs in 
 | CharacterInfoNode | 5 | 5 | ✅ |
 | Adventure Area Info | 13 | — | new |
 
-**Implication**: the count matches the previous XNode extraction precisely, but **the body fields are not in this dump**. ✅ **Wave 3 RESOLVED**: `dump_unity3d.py` (UnityPy) re-reads the same `data.unity3d` and saves the per-node raw bytes to `data/monobehaviour_blobs.bin`. `parse_battle_events.py` then decodes 164/167 `BattleEventNode` records into structured JSON at `data/battle_events.json`. The remaining XNode types (ChestEventNode, RestEventNode, MainEventNode, EventResultNode, StoryLineNode, etc.) have their embedded Chinese text recovered in `data/monobehaviour_strings.json`.
+**Implication**: the count matches the previous XNode extraction precisely, but **the body fields are not in this dump**. ✅ **Wave 3 RESOLVED**: `dump_unity3d.py` (UnityPy) re-reads the same `data.unity3d` and saves the per-node raw bytes to `data/monobehaviour_blobs.bin`. `parse_battle_events.py` then decodes 164/167 `BattleEventNode` records into structured JSON at `data/battle_events.json`. The remaining XNode types (ChestEventNode, RestEventNode, MainEventNode, EventResultNode, StoryLineNode, etc.) have their embedded Chinese text recovered in `data/monobehaviour_strings.json`. ✅ **Wave 4 RESOLVED**: `data/xnode_texts.json` consolidates all 1,477 XNode nodes with structured per-type fields (`intro_normal`/`intro_sneak`/`monsters` for BattleEventNode, `title`/`description`/`results` for MainEventNode, etc.) and 167/167 BattleEventNodes fully decoded (the 3 previously-failing pid 14266/14504/13989 boss events now parse via the compact-layout fallback in `extract_xnode_texts.py`).
 
 > Other extraction paths that don't depend on TypeTrees:
 
@@ -339,8 +339,8 @@ For Web rebuild, drop the SDF and use any web-loadable CJK font (`Noto Sans SC`,
 | Skill scaling | (not here) — see `chinese_strings.txt` | ✅ in `extracted_game_data.md` §5 |
 | Buff formulas | (not here) — see `chinese_strings.txt` | ✅ in `extracted_game_data.md` §1 |
 | Ending NPCs & triggers | (not here) — see `chinese_strings.txt` | ✅ in `extracted_game_data.md` §6 |
-| XNode narrative text | MB stubs lack TypeTree | ✅ **Wave 3** — `data/monobehaviour_strings.json` (8,310 strings) |
-| BattleEventNode → world + monster slots | MB stubs lack TypeTree | ✅ **Wave 3** — `data/battle_events.json` (164/167 parsed) |
+| XNode narrative text | MB stubs lack TypeTree | ✅ **Wave 4** — `data/xnode_texts.json` (1,477 nodes, 5,383 clean strings, 0 mojibake, structured per-type fields) |
+| BattleEventNode → world + monster slots | MB stubs lack TypeTree | ✅ **Wave 4** — `data/xnode_texts.json` (167/167, was 164/167 in Wave 3) |
 | MonoScript catalog (PathID → class) | MB stubs lack TypeTree | ✅ **Wave 3** — `data/monoscript_catalog.json` (780 entries) |
 | Damage formula constants | (not here) — IL2CPP invoker stubs | ❌ still need Frida or dummy DLLs |
 | Sprite UV / rect | `Sprite/*.txt` | ✅ also re-extracted via UnityPy at `data/sprite_index.json` |
@@ -353,6 +353,8 @@ For Web rebuild, drop the SDF and use any web-loadable CJK font (`Noto Sans SC`,
 To convert the remaining ❌ items above into ✅:
 
 1. ✅ **Wave 3 done** — `dump_unity3d.py` + `extract_mb_strings.py` + `parse_battle_events.py` (see `wave3_extraction.md`)
+
+2. ✅ **Wave 4 done** — `extract_xnode_texts.py` consolidates all 1,477 XNode nodes with structured per-type fields into `data/xnode_texts.json`. Fixes the 3 BattleEventNodes (pid 14266/14504/13989) that used the newer compact XNode layout.
 
 2. **Dummy-DLL-aware re-dump** (1-2 hrs) — needed for fully-structured MB decoding:
    - Load `Tool/Il2CppInspectorRedux.GUI` → File → Load IL2CPP → point to `libil2cpp.so` + `global-metadata.dat`
@@ -370,7 +372,7 @@ To convert the remaining ❌ items above into ✅:
 
 ## 12. Files in `rebuild/data/`
 
-After Wave 1 + Wave 2 + Wave 3, every data file ready for direct import lives here:
+After Wave 1 + Wave 2 + Wave 3 + Wave 4, every data file ready for direct import lives here:
 
 ```
 rebuild/data/
@@ -379,19 +381,24 @@ rebuild/data/
 │   ├── WeaponSettingJS.json                 26 equipment items
 │   └── EventCardTypeSettingJS.json          4 adventure-deck card weights
 │
-└── (Wave 3 — programmatic extraction via UnityPy from data.unity3d)
-    ├── monoscript_catalog.json              780 PathID → Class.Namespace.Assembly
-    ├── monobehaviour_index.json             10,246 MB instance records
-    ├── monobehaviour_blobs.bin              2.3 MB raw tail bytes
-    ├── monobehaviour_blobs_index.json       6,509 pid → offset/length entries
-    ├── monobehaviour_strings.json           8,310 CJK strings from 2,372 MBs
-    ├── battle_events.json                   164/167 BattleEventNodes (intro + monsters)
-    ├── sprite_index.json                    568 sprite rect/atlas refs
-    ├── texture2d_index.json                 362 texture dimension/storage refs
-    ├── animationclip_index.json             6 keyframe clips
-    ├── audioclip_index.json                 13 audio refs
-    ├── animator_index.json                  24 controllers
-    └── animatorcontroller_index.json        6 controller state refs
+├── (Wave 3 — programmatic extraction via UnityPy from data.unity3d)
+│   ├── monoscript_catalog.json              780 PathID → Class.Namespace.Assembly
+│   ├── monobehaviour_index.json             10,246 MB instance records
+│   ├── monobehaviour_blobs.bin              2.3 MB raw tail bytes
+│   ├── monobehaviour_blobs_index.json       6,509 pid → offset/length entries
+│   ├── monobehaviour_strings.json           8,310 CJK strings from 2,372 MBs
+│   ├── battle_events.json                   164/167 BattleEventNodes (Wave 3 baseline)
+│   ├── sprite_index.json                    568 sprite rect/atlas refs
+│   ├── texture2d_index.json                 362 texture dimension/storage refs
+│   ├── animationclip_index.json             6 keyframe clips
+│   ├── audioclip_index.json                 13 audio refs
+│   ├── animator_index.json                  24 controllers
+│   └── animatorcontroller_index.json        6 controller state refs
+│
+└── (Wave 4 — XNode narrative text consolidation)
+    └── xnode_texts.json                     1,477 XNode nodes (167/167 BattleEventNode),
+                                              5,383 clean Chinese strings, 0 mojibake,
+                                              structured per-type fields
 ```
 
 These supersede the partial entries in `extracted_game_data.md` §3 (relics) —

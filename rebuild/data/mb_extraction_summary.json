@@ -1,0 +1,16 @@
+{
+  "total_mb_files": 10243,
+  "unique_names": 65,
+  "unique_classes": 166,
+  "categories": {
+    "BattleEvent (class)": 167,
+    "MapAreaStat (class)": 9,
+    "MapAreas (class)": 6,
+    "MapObject (class)": 25,
+    "MapAreaStory (class)": 0,
+    "EventLine variants": 61,
+    "Condition Swich (by name)": 69
+  },
+  "edges_total": 2390,
+  "files_with_decoded_chinese": 294
+}

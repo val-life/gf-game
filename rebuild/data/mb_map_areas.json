@@ -1,0 +1,1500 @@
+[
+  {
+    "filename": "Map Areas #15461.txt",
+    "name": "Map Areas",
+    "script_pathid": 699,
+    "fields": {
+      "m_GameObject": {
+        "__type__": "PPtr<GameObject>",
+        "__name__": "m_GameObject",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 0,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "__type__": "PPtr<MonoScript>",
+        "__name__": "m_Script",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 1,
+          "__pathid__": 699,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Name": "Map Areas",
+      "graph": {
+        "__type__": "PPtr<NodeGraph>",
+        "__name__": "graph",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 13899,
+          "__name__": "m_FileID"
+        }
+      },
+      "position": {
+        "__type__": "Vector2",
+        "__name__": "position",
+        "__kind__": "struct",
+        "x": 2488,
+        "y": -376
+      },
+      "ports": {
+        "__type__": "NodePortDictionary",
+        "__name__": "ports",
+        "__kind__": "struct",
+        "keys": {
+          "__type__": "List`1",
+          "__name__": "keys",
+          "__kind__": "array",
+          "__items__": [
+            "Output"
+          ]
+        },
+        "values": {
+          "__type__": "List`1",
+          "__name__": "values",
+          "__kind__": "array",
+          "__items__": [
+            {
+              "__type__": "NodePort",
+              "__name__": "data",
+              "__kind__": "struct",
+              "_fieldName": "Output",
+              "_node": {
+                "__type__": "PPtr<Node>",
+                "__name__": "_node",
+                "__kind__": "struct",
+                "m_FileID": {
+                  "__fileid__": 0,
+                  "__pathid__": 13727,
+                  "__name__": "m_FileID"
+                }
+              },
+              "_typeQualifiedName": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "connections": {
+                "__type__": "List`1",
+                "__name__": "connections",
+                "__kind__": "array",
+                "__items__": []
+              },
+              "_direction": 1,
+              "_connectionType": 0,
+              "_typeConstraint": 0,
+              "_dynamic": false
+            }
+          ]
+        }
+      },
+      "thisMapArea": {
+        "__type__": "MapArea",
+        "__name__": "thisMapArea",
+        "__kind__": "struct",
+        "MapAreaName": "村外",
+        "GoThereDiscript": "离开村子的小路，通往未知和冒险。",
+        "HasSpecialEvent": true,
+        "mapAreaStats": {
+          "__type__": "List`1",
+          "__name__": "mapAreaStats",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "CurrentMapAreaStat": {
+          "__type__": "MapAreaStat",
+          "__name__": "CurrentMapAreaStat",
+          "__kind__": "struct",
+          "AreaDescript": "",
+          "mapObjects": {
+            "__type__": "List`1",
+            "__name__": "mapObjects",
+            "__kind__": "array",
+            "__items__": []
+          },
+          "ActiveObjects": {
+            "__type__": "List`1",
+            "__name__": "ActiveObjects",
+            "__kind__": "array",
+            "__items__": [
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0006\u0000\u0000\u0000神父\u0000\u0000!\u0000\u0000\u0000村子里德高望�",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": 2.7692782386e-312,
+                "isHide": true
+              }
+            ]
+          },
+          "isSpecialEvent": true
+        },
+        "AdditionMapObjects": {
+          "__type__": "List`1",
+          "__name__": "AdditionMapObjects",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "isSpecialEventThisTurn": true
+      },
+      "Output": true
+    }
+  },
+  {
+    "filename": "Map Areas #15752.txt",
+    "name": "Map Areas",
+    "script_pathid": 699,
+    "fields": {
+      "m_GameObject": {
+        "__type__": "PPtr<GameObject>",
+        "__name__": "m_GameObject",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 0,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "__type__": "PPtr<MonoScript>",
+        "__name__": "m_Script",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 1,
+          "__pathid__": 699,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Name": "Map Areas",
+      "graph": {
+        "__type__": "PPtr<NodeGraph>",
+        "__name__": "graph",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 13899,
+          "__name__": "m_FileID"
+        }
+      },
+      "position": {
+        "__type__": "Vector2",
+        "__name__": "position",
+        "__kind__": "struct",
+        "x": 872,
+        "y": 632
+      },
+      "ports": {
+        "__type__": "NodePortDictionary",
+        "__name__": "ports",
+        "__kind__": "struct",
+        "keys": {
+          "__type__": "List`1",
+          "__name__": "keys",
+          "__kind__": "array",
+          "__items__": [
+            "Output"
+          ]
+        },
+        "values": {
+          "__type__": "List`1",
+          "__name__": "values",
+          "__kind__": "array",
+          "__items__": [
+            {
+              "__type__": "NodePort",
+              "__name__": "data",
+              "__kind__": "struct",
+              "_fieldName": "Output",
+              "_node": {
+                "__type__": "PPtr<Node>",
+                "__name__": "_node",
+                "__kind__": "struct",
+                "m_FileID": {
+                  "__fileid__": 0,
+                  "__pathid__": 14018,
+                  "__name__": "m_FileID"
+                }
+              },
+              "_typeQualifiedName": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "connections": {
+                "__type__": "List`1",
+                "__name__": "connections",
+                "__kind__": "array",
+                "__items__": [
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 13381,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  }
+                ]
+              },
+              "_direction": 1,
+              "_connectionType": 0,
+              "_typeConstraint": 0,
+              "_dynamic": false
+            }
+          ]
+        }
+      },
+      "thisMapArea": {
+        "__type__": "MapArea",
+        "__name__": "thisMapArea",
+        "__kind__": "struct",
+        "MapAreaName": "小屋",
+        "GoThereDiscript": "你温暖的家。",
+        "HasSpecialEvent": true,
+        "mapAreaStats": {
+          "__type__": "List`1",
+          "__name__": "mapAreaStats",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "CurrentMapAreaStat": {
+          "__type__": "MapAreaStat",
+          "__name__": "CurrentMapAreaStat",
+          "__kind__": "struct",
+          "AreaDescript": "",
+          "mapObjects": {
+            "__type__": "List`1",
+            "__name__": "mapObjects",
+            "__kind__": "array",
+            "__items__": [
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "虽然简陋而老旧，但也是你温暖的小家。",
+                "ObjectDescript": "\u0000\u0000\u0000",
+                "Effect": "院子",
+                "AppearRate": -3.473509741202889e+181,
+                "isHide": true
+              }
+            ]
+          },
+          "ActiveObjects": {
+            "__type__": "List`1",
+            "__name__": "ActiveObjects",
+            "__kind__": "array",
+            "__items__": []
+          },
+          "isSpecialEvent": true
+        },
+        "AdditionMapObjects": {
+          "__type__": "List`1",
+          "__name__": "AdditionMapObjects",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "isSpecialEventThisTurn": true
+      },
+      "Output": true
+    }
+  },
+  {
+    "filename": "Map Areas #15836.txt",
+    "name": "Map Areas",
+    "script_pathid": 699,
+    "fields": {
+      "m_GameObject": {
+        "__type__": "PPtr<GameObject>",
+        "__name__": "m_GameObject",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 0,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "__type__": "PPtr<MonoScript>",
+        "__name__": "m_Script",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 1,
+          "__pathid__": 699,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Name": "Map Areas",
+      "graph": {
+        "__type__": "PPtr<NodeGraph>",
+        "__name__": "graph",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 13899,
+          "__name__": "m_FileID"
+        }
+      },
+      "position": {
+        "__type__": "Vector2",
+        "__name__": "position",
+        "__kind__": "struct",
+        "x": -2280,
+        "y": 1192
+      },
+      "ports": {
+        "__type__": "NodePortDictionary",
+        "__name__": "ports",
+        "__kind__": "struct",
+        "keys": {
+          "__type__": "List`1",
+          "__name__": "keys",
+          "__kind__": "array",
+          "__items__": [
+            "Output"
+          ]
+        },
+        "values": {
+          "__type__": "List`1",
+          "__name__": "values",
+          "__kind__": "array",
+          "__items__": [
+            {
+              "__type__": "NodePort",
+              "__name__": "data",
+              "__kind__": "struct",
+              "_fieldName": "Output",
+              "_node": {
+                "__type__": "PPtr<Node>",
+                "__name__": "_node",
+                "__kind__": "struct",
+                "m_FileID": {
+                  "__fileid__": 0,
+                  "__pathid__": 14102,
+                  "__name__": "m_FileID"
+                }
+              },
+              "_typeQualifiedName": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "connections": {
+                "__type__": "List`1",
+                "__name__": "connections",
+                "__kind__": "array",
+                "__items__": [
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 14205,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  },
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 13361,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  }
+                ]
+              },
+              "_direction": 1,
+              "_connectionType": 0,
+              "_typeConstraint": 0,
+              "_dynamic": false
+            }
+          ]
+        }
+      },
+      "thisMapArea": {
+        "__type__": "MapArea",
+        "__name__": "thisMapArea",
+        "__kind__": "struct",
+        "MapAreaName": "居民区",
+        "GoThereDiscript": "村子里的居民区，很多居民在这里安家。",
+        "HasSpecialEvent": true,
+        "mapAreaStats": {
+          "__type__": "List`1",
+          "__name__": "mapAreaStats",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "CurrentMapAreaStat": {
+          "__type__": "MapAreaStat",
+          "__name__": "CurrentMapAreaStat",
+          "__kind__": "struct",
+          "AreaDescript": "\u0002",
+          "mapObjects": {
+            "__type__": "List`1",
+            "__name__": "mapObjects",
+            "__kind__": "array",
+            "__items__": [
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -3.811478359863199e-73,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.288315115950585e-164,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -2.232073969696177e-304,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -5.754217642868216e-208,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.2452093363029935e-34,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -4.544877632029429e-126,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "\u0001\u0000",
+                "ObjectDescript": "铁匠",
+                "Effect": "村子里有名的铁匠，据说手艺不输王城里的大师。",
+                "AppearRate": -3.000212830657472e+196,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "\"\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000",
+                "Effect": "",
+                "AppearRate": 1.9680492386794456e-305,
+                "isHide": false
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "filename": "Map Areas #16018.txt",
+    "name": "Map Areas",
+    "script_pathid": 699,
+    "fields": {
+      "m_GameObject": {
+        "__type__": "PPtr<GameObject>",
+        "__name__": "m_GameObject",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 0,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "__type__": "PPtr<MonoScript>",
+        "__name__": "m_Script",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 1,
+          "__pathid__": 699,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Name": "Map Areas",
+      "graph": {
+        "__type__": "PPtr<NodeGraph>",
+        "__name__": "graph",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 13899,
+          "__name__": "m_FileID"
+        }
+      },
+      "position": {
+        "__type__": "Vector2",
+        "__name__": "position",
+        "__kind__": "struct",
+        "x": 24,
+        "y": 1544
+      },
+      "ports": {
+        "__type__": "NodePortDictionary",
+        "__name__": "ports",
+        "__kind__": "struct",
+        "keys": {
+          "__type__": "List`1",
+          "__name__": "keys",
+          "__kind__": "array",
+          "__items__": [
+            "Output"
+          ]
+        },
+        "values": {
+          "__type__": "List`1",
+          "__name__": "values",
+          "__kind__": "array",
+          "__items__": [
+            {
+              "__type__": "NodePort",
+              "__name__": "data",
+              "__kind__": "struct",
+              "_fieldName": "Output",
+              "_node": {
+                "__type__": "PPtr<Node>",
+                "__name__": "_node",
+                "__kind__": "struct",
+                "m_FileID": {
+                  "__fileid__": 0,
+                  "__pathid__": 14284,
+                  "__name__": "m_FileID"
+                }
+              },
+              "_typeQualifiedName": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "connections": {
+                "__type__": "List`1",
+                "__name__": "connections",
+                "__kind__": "array",
+                "__items__": [
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 14309,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  },
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 14506,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  }
+                ]
+              },
+              "_direction": 1,
+              "_connectionType": 0,
+              "_typeConstraint": 0,
+              "_dynamic": false
+            }
+          ]
+        }
+      },
+      "thisMapArea": {
+        "__type__": "MapArea",
+        "__name__": "thisMapArea",
+        "__kind__": "struct",
+        "MapAreaName": "农田",
+        "GoThereDiscript": "村子周边广大的农田，几乎家家户户都有人在这片田野上劳作。",
+        "HasSpecialEvent": false,
+        "mapAreaStats": {
+          "__type__": "List`1",
+          "__name__": "mapAreaStats",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "CurrentMapAreaStat": {
+          "__type__": "MapAreaStat",
+          "__name__": "CurrentMapAreaStat",
+          "__kind__": "struct",
+          "AreaDescript": "\u0002",
+          "mapObjects": {
+            "__type__": "List`1",
+            "__name__": "mapObjects",
+            "__kind__": "array",
+            "__items__": [
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -3.811478359863199e-73,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.288315115950585e-164,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -2.232073969696177e-304,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -5.754217642868216e-208,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.2452093363029935e-34,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -4.544877632029429e-126,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "\u0001\u0000",
+                "ObjectDescript": "铁匠",
+                "Effect": "村子里有名的铁匠，据说手艺不输王城里的大师。",
+                "AppearRate": -3.000212830657472e+196,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "\"\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000",
+                "Effect": "",
+                "AppearRate": 1.9680492386794456e-305,
+                "isHide": false
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "filename": "Map Areas #16155.txt",
+    "name": "Map Areas",
+    "script_pathid": 699,
+    "fields": {
+      "m_GameObject": {
+        "__type__": "PPtr<GameObject>",
+        "__name__": "m_GameObject",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 0,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "__type__": "PPtr<MonoScript>",
+        "__name__": "m_Script",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 1,
+          "__pathid__": 699,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Name": "Map Areas",
+      "graph": {
+        "__type__": "PPtr<NodeGraph>",
+        "__name__": "graph",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 13899,
+          "__name__": "m_FileID"
+        }
+      },
+      "position": {
+        "__type__": "Vector2",
+        "__name__": "position",
+        "__kind__": "struct",
+        "x": 856,
+        "y": -56
+      },
+      "ports": {
+        "__type__": "NodePortDictionary",
+        "__name__": "ports",
+        "__kind__": "struct",
+        "keys": {
+          "__type__": "List`1",
+          "__name__": "keys",
+          "__kind__": "array",
+          "__items__": [
+            "Output"
+          ]
+        },
+        "values": {
+          "__type__": "List`1",
+          "__name__": "values",
+          "__kind__": "array",
+          "__items__": [
+            {
+              "__type__": "NodePort",
+              "__name__": "data",
+              "__kind__": "struct",
+              "_fieldName": "Output",
+              "_node": {
+                "__type__": "PPtr<Node>",
+                "__name__": "_node",
+                "__kind__": "struct",
+                "m_FileID": {
+                  "__fileid__": 0,
+                  "__pathid__": 14421,
+                  "__name__": "m_FileID"
+                }
+              },
+              "_typeQualifiedName": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "connections": {
+                "__type__": "List`1",
+                "__name__": "connections",
+                "__kind__": "array",
+                "__items__": [
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 13397,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  },
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 13807,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  }
+                ]
+              },
+              "_direction": 1,
+              "_connectionType": 0,
+              "_typeConstraint": 0,
+              "_dynamic": false
+            }
+          ]
+        }
+      },
+      "thisMapArea": {
+        "__type__": "MapArea",
+        "__name__": "thisMapArea",
+        "__kind__": "struct",
+        "MapAreaName": "教堂",
+        "GoThereDiscript": "高耸的教堂，在村子的任何地方都能看到。",
+        "HasSpecialEvent": true,
+        "mapAreaStats": {
+          "__type__": "List`1",
+          "__name__": "mapAreaStats",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "CurrentMapAreaStat": {
+          "__type__": "MapAreaStat",
+          "__name__": "CurrentMapAreaStat",
+          "__kind__": "struct",
+          "AreaDescript": "\u0002",
+          "mapObjects": {
+            "__type__": "List`1",
+            "__name__": "mapObjects",
+            "__kind__": "array",
+            "__items__": [
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -8.499880773293651e-30,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -3.9927617859129116e-20,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -6.09608196600844e-131,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.9635575167669543e-169,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.288759771711507e-164,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": 2.121995792e-314,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "\"!\u0000\u0000\u0000村子里德高望重的神父。\u0000\u0000\u0000"
+              }
+            ]
+          }
+        }
+      },
+      "\u0000\u0000\u0000女神像\u0000\u0000\u0000T\u0000\u0000\u0000精致而宏伟的女神像，不知为何，你总觉得女神长得有点眼熟。\u0010\u0000\u0000\u0000对象_女神像\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0006\u0000\u0000\u0000神父\u0000\u0000!\u0000\u0000\u0000村子里德高望重的神父。\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000对话_神父\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__name__": "\u0000\u0000\u0000女神像\u0000\u0000\u0000T\u0000\u0000\u0000精致而宏伟的女神像，不知为何，你总觉得女神长得有点眼熟。\u0010\u0000\u0000\u0000对象_女神像\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0006\u0000\u0000\u0000神父\u0000\u0000!\u0000\u0000\u0000村子里德高望重的神父。\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "\u0000\u0000\u0000女神像\u0000\u0000\u0000T\u0000\u0000\u0000精致而宏伟的女神像，不知为何，你总觉得女神长得有点眼熟。\u0010\u0000\u0000\u0000对象_女神像\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0006\u0000\u0000\u0000神父\u0000\u0000!\u0000\u0000\u0000村子里德高望重的神父。\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000对话_神父\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__name__": "\u0000\u0000\u0000女神像\u0000\u0000\u0000T\u0000\u0000\u0000精致而宏伟的女神像，不知为何，你总觉得女神长得有点眼熟。\u0010\u0000\u0000\u0000对象_女神像\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0006\u0000\u0000\u0000神父\u0000\u0000!\u0000\u0000\u0000村子里德高望重的神父。\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000DefautOutput",
+        "__name__": "\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000096\u0000\u0000\u0000\u0000\u0000\u0000\u0000��E\u0000\u0000�C\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000096\u0000\u0000\u0000\u0000\u0000\u0000\u0000��E\u0000\u0000�C\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000�}E\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000�}E\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000/6\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u001bF\u0000\u0000\bC\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000/6\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u001bF\u0000\u0000\bC\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u0000B6\u0000\u0000\u0000\u0000\u0000\u0000L����\u0012wD\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u0000B6\u0000\u0000\u0000\u0000\u0000\u0000L����\u0012wD\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000096\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000\u0018�\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000096\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000\u0018�\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000006\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0016E\u0000\u0000\u0018C\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000006\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0016E\u0000\u0000\u0018C\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000$6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000\u0000�D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000�\u0000\u0000\u0000你被几个牵着双头猎犬的兽人追踪了，双头猎犬嗅着你的味道寻来，这样下去迟早被发现，还不如主动跳出去和它们正面作战。�\u0000\u0000\u0000你被几个牵着双头猎犬的兽人追踪了，双头猎犬嗅着你的味道寻来，你急中生智，把鞋子留在了另一处，待敌人追踪你鞋子的味道的时候，正好把后背暴露给你了。\u0006\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Battle",
+        "__name__": "Event\u0000\u0000\u0000\u0000$6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000\u0000�D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000\u0003\u0000\u0000\u0000无\u0000�\u0000\u0000\u0000你被几个牵着双头猎犬的兽人追踪了，双头猎犬嗅着你的味道寻来，这样下去迟早被发现，还不如主动跳出去和它们正面作战。�\u0000\u0000\u0000你被几个牵着双头猎犬的兽人追踪了，双头猎犬嗅着你的味道寻来，你急中生智，把鞋子留在了另一处，待敌人追踪你鞋子的味道的时候，正好把后背暴露给你了。\u0006\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�B\u0000\u0000`�\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�B\u0000\u0000`�\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000+6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000\u0000�A\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000+6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000\u0000�A\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000066\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000�#E\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000066\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000�#E\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u0000,6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000`B\u0000\u0000�D\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u0000,6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000`B\u0000\u0000�D\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u000086\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000�C\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u000086\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000�C\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000�tE\u0000��E\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000�tE\u0000��E\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000�_E\u0000��E\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000�_E\u0000��E\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000036\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000��\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000036\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000��\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000^D\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000\u0000^D\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000*6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000ZD\u0000\u0000��\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000*6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000ZD\u0000\u0000��\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u000096\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000\u0000��\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u000096\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000\u0000��\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0018�\u0000\u0000��\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0018�\u0000\u0000��\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "\u0000\u0000\u0000通关结局:全世界去冒险\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0001\u0000\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000UV6D7XHSLPXC\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0001\u0000\u0000你已经习惯了常年的冒险生涯。去未知的地方冒险，探寻遗迹和宝藏，挖掘未知的秘密，已经成了你的生活的一部分。因此，在长时间的休整之后，你重新选择踏上了冒险之路。这一次，你决定离开生活了多年的村子，去看一看这个未知的世界。[段落]（已达成游戏结局，接下来你无法进行其它活动，请点击时间流逝见证结局。）\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__name__": "\u0000\u0000\u0000通关结局:全世界去冒险\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0001\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u000036\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\\E\u0000\u0000��\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u000036\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\\E\u0000\u0000��\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u0000-6\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001F\u0000�:�\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u0000-6\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001F\u0000�:�\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000@�E\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000@�E\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000�wE\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�D\u0000�wE\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "\u0000\u0000\u0000智力:12\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0000\u0000无\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u00007DAMYUEC0DDL\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0012\u0000\u0000\u0000为她想想办法\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__name__": "\u0000\u0000\u0000智力:12\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0000\u0000无\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000��E\u0000\u0000VD\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000��E\u0000\u0000VD\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000�eE\u0005\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Main",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000�eE\u0005\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000K8�E,'�E\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000076\u0000\u0000\u0000\u0000\u0000\u0000K8�E,'�E\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u000016\u0000\u0000\u0000\u0000\u0000\u0000\u0000�oE\u0000\u0000�D\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u000016\u0000\u0000\u0000\u0000\u0000\u0000\u0000�oE\u0000\u0000�D\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000!6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000�\u0000\u0000\u0000你在阴暗的矿洞中发现了一处隐蔽的暗门。你用尽全力推开暗门，点亮煤灯，你在暗门背后的房间找到了一件战利品。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Chest",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000!6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000�\u0000\u0000\u0000你在阴暗的矿洞中发现了一处隐蔽的暗门。你用尽全力推开暗门，点亮煤灯，你在暗门背后的房间找到了一件战利品。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000\"6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000�\u0000\u0000\u0000你发现了一座精灵的祭坛，祭坛中央摆放着一件看起来很精美的珍宝。你觉得宝贝放在这里也不会有人用了，不如你把它带走吧。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Chest",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000\"6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000�\u0000\u0000\u0000你发现了一座精灵的祭坛，祭坛中央摆放着一件看起来很精美的珍宝。你觉得宝贝放在这里也不会有人用了，不如你把它带走吧。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000#6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000�\u0000\u0000\u0000你来到一处隐秘之地，这片区域树叶茂密。你拨开一片片树叶，发现了一座神秘的废墟，在废墟里，你找到了一件遗物。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Chest",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000#6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000�\u0000\u0000\u0000你来到一处隐秘之地，这片区域树叶茂密。你拨开一片片树叶，发现了一座神秘的废墟，在废墟里，你找到了一件遗物。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000$6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000i\u0000\u0000\u0000你在悬崖边发现了一个宝箱，你充满期待地打开，原来里面是一件不错的宝物。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Chest",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000$6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000i\u0000\u0000\u0000你在悬崖边发现了一个宝箱，你充满期待地打开，原来里面是一件不错的宝物。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000}\u0002\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Event\u0000\u0000\u0000\u0000\u0000%6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000o\u0000\u0000\u0000你在墓地里发现了一座规模不小的坟墓，你进入坟墓里面，找到了一件不错的宝物。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000\u0000\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Chest",
+        "__name__": "Event\u0000\u0000\u0000\u0000\u0000%6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000n�\u0000\u0000:�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000\u0000\u0000o\u0000\u0000\u0000你在墓地里发现了一座规模不小的坟墓，你进入坟墓里面，找到了一件不错的宝物。\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000/6\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000@�E\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000/6\u0000\u0000\u0000\u0000\u0000\u0000\u0000@�E\u0000@�E\u0002\u0000\u0000\u0000",
+        "__kind__": "struct"
+      },
+      "Result\u0000\u0000\u0000\u0000-6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"D\u0000\u0000f�\u0002\u0000\u0000\u0000": {
+        "__type__": "\u0000\u0000\u0000Event",
+        "__name__": "Result\u0000\u0000\u0000\u0000-6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"D\u0000\u0000f�\u0002\u0000\u0000\u0000",
+        "__kind__": "struct",
+        "Effect": "",
+        "AppearRate": -7.014888428307355e+185,
+        "isHide": true,
+        "data": {
+          "__type__": "MapObject",
+          "__name__": "data",
+          "__kind__": "struct"
+        }
+      }
+    }
+  },
+  {
+    "filename": "Map Areas.txt",
+    "name": "Map Areas",
+    "script_pathid": 699,
+    "fields": {
+      "m_GameObject": {
+        "__type__": "PPtr<GameObject>",
+        "__name__": "m_GameObject",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 0,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "__type__": "PPtr<MonoScript>",
+        "__name__": "m_Script",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 1,
+          "__pathid__": 699,
+          "__name__": "m_FileID"
+        }
+      },
+      "m_Name": "Map Areas",
+      "graph": {
+        "__type__": "PPtr<NodeGraph>",
+        "__name__": "graph",
+        "__kind__": "struct",
+        "m_FileID": {
+          "__fileid__": 0,
+          "__pathid__": 13899,
+          "__name__": "m_FileID"
+        }
+      },
+      "position": {
+        "__type__": "Vector2",
+        "__name__": "position",
+        "__kind__": "struct",
+        "x": -1352,
+        "y": -440
+      },
+      "ports": {
+        "__type__": "NodePortDictionary",
+        "__name__": "ports",
+        "__kind__": "struct",
+        "keys": {
+          "__type__": "List`1",
+          "__name__": "keys",
+          "__kind__": "array",
+          "__items__": [
+            "Output"
+          ]
+        },
+        "values": {
+          "__type__": "List`1",
+          "__name__": "values",
+          "__kind__": "array",
+          "__items__": [
+            {
+              "__type__": "NodePort",
+              "__name__": "data",
+              "__kind__": "struct",
+              "_fieldName": "Output",
+              "_node": {
+                "__type__": "PPtr<Node>",
+                "__name__": "_node",
+                "__kind__": "struct",
+                "m_FileID": {
+                  "__fileid__": 0,
+                  "__pathid__": 14425,
+                  "__name__": "m_FileID"
+                }
+              },
+              "_typeQualifiedName": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "connections": {
+                "__type__": "List`1",
+                "__name__": "connections",
+                "__kind__": "array",
+                "__items__": [
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 13971,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  },
+                  {
+                    "__type__": "PortConnection",
+                    "__name__": "data",
+                    "__kind__": "struct",
+                    "fieldName": "Input",
+                    "node": {
+                      "__type__": "PPtr<Node>",
+                      "__name__": "node",
+                      "__kind__": "struct",
+                      "m_FileID": {
+                        "__fileid__": 0,
+                        "__pathid__": 13663,
+                        "__name__": "m_FileID"
+                      }
+                    },
+                    "reroutePoints": {
+                      "__type__": "List`1",
+                      "__name__": "reroutePoints",
+                      "__kind__": "array",
+                      "__items__": []
+                    }
+                  }
+                ]
+              },
+              "_direction": 1,
+              "_connectionType": 0,
+              "_typeConstraint": 0,
+              "_dynamic": false
+            }
+          ]
+        }
+      },
+      "thisMapArea": {
+        "__type__": "MapArea",
+        "__name__": "thisMapArea",
+        "__kind__": "struct",
+        "MapAreaName": "集市",
+        "GoThereDiscript": "村子的集市，是方圆几里内最热闹的地方。",
+        "HasSpecialEvent": false,
+        "mapAreaStats": {
+          "__type__": "List`1",
+          "__name__": "mapAreaStats",
+          "__kind__": "array",
+          "__items__": []
+        },
+        "CurrentMapAreaStat": {
+          "__type__": "MapAreaStat",
+          "__name__": "CurrentMapAreaStat",
+          "__kind__": "struct",
+          "AreaDescript": "\u0002",
+          "mapObjects": {
+            "__type__": "List`1",
+            "__name__": "mapObjects",
+            "__kind__": "array",
+            "__items__": [
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -3.811478359863199e-73,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.288315115950585e-164,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -2.232073969696177e-304,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -5.754217642868216e-208,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -1.2452093363029935e-34,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "",
+                "Effect": "",
+                "AppearRate": -4.544877632029429e-126,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "\u0001\u0000",
+                "ObjectDescript": "铁匠",
+                "Effect": "村子里有名的铁匠，据说手艺不输王城里的大师。",
+                "AppearRate": -3.000212830657472e+196,
+                "isHide": true
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct",
+                "ObjectName": "",
+                "ObjectDescript": "\"\u0000\u0000\u0000\u0000\u0000\u0000�?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000",
+                "Effect": "",
+                "AppearRate": 1.9680492386794456e-305,
+                "isHide": false
+              },
+              {
+                "__type__": "MapObject",
+                "__name__": "data",
+                "__kind__": "struct"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+]

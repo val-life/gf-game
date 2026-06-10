@@ -265,8 +265,8 @@ for textures or `obj.read().samples` for audio).
 | Need | Status before Wave 3 | After Wave 3 |
 |---|---|---|
 | Class catalog (script PathID → name) | guess from MB names | ✅ `monoscript_catalog.json` (780 records) |
-| XNode narrative text per node | ⚠️ raw extraction had mojibake | ✅ `monobehaviour_strings.json` (8,310 clean strings) |
-| BattleEventNode → world + monster slots | ❌ stubs only | ✅ `battle_events.json` (164/167) |
+| XNode narrative text per node | ⚠️ raw extraction had mojibake | ✅ **`xnode_texts.json` (Wave 4)** — 1,477/1,477 nodes, 5,383 strings, 0 mojibake, structured per-type fields |
+| BattleEventNode → world + monster slots | ❌ stubs only | ✅ `battle_events.json` (164/167 in Wave 3) → **`xnode_texts.json` 167/167 in Wave 4** |
 | Sprite atlas references | partial | ✅ `sprite_index.json` |
 | Texture2D dimensions + storage offsets | partial | ✅ `texture2d_index.json` |
 | AudioClip references | partial | ✅ `audioclip_index.json` |
@@ -345,5 +345,5 @@ All outputs land in `rebuild/data/`. Re-running is idempotent (overwrites).
 
 - `extracted_game_data.md` §8.3 — adds a "Wave 3 confirmed counts" section
 - `dump_inventory.md` §0, §2 — replaces guess counts with authoritative ones from `monoscript_catalog.json`
-- `todo.md` — marks XNode body fields (#2) and XNode Chinese text (#3) ✅ RESOLVED
+- `todo.md` — marks XNode body fields (#2) and XNode Chinese text (#3) ✅ RESOLVED (Wave 4 update adds `xnode_texts.json` note)
 - `extraction_summary.md` — adds Wave 3 row to the results table

@@ -1,0 +1,45 @@
+{
+  "battle_events": {
+    "total": 167,
+    "boss": 0,
+    "final_boss": 13,
+    "with_normalAttackContent": 89,
+    "with_sneakAttackContent": 149,
+    "with_enemyList": 41,
+    "with_rewards": 41
+  },
+  "map_area_stats": {
+    "total": 9,
+    "with_chinese_descript": 9,
+    "with_mapObjects": 9
+  },
+  "map_areas": {
+    "total": 6
+  },
+  "map_objects": {
+    "total": 25,
+    "with_effect_strings": 7,
+    "total_effect_entries": 12
+  },
+  "event_lines": {
+    "categories": 25,
+    "total_files": 61
+  },
+  "condition_switches": {
+    "total": 69
+  },
+  "xnode_edges": {
+    "total": 2390,
+    "from_files": 1181,
+    "to_files": 0
+  },
+  "catalog": {
+    "total_files": 10243,
+    "unique_names": 65,
+    "unique_classes": 166
+  },
+  "decoded_chinese": {
+    "files_with_chinese": 294,
+    "total_strings": 2773
+  }
+}
