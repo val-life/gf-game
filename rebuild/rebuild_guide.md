@@ -887,3 +887,6 @@ For the per-talent `Addition` values (the actual numbers from `extracted_game_da
 ### 9.7 Localization
 - **Decision**: **Translate the simplified chinese to Traditional chinese**
 - **Source data**: `Dump/TextAsset/Zh.txt` is mojibake; use `chinese_strings.txt` (1,834 strings) and `data/monobehaviour_strings.json` (8,310 CJK strings) instead
+
+### 9.8 Multi-stage boss fight difficulty curve
+- **Decision**: the 2 true final bosses (pid 13989, 14504 — 魔王I/II) ship with the same scaling as elite bosses

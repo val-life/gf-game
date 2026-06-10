@@ -368,6 +368,56 @@ This is the weighted random table that decides what kind of event card you draw 
 
 > **Note**: The sum is 85 — there is no 5th entry making it total 100. Implication: the deck only resolves on a roll ≤85, and the remaining 15% of rolls fall through to the area's static event (chest / rest / story node from the XNode graph).
 
+### 4c. Final Boss Event Layouts (Wave 7) — `mb_final_boss_layouts.json`
+
+> **Source**: raw byte parse of `BattleEventNode` MonoBehaviours in `game_file/异世轮回录_1.20/assets/bin/Data/data.unity3d`. Each event's `BattleEvent` struct has **both** a stage-1 `EnemyList` AND a stage-2 `SecendEnemyList`, plus `WinBossBattleStr` (win story) and `SecendBattleStr` (stage-2 story). The original `parse_typemb.py` bailed on these because `find_field_chinese` can't handle the multi-stage binary blob. The new `parse_battle_events_raw.py` walks the MB tail field-by-field using the C# field order. **All 13 boss events fully decoded; 0 errors.**
+
+**C# field order walked** (offsets relative to MB tail start):
+```
+Node.graph(12) | Node.position(8) | Node.ports.keys(4) | Node.ports.values(4)
+| AENE.nodeType(4) | BE.exploreStat(4) | BE.EventType(4) | BE.IsBossEvent(4)
+| BE.ProbilyRelics(List<string>) | BE.WinBossBattleStr | BE.IsFinalBossEvent
+| BE.SecendBattleStr | BE.SecendEnemyList | BE.normalAttackContent
+| BE.sneakAttackContent | BE.EnemyList | BE.ExpReward | BE.EquipmentReward | BE.GoldReward
+```
+
+**13 boss events** (data.unity3d PathIDs — note: these are **different** from the txt-dump PathIDs in `mb_battle_events_full.json` because that was a separate AssetStudio extraction from an older bundle version):
+
+| pid | graph_pid | is_final | Stage 1 boss | Stage 2 boss | Relic drop | Source world |
+|---:|---:|:---:|---|---|---|---|
+| 13785 | 13894 | – | 卡拉多格 | – | 王国圣剑 | 墓地/魔域 |
+| 13989 | 13898 | ✓ | 魔王I（史莱姆形） | 魔王II（史莱姆形） | – | Final boss |
+| 14264 | 13857 | – | 地龙王奥凯 | – | 龙之心 + 淬火鳞片 | 矿山 |
+| 14265 | 13858 | – | 堕落精灵女王 | – | 精灵权杖 + 月之石 | 精灵之森 |
+| 14266 | 13859 | – | 哥布林王 | – | 死亡号角 + 纯金王冠 | 迷雾森林 |
+| 14267 | 13860 | – | 远古巨灵·圣 | – | – | 兽人山脉 |
+| 14268 | 13861 | – | 密室怨灵 | – | 毒腺 | 墓地/魔域 |
+| 14269 | 13891 | – | 巴利（斧头将） | – | 巨大骷髅 + 巨斧之灵 | 牛头人 |
+| 14270 | 13892 | – | 上古魔神（首缺） | – | – | 牛头人 |
+| 14271 | 13893 | – | 上古魔神（首缺） | – | – | 牛头人 |
+| 14272 | 13896 | – | 巴利（斧头将） | – | 巨大骷髅 + 巨斧之灵 | 牛头人 |
+| 14351 | 13895 | – | 魔王奥 | – | – | 魔域 |
+| 14504 | 13897 | ✓ | 魔王I | 魔王II | – | Final boss |
+
+**Per-event data** (full content in `data/mb_final_boss_layouts.json`):
+- `stage1.enemy_list` — 6-position enemy roster (`"无"` = empty slot)
+- `stage1.normal_attack_content` — full Chinese encounter text
+- `stage1.relics` — items dropped on victory
+- `stage1.rewards` — `{exp, equip, gold}`
+- `stage2.enemy_list` — 6-position roster for next stage (`"无"` if no next stage)
+- `stage2.story_text` — `SecendBattleStr` (stage-2 transition narrative)
+- `stage2.win_story_text` — `WinBossBattleStr` (victory cutscene)
+- `stage2.sneak_attack_content` — pre-emptive strike flavor text
+
+**Multi-stage structure**:
+- **2 true final bosses** (pid 13989, 14504) — the 3-stage Demon King fight described in `rebuild_guide.md` §3.5 (魔王I → 魔王II). `is_final_boss_event=true`, `sec_enemies` populated.
+- **11 elite bosses** — single-stage with relic drops. `is_final_boss_event=false`, `sec_enemies` all `"无"`, `sec_str` empty, but the field structure is there for future use (e.g., heroic mode / ascension).
+
+**Implementation note for web rebuild**:
+- `enemy_list` is 6 positions (the "front row" of the battle UI shows 6 enemy slots). `sec_enemies` is the second wave for multi-stage.
+- For non-final bosses, the `win_story_text` describes the boss's "spare the life" dialog (e.g., 卡拉多格 gives the player the 王国圣剑 and reports them dead). This text IS in the save data; surface it as the post-fight dialog.
+- The `normal_attack_content` is the pre-fight encounter flavor text shown when you first enter the battle.
+
 ---
 
 ## 5. Skills (技能) - 20+ skills, 3 levels each
@@ -728,4 +778,6 @@ The IL2CPP build strips inline TypeTrees, so UnityPy alone can't decode `MonoBeh
 This **resolves the remaining "XNode body fields" blocker (todo #2 + #3)** without needing dummy DLLs. For full per-field structured decode of ALL MB types, you still need the dummy-DLL path (see `wave3_extraction.md` §3.1).
 
 See `wave3_extraction.md` for the full pipeline.
+
+
 
