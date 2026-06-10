@@ -389,17 +389,19 @@ where:
 - `healthExponent = GameConst.怪物生命每级属性提高Addition + 1.35` (different Addition field, same +1.35 base)
 - `cruelLevel` = `GameManager.cruelLevel` (0-10, from Cruel World toggle; **0 if CW is off**)
 - `0.15` is `DAT_018eea08`, `0.9` is `DAT_018fc198`, `1.35` is `DAT_018fc8e8`
-- `baseAttack` / `baseHealth` are the monster's natural stats set by `MonsterGenerater` (per-species; TODO for next pass)
+- `baseAttack` / `baseHealth` are the monster's natural stats set by `MonsterGenerater` (per-species; **all 58 monsters extracted in Wave 6 — see `ghidra_results.md` §11**; note: **all monsters have 0 base defence** — defence stat is unused in damage calc)
 
-**Damage flow** (per hit, in `Creature.OnAttack` / `Creature.OnUnderAttack`):
+**Damage flow** (per hit, in `BattleCommander.tryDoDamage` @ 0x00CF0E88):
+```js
+defFactor   = pow(1.0147, defender.defence / -1.3)     // 1.0147 = DAT_018fe764, -1.3 = DAT_018fe760
+reduction   = 1 / (defFactor + 1) - 0.5                 // 0.0 at def=0, increases with def
+dmg         = attacker.attack * (1 - 1.5 * reduction)  // atk multiplied by damage-pass%
+if random() < attacker.criticalRate: dmg *= (attacker.criticalDegree + 2.0)  // default 2.0x; +0.2 talent = 2.2x
+if dmg < 1: dmg = 1                                     // hard floor of 1
+if random() < defender.blockRate:   dmg *= (1 - 0.4)    // 60% damage on block (blockDmgReduction = 0.4)
+return dmg
 ```
-base_dmg     = max(attacker.attack - defender.defence * 0.5, attacker.attack * 0.1)
-if random() < attacker.criticalRate: base_dmg *= 2                                  // 暴击
-if random() < defender.blockRate:   base_dmg *= 0.5                                 // 格挡
-if random() < defender.dodge:       base_dmg = 0                                    // 闪避
-final        = base_dmg * (1 + attacker.buff_atk%) * (1 - defender.buff_def%)
-```
-The 0.5 def-mult, 0.1 floor, 2x crit, 0.5x block, and dodge-to-zero are placeholder coefficients inferred from the decompiled battle code path; the exact `attack * X` and `defence * Y` multipliers in the inner loop are in a per-skill method that wasn't fully traced this pass.
+Reduction curve (no crit, no block): def 0→100%, def 10→96%, def 50→79%, def 100→62%, def 200→44%, def 500→25%. Dodge is **not** applied here (it's encoded in `AttackData.IsBlock` path, not as a separate `IsDodge`).
 
 **Regen / per-turn HP**:
 ```
@@ -507,22 +509,44 @@ Per-run souls (from ComfirmGainSoulPanel.CaculateGainSoulNum @ 0x00B06E34):
   lose: 50% of win amount (no per-monster formula in code; the 50% is in the panel flow, not in CaculateGainSoulNum)
   rest: GainSoulRestTime → offline/afk regen (separate method, not analyzed this pass)
 
-Per-source money gain (from GameManager.GainMoney @ 0x00B29F34):
-  value        = base reward value (from battle drop / chest / event)
-  final = (int)(((GameConst.每点魅力金币获取提升Addition + 0.005) * Hero.Charm + 1.0) * value)
-  if (source is 钓鱼 (fishing) or 打工 (mining) AND Hero has the matching talent): final *= 1.5
-  // Hero.Money += final; GameManager.TotalMoneyGain += final
+Per-battle reward (from `AdventruePanel_c__DisplayClass32_0__WinBattle_b__8` @ 0x00C466C8 — Wave 6):
+  expBase    = GameConst.经验获取基数Addition + 5   // default 5 (Addition = 0)
+  goldBase   = GameConst.金币获取基数Addition + 8   // default 8 (Addition = 0)
+  enemyLevel = AdventruePanel.getEnemyLevel()      // = AreaLevel + currentExploreStat - 1
+  // Raw exp from battle event (mb_battle_events_full.json expReward field)
+  expGained  = expBase * expReward * (enemyLevel + 1)
+  // Raw gold from battle event (mb_battle_events_full.json goldReward field)
+  rawGold    = floor((enemyLevel * 0.01 + 1.0) * goldReward * goldBase)
+  // After battle-pass, the raw values then pass through GainMoney/AddExp for Charm & talent mods:
+  finalGold  = (int)(((每点魅力金币获取提升Addition + 0.005) * Hero.Charm + 1.0) * rawGold)
+  if (source == 钓鱼/打工 AND matching talent) finalGold = floor(finalGold * 1.5)
+  finalExp   = floor((Hero.GetAllExpGainImprove() + 1.0) * expGained)
+  // Crucially: cruelLevel does NOT multiply or add to expGained/rawGold. CW is stat-only.
 
-Per-source XP gain (from HeroLevel.AddExp @ 0x00B39E00):
+Per-source XP gain (from HeroLevel.AddExp @ 0x00B39E00, for non-battle XP like event bonuses):
   exp          = base reward value
   gainedExp = (int)((Hero.GetAllExpGainImprove() + 1.0) * exp)
   // HeroLevel.CurrentExp += gainedExp; if (levelUp) show UpgradePanel
 
-Cross-run Evil Crystal:
-  souls → EC:  EvilCrystalValueChange(souls)         // 1:1 conversion by default
-  grow:        EC += elapsed_time * GrowSpeed + GrowSpeedTotal
-  upgrade:     EvilCrystalUpgrade (permanent per-stat bonus)
-  reset:       AllResetEvilCrystal (one-time reset for reallocation)
+Cross-run Evil Crystal (Wave 6 schema extracted — `EvilCrystal` class @ 0x00B47270):
+  fields:
+    IsActive                 : bool
+    IsGameVictory            : bool
+    MaxValue                 : 100                       // hardcoded constant
+    CurrentEvilCrystalLevel  : int                       // upgrade tier (0, 1, 2, ...)
+    CurrentValue             : int                       // XP toward next level
+    CurrentEvilCrystalEvent   : string                    // name of current active story
+    CurrentEvilCrystalStoryLine : StoryLine ref           // live story being progressed
+  operations:
+    EvilCrystalValueChange(v)  : CurrentValue = max(0, min(CurrentValue + v, MaxValue))
+    EvilCrystalGrow()          : CurrentValue += EvilCrystalGrowSpeedTotal (capped at MaxValue)
+                                 + pushes current StoryLine into the active story list
+    EvilCrystalUpgrade() / LevelUp()  : CurrentEvilCrystalLevel += 1; CurrentValue = 0
+    IsFull()                   : MaxValue <= CurrentValue
+    AllResetEvilCrystal()      : clears everything (level 0, value 0, MaxValue 100, no story)
+  // The crystal just gates story unlocks — what each level *gives* lives in the 48 artifacts
+  // and in relics with `AcquisitionMethod: Special` + `AcquisitionLimit: Once` (see artifact_complete.md).
+  // Per-tick grow rate is `EvilCrystalGrowSpeedTotal` from GameConst (addition-based; default 0).
 ```
 
 > **Save format**: complete schema extracted in `save_format.md` (Wave 5+). All `ISaveAndLoad` classes' `Save()` methods decompiled — 6 per-run keys + 1 cross-run key, AES-encrypted in Android internal storage. Web rebuild can skip the AES step and use the JSON schema directly with `localStorage`.
@@ -558,24 +582,24 @@ Year events:
 ```
 value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd) * 1.05)
 ```
-The full `(property, slot) → (minMul, maxAdd)` table (13 properties × 3 slots):
+The full `(property, slot) → (minMul, maxAdd)` table (13 properties × 3 slots, re-verified Wave 6 via `AdventrueManager_generateEquipmentProperty` @ 0x00C3DB48 — Crit Main, AtkSpeed Main, Atk Random corrected from prior hand-trace):
 | Property (cn/en) | Random (mul, add) | Sub (mul, add) | Main (mul, add) |
 |---|---:|---:|---:|
-| 攻击 Attack | (0.01, 0.025) | (0.02, 0.07) | (0.04, 0.15) |
+| 攻击 Attack | (0.02, 0.07) | (0.01, 0.025) | (0.04, 0.15) |
 | 防御 Defence† | (level+1)\*0.95..1.05 | (level\*2+2)\*0.95..1.05 | (level\*4+4)\*0.95..1.05 |
-| 暴击 CritRate | (0.005, 0.03) | (0.005, 0.03) | (0.005, 0.025) |
-| 格挡 Block | (0.005, 0.015) | (0.0075, 0.03) | (0.015, 0.06) |
+| 暴击 CritRate | (0.005, 0.01) | (0.005, 0.02) | (0.01, 0.05) |
+| 格挡 Block | (0.0075, 0.03) | (0.005, 0.015) | (0.015, 0.06) |
 | 暴伤 CritDmg | (0.01, 0.05) | (0.01, 0.05) | (0.02, 0.1) |
 | 生命 Health | (0.02, 0.1) | (0.04, 0.2) | (0.08, 0.4) |
-| 闪避 Dodge | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
-| 吸血 LifeSteal | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
-| 攻速 AtkSpeed | (0.005, 0.025) | (0.006, 0.04) | (0.006, 0.025) |
-| 反击 Counter | (0.005, 0.025) | (0.005, 0.02) | (0.008, 0.015) |
-| 溅伤 Splash | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
-| 回复 Recovery | (0.005, 0.025) | (0.35, 0.7) | (0.1, 0.05) |
-| 回复率 RecovRate | (0.005, 0.025) | (0.35, 0.7) | (0.1, 0.05) |
+| 闪避 Dodge | (0.005, 0.01) | (0.005, 0.02) | (0.01, 0.04) |
+| 吸血 LifeSteal | (0.0025, 0.01) | (0.005, 0.02) | (0.01, 0.05) |
+| 攻速 AtkSpeed | (0.006, 0.04) | (0.006, 0.02) | (0.01, 0.05) |
+| 反击 Counter | (0.006, 0.02) | (0.008, 0.02) | (0.015, 0.05) |
+| 溅伤 Splash | (0.005, 0.01) | (0.005, 0.02) | (0.01, 0.04) |
+| 回复 Recovery | (0.35, 0.7) | (0.75, 1.0)\*0.95..1.05 | (1.5, 2.0)\*0.95..1.05 |
+| 回复率 RecovRate | (0.35, 0.7) | (0.75, 1.0)\*0.95..1.05 | (1.5, 2.0)\*0.95..1.05 |
 
-† **Defence is the only property using absolute level-based values** (level\*4+4, level\*2+2, level+1) instead of the percentage-of-level pattern. The ±5% still wraps it.
+† **Defence is the only property using absolute level-based values** (level\*4+4, level\*2+2, level+1) instead of the percentage-of-level pattern. The ±5% still wraps it. **CritDmg** has identical Random and Sub values (both `(0.01, 0.05)`) — only Main is bigger. **AtkSpeed** has 3 distinct values per slot. Final formula: `value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd) * 1.05)`.
 
 **Rarity weight table** (5 entries, summed; weight 0 if negative):
 ```
@@ -659,14 +683,17 @@ finalPrice = (int)((1.0 - this->Discount) * basePrice)
 | 5 | **真正的勇者** (True) | 真正的勇者 | 没有触发一次死里逃生通关 | — | ? |
 | (bonus) | **如此老套?** (Beat King) | 如此老套？ | 击败了魔王 | — | 解锁残酷世界 |
 
-**Cruel World difficulty unlocks** (残酷世界, see §6 of extracted data, partially extracted via Ghidra Wave 5):
-- **Wave 5 finding**: `GameManager.cruelLevel` is a single integer (0, 1, 3, 5, 7, or 10 — the 5 selectable levels). It's **added directly to hero attack** (in `CaculateBaseAttack`: `+ cruelLevel * Power`) and **multiplied into monster attack/health** (in `Monster_SetLevel`: `* (cruelLevel + levelCurve)`). So Cruel World makes both hero and monster stronger — it's a damage-rubberbanding system.
+**Cruel World difficulty unlocks** (残酷世界, extracted via Ghidra Wave 5 + 6):
+- **Wave 6 finding**: `GameManager.cruelLevel` is a single integer (0, 1, 3, 5, 7, or 10 — the 5 selectable levels). It is **read in exactly 2 places** in the binary:
+  1. `Hero_CaculateBaseAttack` @ 0x00B36668: `attack = (Addition + 0.4 + cruelLevel) * Power + 5` — adds `+cruelLevel` per Power point.
+  2. `Monster_SetLevel` @ 0x00A9F1C0: `attack = base * (cruelLevel + (level-curve) + 0.9)` — adds `cruelLevel` to the multiplier (NOT multiplicative).
+- So Cruel World makes both hero and monster stronger — it's a damage-rubberbanding system.
 - 0-1: no reward / 死里逃生:1
 - 3: 人类守卫者
 - 5: 可以锁定两个天赋 (lock 2 talents)
 - 7: 战神
 - 10: 爱的战士
-- **Unresolved (todo #9)**: the per-level XP/gold reward multipliers are NOT in the decompiled `Monster_SetLevel` or `Hero_CaculateBaseAttack` code. They likely live in `Hero.BattleEnd` or `AdventrueManager.AwardBattle` (not yet decompiled). For now, the CW reward system is a black box; the difficulty multiplier IS extracted and can be modeled directly.
+- **Crucially**: `GameManager_GainMoney`, `HeroLevel_AddExp`, and `CaculateGainSoulNum` do **NOT** read `cruelLevel`. The battle reward formulas (`exp = (expBase) * expReward * (level+1)`, `gold = floor((level*0.01+1.0) * goldReward * goldBase)`) are independent of CW. Higher CW = stronger monsters, same rewards.
 
 ---
 
@@ -710,7 +737,7 @@ Data files (JSON):
   relics.json         (51 relics, IMPORT data/RelicSettingJS.json as-is)        ← Wave 2
   equipment.json      (26 items + property pools, IMPORT data/WeaponSettingJS.json as-is)  ← Wave 2
   artifacts.json      (40+ boss-drop items, see artifact_complete.md)
-  monsters.json       (50 monsters, see extracted_game_data.md §4)
+  monsters.json       (58 monsters, base atk/hp/atkInterval/crit from `ghidra_results.md` §11; abilities from extracted_game_data.md §4)
   skills.json         (20 skills, see extracted_game_data.md §5)
   buffs.json          (10 buff types, see extracted_game_data.md §1)
   endings.json        (5 endings + CW levels, see §5)
@@ -736,7 +763,7 @@ Data files (JSON):
    - Equipment property values are now **deterministic from `level*minMul + maxAdd` ± 5%** (see §4.8). Use this instead of hand-tuned affix magnitudes.
    - Equipment rarity rolls use the 5-entry weighted table in §4.8.
 7. **Boss-drop artifacts** (special-effect items, see `artifact_complete.md` — hand-coded combat-tick behaviours)
-8. **Monsters** (50 enemies with abilities, see extracted_game_data.md §4). Monster atk/hp scale with player level per §4.1.
+8. **Monsters** (58 enemies with abilities, see `ghidra_results.md` §11 for full base stat table + extracted_game_data.md §4 for abilities). Monster atk/hp scale with player level per §4.1.
 9. **Skills** (20 skills, 3 levels each, see extracted_game_data.md §5)
 10. **Map** (6 regions, 5 worlds, transition logic)
 11. **Adventure deck** (IMPORT `data/EventCardTypeSettingJS.json` — weighted roll for monster/elite/smith/merchant, see extracted_game_data.md §4b)
@@ -760,10 +787,31 @@ const XP_CURVE_MUL           = 100.0;  // MaxExp = (int)(level^1.25 * 100)
 // Souls
 const SOUL_MUL               = 0.01;   // souls = ... + (level+1) * ((baseSoul + allHeroSoul) * 0.01), cap 20000
 
+// Battle rewards (Wave 6)
+const BATTLE_EXP_BASE        = 5;      // 经验获取基数Addition + 5
+const BATTLE_GOLD_BASE       = 8;      // 金币获取基数Addition + 8
+const BATTLE_GOLD_LV_BONUS   = 0.01;   // gold = floor((level*0.01 + 1.0) * goldReward * goldBase)
+
 // Monster
 const MON_ATK_SPEED          = 0.15;
 const MON_BASE               = 0.9;
 const MON_EXP_BASE           = 1.35;   // attackExp = healthExp = Addition + 1.35
+
+// Damage formula (Wave 6)
+const DMG_DEF_K              = 1.0147; // pow(K, def/-1.3)
+const DMG_DEF_X              = -1.3;
+const DMG_REDUCTION_MUL      = 1.5;    // atk * (1 - 1.5 * reduction)
+const DMG_BLOCK_REDUCTION    = 0.4;    // block: dmg *= (1 - 0.4) = 0.6x
+const DMG_MIN                = 1;
+
+// Talent roll (Wave 6)
+const TALENT_SOUL_BASE       = 70;     // soulCost = rollCount * 70 - 40
+const TALENT_SOUL_OFFSET     = 40;
+const TALENT_SOUL_CAP        = 250;
+// 5-rarity dynamic weights: Common=60-2n, Uncommon=50-n, Rare=40-n/2, Epic=20+n/3, Leg=10+n; n=(lifetime+roll)*4
+
+// EvilCrystal (Wave 6)
+const EVIL_CRYSTAL_MAX       = 100;    // hardcoded MaxValue per level
 
 // Shop
 const SHOP_PRICE_BASE        = 250;    // price = 250 * (Rarity+1) [/4 if relicType==3]
@@ -782,7 +830,7 @@ For the per-talent `Addition` values (the actual numbers from `extracted_game_da
 
 ## 8. Cross-References
 
-- **`ghidra_results.md`** — **Decompiled formulas + `.data` constants from `libil2cpp.so` (Wave 5)**. Source of truth for §4.1, §4.2, §4.6, §4.8, §4.9 in this guide. Read FIRST if you want exact numbers.
+- **`ghidra_results.md`** — **Decompiled formulas + `.data` constants from `libil2cpp.so` (Wave 5 + 6)**. Source of truth for §4.1, §4.2, §4.6, §4.8, §4.9 in this guide. Read FIRST if you want exact numbers.
 - **`save_format.md`** — **Complete save file schema (Wave 5+)**. All 6 per-run save keys + 1 cross-run key, with the field list of every Saver class. Schema extracted via Ghidra decompilation of every `ISaveAndLoad.Save()` method. No rooted device needed.
 - **`extracted_game_data.md`** — All decoded game data (talents, items, monsters, skills, buffs, achievements, equipment, event-deck, Wave 3 counts)
 - **`dump_inventory.md`** — Catalogue of the 11,271 `Dump/*` files; what each bucket gives the rebuild

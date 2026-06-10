@@ -544,6 +544,11 @@ This is the weighted random table that decides what kind of event card you draw 
 | **164/167 BattleEventNodes structured (world + monster slots)** (Wave 3) | ✅ `data/battle_events.json` |
 | **Raw tail bytes for every MonoBehaviour** (Wave 3) | ✅ `data/monobehaviour_blobs.bin` (2.34 MB) |
 | **Built-in asset indexes (Sprite/Texture/Audio/Animation)** (Wave 3) | ✅ `data/*_index.json` |
+| **All 58 monster base stats** (atk/def/hp/interval/crit) (Wave 6) | ✅ `ghidra_results.md` §11 |
+| **Damage formula** (defence mitigation + crit + block) (Wave 6) | ✅ `ghidra_results.md` §13 |
+| **Talent roll rarity weights** (5-tier dynamic, 35 talents) (Wave 6) | ✅ `ghidra_results.md` §14 |
+| **EvilCrystal progression** (MaxValue=100, level+reset) (Wave 6) | ✅ `ghidra_results.md` §15 |
+| **16 condition types for endings/stories** (Wave 6) | ✅ `ghidra_results.md` §12 |
 
 ### 8.1b Wave 3 — confirmed structural counts (UnityPy walk)
 
@@ -604,12 +609,13 @@ This is the weighted random table that decides what kind of event card you draw 
 - 巨大化/狂暴化/虚空化/幻影化 - 终极buff
 
 **Cruel World difficulty** (残酷世界):
-- 0-1: 无奖励
-- 1+: 死里逃生:1
-- 3+: 人类守卫者
-- 5+: 锁定2天赋
-- 7+: 战神
-- 10: 爱的战士
+- 0: CW off (no effect)
+- 1+: 死里逃生:1 (death-escape +1)
+- 3+: 通关残酷世界3奖励 人类守卫者
+- 5+: 通关残酷世界5奖励 可以锁定两个天赋 (lock 2 talents)
+- 7+: 通关残酷世界7奖励 战神
+- 10: 通关残酷世界10奖励 爱的战士
+- **Ghidra Wave 6 finding**: CW has no reward multiplier in the code. The toggle makes heroes stronger (`+cruelLevel` per Power) and monsters stronger (added to the atk/hp multiplier). Battle rewards (gold/exp/soul) are independent of CW — same rewards at any CW level, just harder battles.
 
 **Key NPC names decoded**:
 - 露明娜 (Lumnia) - 慢生活结局
@@ -621,13 +627,14 @@ This is the weighted random table that decides what kind of event card you draw 
 - 卡拉 (Cara) - 堕落精灵女王
 - 奥凯 (Aokai) - 地龙王
 
-**Ending system (5+ endings)**:
-- 慢生活 (Lumnia ending) - 魅力
-- 成为贵族 (Charlotte ending) - ?
-- 重建人类家园 (Rebuild ending) - 家境
-- 真正的勇者 (True ending - no death) - ?
-- 天下无敌 (World's Strongest ending) - ?
-- 如此老套? (Defeat Demon King) - 解锁残酷世界
+**Ending system (5 endings, full trigger conditions extracted via Ghidra Wave 6)**:
+- 慢生活 (Slow Life / Lumnia ending) — type 11 condition: married to Lumnia (魅力:2 side stat)
+- 成为贵族 (Noble / Charlotte ending) — type 11 condition: married to Charlotte
+- 重建人类家园 (Rebuild ending) — type 2 condition: `rebuildHuman` turning point reached (家境:2 side stat)
+- 天下无敌 (Strongest ending) — type 2 condition: `strongest` turning point reached (gated by 击败卡拉多格 / defeated Karadog)
+- 真正的勇者 (True ending - no death) — type 7 condition: `hasDeathEscape == false` (i.e. never used the death-escape)
+- 如此老套? (Defeat Demon King) - 解锁残酷世界 (not a regular ending; it's the meta-condition that unlocks the CW difficulty toggle)
+- 16 condition types total — see `ghidra_results.md` §12. Turning point names come from XNode data (already extracted in `xnode_texts.json`).
 
 **Skill scaling (3 levels each)**:
 - 格挡反击: 20%/23%/26%

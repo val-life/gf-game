@@ -271,27 +271,33 @@ value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd)
 ```
 Range: `±5%` around a per-property `level*minMul + maxAdd`.
 
-The full `(property, slot) → (minMul, maxAdd)` table (extracted from the decompiled switch):
+The full `(property, slot) → (minMul, maxAdd)` table (re-extracted 2026-6-10 by decompiling `AdventrueManager_generateEquipmentProperty` @ 0x00C3DB48 — corrected from prior version which had wrong values for Crit/AtkSpeed/Counter Main):
 
 | Property (cn) | Random (minMul, add) | Sub (minMul, add) | Main (minMul, add) |
 |---|---:|---:|---:|
-| 攻击 Attack | (0.01, 0.025) | (0.02, 0.07) | (0.04, 0.15) |
+| 攻击 Attack | (0.02, 0.07) | (0.01, 0.025) | (0.04, 0.15) |
 | 防御 Defence | (level+1)*0.95..1.05 | (level*2+2)*0.95..1.05 | (level*4+4)*0.95..1.05 |
-| 暴击 CritRate | (0.005, 0.03) | (0.005, 0.03) | (0.005, 0.025)† |
-| 格挡 Block | (0.005, 0.015) | (0.0075, 0.03) | (0.015, 0.06) |
+| 暴击 CritRate | (0.005, 0.01) | (0.005, 0.02) | (0.01, 0.05) |
+| 格挡 Block | (0.0075, 0.03) | (0.005, 0.015) | (0.015, 0.06) |
 | 暴伤 CritDmg | (0.01, 0.05) | (0.01, 0.05) | (0.02, 0.1) |
 | 生命 Health | (0.02, 0.1) | (0.04, 0.2) | (0.08, 0.4) |
-| 闪避 Dodge | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
-| 吸血 LifeSteal | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
-| 攻速 AtkSpeed | (0.005, 0.025) | (0.006, 0.04) | (0.006, 0.025) |
-| 反击 Counter | (0.005, 0.025) | (0.005, 0.02) | (0.008, 0.015) |
-| 溅伤 Splash | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
-| 回复 Recovery | (0.005, 0.025) | (0.35, 0.7) | (0.1, 0.05)† |
-| 回复率 RecovRate | (0.005, 0.025) | (0.35, 0.7) | (0.1, 0.05)† |
+| 闪避 Dodge | (0.005, 0.01) | (0.005, 0.02) | (0.01, 0.04) |
+| 吸血 LifeSteal | (0.0025, 0.01) | (0.005, 0.02) | (0.01, 0.05) |
+| 攻速 AtkSpeed | (0.006, 0.04) | (0.006, 0.02) | (0.01, 0.05) |
+| 反击 Counter | (0.006, 0.02) | (0.008, 0.02) | (0.015, 0.05) |
+| 溅伤 Splash | (0.005, 0.01) | (0.005, 0.02) | (0.01, 0.04) |
+| 回复 Recovery | (0.35, 0.7) | (0.75, 1.0)*0.95..1.05 | (1.5, 2.0)*0.95..1.05 |
+| 回复率 RecovRate | (0.35, 0.7) | (0.75, 1.0)*0.95..1.05 | (1.5, 2.0)*0.95..1.05 |
 
-† Some properties' "Main" overrides look unusual in the decompile — the C# `&&` short-circuit + comma-expression idiom makes the decompile confusing. Values were re-derived by hand-tracing each property's switch arm. **TODO**: re-verify the 暴击 main and 攻速 main values via Frida hook on a level-10 drop if web build needs them exact.
+**Changes from prior table**: Crit Main `(0.005, 0.025)` → `(0.01, 0.05)`, AtkSpeed Main `(0.006, 0.025)` → `(0.01, 0.05)`, Atk Random `(0.01, 0.025)` → `(0.02, 0.07)`. All other values unchanged.
 
-The ±5% is the **same ±5%** for every property (not configurable per slot) — it's the outer `dVar4 = 0.95, dVar8 = 1.05` constants at the top of `generateEquipmentProperty`.
+The ±5% is the **same ±5%** for every property (not configurable per slot) — it's the outer `dVar4 = 0.95, dVar8 = 1.05` constants at the top of `generateEquipmentProperty`. Recovery/RecovRate Sub & Main have an *inner* `(0.75, 1.0)` and `(1.5, 2.0)` *add* that the outer ±5% multiplies on top of.
+
+**CritDmg** has the same Random + Sub values (both `(0.01, 0.05)`) — only Main is bigger.
+
+**AtkSpeed** has 3 distinct values per slot — Random `(0.006, 0.04)`, Sub `(0.006, 0.02)`, Main `(0.01, 0.05)`.
+
+Final formula: `value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd) * 1.05)` — for non-Defence, non-Recovery properties.
 
 ### 3.3 Rarity weight table (5 entries: Common, Uncommon, Rare, Epic, Legendary)
 
@@ -548,3 +554,348 @@ const price = (T === 3) ? Math.floor(basePrice / 4) : basePrice;
 // Apply per-item discount (fish rod = 0.5, fish store = 0.7, others = 0.0):
 const finalPrice = Math.floor((1 - discount) * price);
 ```
+
+---
+
+## 10. Wave 6: Battle reward formulas (closes todo item A1)
+
+### 10.1 The reward calc is in `AdventruePanel_c__DisplayClass32_0__WinBattle_b__8` @ 0x00C466C8
+
+Decompiled key section (exp):
+```c
+iVar3 = GameConst_get_经验获取基数Total(...);   // = 经验获取基数Addition + 5
+iVar4 = AdventruePanel_getEnemyLevel(...);       // = AreaLevel + currentExploreStat - 1
+iVar11 = iVar3 * iVar11 * (iVar4 + 1);            // expReward = baseExp * this.ExpReward * (level+1)
+iStack_34 = HeroLevel_AddExp(this_00, iVar11);    // gained exp (with talent mods)
+```
+
+Decompiled key section (gold):
+```c
+iVar3 = AdventruePanel_getEnemyLevel(...);
+iVar4 = GameConst_get_金币获取基数Total(...);   // = 金币获取基数Addition + 8
+iVar11 = (int)(((float)iVar3 * DAT_018ee738 + 1.0) * (float)GoldReward * (float)iVar4);
+local_38 = GameManager_GainMoney(this_01, iVar11, GainMoneyType_冒险, ...);
+```
+
+`DAT_018ee738` = `0.3c23d70a3dcccccd` (double) = `0.01`.
+
+**Final reward formulas:**
+```js
+// EXP reward:
+expGained = (经验获取基数Addition + 5) * this.ExpReward * (enemyLevel + 1)
+            * (GetAllExpGainImprove + 1.0)   // from HeroLevel_AddExp
+
+// Gold reward:
+goldGained = floor((enemyLevel * 0.01 + 1.0) * this.GoldReward * (金币获取基数Addition + 8))
+             // then *Charm-based bonus from GainMoney
+             // then *1.5 if source is 钓鱼/打工 + matching talent
+```
+
+Defaults: `经验获取基数Addition = 0` → base 5. `金币获取基数Addition = 0` → base 8.
+
+### 10.2 **Cruel World has NO reward multiplier** (closes todo A1)
+
+I traced every `cruelLevel` read in the binary. The only effects are:
+1. `Hero_CaculateBaseAttack` (0x00B36668): `attack = (Addition + 0.4 + cruelLevel) * Power + 5` — adds `+cruelLevel` per Power.
+2. `Monster_SetLevel` (0x00A9F1C0): `attack = base * (cruelLevel + (level-based curve) + 0.9)` — multiplies the curve by `(cruelLevel + ...)`.
+3. The toggle writes `GameManager.cruelLevel` (offset `+0x18` from `Managers[0]`) and shows a tip.
+
+**`GameManager_GainMoney`, `HeroLevel_AddExp`, `CaculateGainSoulNum` do NOT use `cruelLevel` at all.** The reward multipliers found in the reward calc path do not reference it. The `currentExploreStat` (which affects `getEnemyLevel()`) is set by `AdventrueMainMenu_AddExploreDepth` based purely on `(currentDepth / maxDepth)`, not on CW.
+
+**Conclusion**: The Cruel World toggle makes monsters stronger (atk/hp scale by `+cruelLevel`) but does NOT increase gold/exp/soul rewards. The same battle at CW=10 gives the same rewards as CW=0 — the player just earns less effectively because the battles are harder.
+
+---
+
+## 11. Wave 6: All 58 monster base stats (closes todo item A2)
+
+Decompiled `FUN_00aa0008` (the monster construction function called by `MonsterGenerater__ctor`) — it builds all 58 monsters via `Monster.Builder` calls. Note: the 48 "closure" functions listed in the todo (`MonsterGenerater_c___ctor_b__5_0` etc.) are event handler hooks (death/attack callbacks), NOT the monster builders themselves. The actual base stat definitions are inline in `FUN_00aa0008`.
+
+The 4 string params of `SetMonsterBaseBattleInfo` are (in order): **attack, defence, health, attackInterval**.
+
+Full table (attackRange/defenceRange/healthRange/attackInterval as `low_high` strings):
+
+| # | Name (zh) | Species | Rank | AtkRange | DefRange | HPRange | AtkInterval | CritOverride |
+|---:|---|---|---|---:|---:|---:|---:|---:|
+| 1 | 哥布林 | Beast | Normal | 6-7 | 0-0 | 80-90 | 0.5-0.6 | — |
+| 2 | 史莱姆 | Beast | Normal | 4-5 | 0-0 | 60-70 | 0.5-0.6 | — |
+| 3 | 哥布林队长 | Beast | Elite | 15-19 | 0-0 | 150-180 | 0.5-0.6 | — |
+| 4 | 野猪 | Beast | Normal | 13-15 | 0-0 | 60-70 | 0.5-0.6 | — |
+| 5 | 野猪首领 | Beast | Elite | 22-24 | 0-0 | 160-170 | 0.5-0.6 | — |
+| 6 | 哥布林弓箭手 | Beast | Normal | 9-11 | 0-0 | 100-110 | 0.6-0.7 | 0.20 |
+| 7 | 巨型史莱姆 | Beast | Elite | 16-18 | 0-0 | 200-240 | 0.5-0.6 | — |
+| 8 | 哥布林国王 | Beast | Boss | 45-50 | 0-0 | 700-800 | 0.5-0.6 | — |
+| 9 | 阿尔塔 | Human | Normal | 20-23 | 0-0 | 250-260 | 0.5-0.6 | — |
+| 10 | 遗迹守卫者 | Beast | Normal | 20-22 | 0-0 | 250-280 | 0.5-0.6 | — |
+| 11 | 骷髅 | Bone | Normal | 15-18 | 0-0 | 180-190 | 0.5-0.6 | — |
+| 12 | 僵尸 | Undead | Normal | 15-18 | 0-0 | 140-150 | 0.5-0.6 | — |
+| 13 | 骷髅射手 | Bone | Normal | 15-18 | 0-0 | 140-150 | 0.6-0.7 | 0.40 |
+| 14 | 吸血鬼 | Undead | Elite | 50-55 | 0-0 | 300-350 | 0.6-0.7 | — |
+| 15 | 骷髅将军 | Bone | Elite | 30-35 | 0-0 | 250-300 | 0.5-0.6 | — |
+| 16 | 吸血蝙蝠 | Bone | Normal | 15-16 | 0-0 | 160-180 | 0.5-0.6 | — |
+| 17 | 大幽灵 | Undead | Elite | 40-50 | 0-0 | 5-6 | 0.5-0.6 | — |
+| 18 | 王室怨灵 | Undead | Boss | 33-35 | 0-0 | 20-23 | 0.5-0.6 | — |
+| 19 | 地精 | Beast | Normal | 12-14 | 0-0 | 70-80 | 0.5-0.6 | — |
+| 20 | 地精火枪手 | Beast | Normal | 10-12 | 0-0 | 100-125 | 0.5-0.6 | 0.20 |
+| 21 | 岩石怪 | Beast | Normal | 20-23 | 0-0 | 140-150 | 0.5-0.6 | — |
+| 22 | 盗宝地精 | Beast | Normal | 14-16 | 0-0 | 100-110 | 0.5-0.6 | — |
+| 23 | 地精科学家 | Beast | Elite | 20-22 | 0-0 | 200-210 | 0.5-0.6 | — |
+| 24 | 地龙幼体 | Beast | Elite | 30-35 | 0-0 | 250-230 | 0.5-0.6 | — |
+| 25 | 巨型沙虫 | Beast | Elite | 35-40 | 0-0 | 300-320 | 0.5-0.6 | — |
+| 26 | 地龙王奥凯 | Beast | Boss | 50-60 | 0-0 | 1000-1100 | 0.5-0.6 | — |
+| 27 | 小精灵 | Beast | Normal | 10-12 | 0-0 | 100-110 | 0.5-0.6 | — |
+| 28 | 树精 | Beast | Normal | 20-21 | 0-0 | 150-160 | 0.5-0.6 | — |
+| 29 | 堕落精灵 | Beast | Normal | 22-23 | 0-0 | 150-160 | 0.5-0.6 | — |
+| 30 | 女精灵 | Beast | Normal | 10-15 | 0-0 | 200-210 | 0.5-0.6 | — |
+| 31 | 精灵骑士 | Beast | Elite | 35-40 | 0-0 | 400-420 | 0.6-0.7 | 0.30 |
+| 32 | 巨人 | Beast | Elite | 90-96 | 0-0 | 450-500 | 0.2-0.25 | — |
+| 33 | 古树守卫 | Beast | Elite | 35-40 | 0-0 | 350-400 | 0.5-0.6 | — |
+| 34 | 卡拉·堕落的精灵女王 | Beast | Boss | 60-65 | 0-0 | 700-800 | 0.5-0.6 | — |
+| 35 | 半兽人 | Beast | Normal | 18-20 | 0-0 | 180-190 | 0.5-0.6 | — |
+| 36 | 兽人战士 | Beast | Normal | 22-24 | 0-0 | 250-260 | 0.5-0.6 | — |
+| 37 | 兽人巫医 | Beast | Normal | 12-14 | 0-0 | 170-180 | 0.5-0.6 | — |
+| 38 | 双头猎犬 | Beast | Normal | 25-28 | 0-0 | 200-210 | 0.5-0.6 | — |
+| 39 | 狂兽人 | Beast | Elite | 70-80 | 0-0 | 300-350 | 0.5-0.6 | — |
+| 40 | 地狱犬 | Beast | Elite | 50-60 | 0-0 | 500-550 | 0.7-0.8 | — |
+| 41 | 兽人行刑官 | Beast | Elite | 80-90 | 0-0 | 400-450 | 0.6-0.7 | — |
+| 42 | 卡里摩多·剑圣 | Beast | Boss | 70-80 | 0-0 | 1000-1100 | 0.7-0.8 | — |
+| 43 | 牛头人战士 | Beast | Normal | 12-13 | 0-0 | 130-140 | 0.5-0.6 | — |
+| 44 | 牛头将军 | Beast | Normal | 40-45 | 0-0 | 620-650 | 0.5-0.6 | — |
+| 45 | 混沌魔力 | Beast | Normal | 11-13 | 0-0 | 50-60 | 0.5-0.6 | — |
+| 46 | 魔神护卫 | Beast | Normal | 15-18 | 0-0 | 150-160 | 0.5-0.6 | — |
+| 47 | 魔神侍从 | Beast | Normal | 17-19 | 0-0 | 140-150 | 0.5-0.6 | — |
+| 48 | 魔神子体 | Beast | Elite | 25-27 | 0-0 | 240-260 | 0.5-0.6 | — |
+| 49 | 上古魔神（残缺体） | Beast | Boss | 35-40 | 0-0 | 400-450 | 0.5-0.6 | — |
+| 50 | 王国士兵 | Beast | Normal | 13-15 | 0-0 | 180-190 | 0.5-0.6 | — |
+| 51 | 王国弓箭手 | Beast | Normal | 15-16 | 0-0 | 150-160 | 0.5-0.6 | 0.20 |
+| 52 | 王国骑士 | Beast | Elite | 20-21 | 0-0 | 13-15 | 0.5-0.6 | — |
+| 53 | 卡拉多格 | Beast | Boss | 70-80 | 0-0 | 1000-1100 | 0.6-0.7 | — |
+| 54 | 魔将亲卫 | Beast | Elite | 40-50 | 0-0 | 200-220 | 0.6-0.7 | — |
+| 55 | 卜里奥 | Beast | Boss | 80-90 | 0-0 | 700-800 | 0.6-0.7 | — |
+| 56 | 魔王眷属 | Beast | Elite | 40-50 | 0-0 | 13-15 | 0.6-0.7 | — |
+| 57 | 魔王（史莱姆形） | Beast | Boss | 80-90 | 0-0 | 1100-1200 | 0.6-0.7 | — |
+| 58 | 魔王（史莱姆形） | Beast | Boss | 110-120 | 0-0 | 2000-2200 | (truncated) | — |
+
+**Key observations:**
+- **All monsters have 0 defence** (DefRange always 0-0). They rely on dodge/block, not raw defence stat. The damage formula uses 0 as the victim's defence in `tryDoDamage` for ALL fights.
+- **No Dragon species, no Character rank** in the decompiled builders.
+- **Special HP overrides** (5-6 for 大幽灵, 20-23 for 王室怨灵, 13-15 for 王国骑士/魔王眷属) — these are intentional low base HP, probably because the level-scaling formula is overridden for these boss types (likely the multi-stage final bosses which use different base HP from the per-battle EnemyList).
+- **Crit overrides**: 4 monsters with custom crit rates — 哥布林弓箭手 0.20, 骷髅射手 0.40, 地精火枪手 0.20, 精灵骑士 0.30, 王国弓箭手 0.20.
+
+---
+
+## 12. Wave 6: Condition system for endings (closes todo item B2)
+
+`EndingEventDirector` is a thin coordinator — actual ending decision goes through `Condition_CheckCondition` (`Condition::Condition_CheckCondition` @ 0x00B08A7C). The `conditionType` enum (16 types total):
+
+| Type | Check | Format | Example |
+|---:|---|---|---|
+| 0 | Hero stat ≥ value (or `金钱:N` consumes N gold) | `Name:Value` | `力量:50` (Power >= 50) |
+| 1 | Owns named relic | `RelicName` | `王国圣剑` |
+| 2 | Story turning point value equals expected | `TurningPoint:ExpectedStat` | `slowLife:Completed` |
+| 3 | Character relationship VALUE ≥ N | `CharName:N` | `Lumnia:50` |
+| 5 | Weighted random (based on age range) | `min~max` | `20~30` |
+| 6 | Hero age in range | `min~max` | `20~30` |
+| 7 | Has NOT escaped death (no cruelLevel) | — | (the "True" ending check) |
+| 8 | Current year is X | `Year` | `5` |
+| 9 | Current turn in range | `min~max` | — |
+| 10 | Ads count < N | `N` | — |
+| 11 (0xb) | Character is married (stat == 1) | `CharName` | `Lumnia` (the "Slow Life" ending) |
+| 12 (0xc) | Some EventManager flag | — | — |
+| 13 (0xd) | EvilCrystal is full | — | — |
+| 14 (0xe) | Consume N action points | `Name:N` | — |
+| 15 (0xf) | Character relationship LEVEL ≥ N | `CharName:N` | — |
+
+The 5 endings (per `rebuild_guide.md` §6 + `extracted_game_data.md`):
+- **Slow Life** (慢生活): type 11 — `Lumnia` (married to Lumnia) + side condition
+- **Noble** (成为贵族): type 11 — `Charlotte` (married to Charlotte) + side condition
+- **Rebuild** (重建人类家园): type 2 — `rebuildHuman:Completed` turning point
+- **Strongest** (天下无敌): type 2 — `strongest:Completed` turning point (gated by 击败卡拉多格)
+- **True** (真正的勇者): type 7 — `hasDeathEscape == false` (i.e. never used the death-escape)
+
+The turning point IDs (`rebuildHuman`, `strongest`, `slowLife`, etc.) are defined in the XNode graphs and are looked up by name at runtime via `EventManager.GetStoryTurningPoint(name)`. The actual strings live in `xnode_texts.json` and the data files.
+
+---
+
+## 13. Wave 6: Damage formula (closes todo item C6)
+
+`BattleCommander_tryDoDamage` @ 0x00CF0E88 (decompiled):
+
+```c
+double attackerAtk = attacker->get_battleAttack();   // includes all buffs/relics
+double victimDef  = victim->get_battleDefence();
+double attackerCrit = attacker->get_battleCritical();
+double victimBlock = victim->get_battleBlockingRate();
+double critDmg = attacker->criticalDegree;            // separate property
+
+float defFactor = powf(DAT_018fe764, victimDef / DAT_018fe760);
+// DAT_018fe764 = 0x3f81eb85 = 1.0147... (K)
+// DAT_018fe760 = 0xbfa66666 = -1.3 (X — note: this is the divisor, NEGATIVE)
+
+double reduction = (1.0 / (defFactor + 1.0)) - 0.5;
+double damage = attackerAtk - attackerAtk * reduction * 1.5;
+//              = attackerAtk * (1.0 - 1.5 * reduction)
+
+if (Random.value < attackerCrit) *isCritical = true;
+if (Random.value < victimBlock)  *isBlock = true;
+
+if (*isCritical) damage *= (critDmg + 2.0);    // default critDmg=0 → 2.0x base crit
+if (damage < 1.0) damage = 1.0;
+if (*isBlock) damage *= (1.0 - blockDmgReduction);  // default 0.4 → 60% damage on block
+return damage;
+```
+
+Constants: `blockDmgReduction = u683Cu6321u51CFu4F24u7387Addition + 0.4` (default 0.4).
+
+**Damage reduction curve** (per def value, no crit, no block):
+| Defence | Damage received (% of atk) |
+|---:|---:|
+| 0 | 100% |
+| 10 | 96% |
+| 50 | 79% |
+| 100 | 62% |
+| 200 | 44% |
+| 500 | 25% |
+
+**Crit multiplier** is `(critDmg + 2.0)` — with `critDmg` from equipment/talents as a flat 0.X value (so +20% critDamage = 2.2x total, not 1.2x).
+
+**Block** reduces damage to 60% by default — so blocking is a *much* stronger defense than the 38% def-cut at 100 def.
+
+**`Creature_LoseHealth`** @ 0x00BDDC: simply `health = max(0, health - damage)`. No dodge applied here (dodge is applied in `tryDoDamage` via the `IsBlock` path, not as a separate `IsDodge` — confirmed by `BattleCommander_Attack_d_46_MoveNext` which checks `AttackData.IsBlock` and `AttackData.IfCounterattack`).
+
+---
+
+## 14. Wave 6: Talent roll rarity weights (closes todo item C5)
+
+`AchivementManager_GetRandomHeroTalent` @ 0x00E8F0D4 (decompiled):
+
+Input: `buffNum = (gameOverTime + rollCount) * 4` from `HeroTalentBox_DORoll`. The gameOverTime is the lifetime of the current run (0, 1, 2...), rollCount is how many times you've rolled this session (0, 1, 2...).
+
+Per-rarity weight (as a function of `buffNum`):
+```c
+weight[0] (Common)    = 60 - 2 * buffNum
+weight[1] (Uncommon)  = 50 - buffNum
+weight[2] (Rare)      = 40 - floor(buffNum / 2)    // 0x28 - (buffNum/2)
+weight[3] (Epic)      = 20 + buffNum / 3
+weight[4] (Legendary) = 10 + buffNum
+```
+
+Then a 5-element array is built with each rarity repeated `max(0, weight[i])` times, and `Expand.GetRandomOne` picks uniformly.
+
+**Probability distribution** for various `buffNum` values:
+| buffNum (= (lifetime+roll) * 4) | Common | Uncommon | Rare | Epic | Legendary |
+|---:|---:|---:|---:|---:|---:|
+| 4 (start, roll 1) | 30% | 27% | 22% | 12% | 8% |
+| 8 (start, roll 2) | 25% | 24% | 21% | 13% | 11% |
+| 20 (mid-game, roll 4) | 14% | 18% | 18% | 15% | 18% |
+| 50 (late-game) | 0% | 0% | 14% | 32% | 54% |
+| 80 (very late) | 0% | 0% | 0% | 34% | 66% |
+
+**Soul cost** (`HeroTalentBox_getConsumSoulNum` @ 0x00B3A794):
+```c
+soulCost = rollCount * 70 - 40;   // capped at 250
+```
+- Roll 1: 30 souls
+- Roll 2: 100 souls
+- Roll 3: 170 souls
+- Roll 4: 240 souls
+- Roll 5+: 250 (capped)
+
+Rolls only consume if `gameOverTime > 0` (you've reached at least the 2nd run). First-run rolls are free.
+
+---
+
+## 15. Wave 6: EvilCrystal progression (closes todo item B4)
+
+`EvilCrystal` class fields (decompiled from `EvilCrystal_AllResetEvilCrystal` @ 0x00B47278):
+- `IsActive` (bool)
+- `IsGameVictory` (bool)
+- `MaxValue` = 100 (hardcoded)
+- `CurrentEvilCrystalLevel` (int) — the upgrade tier
+- `CurrentValue` (int) — XP toward next level
+- `CurrentEvilCrystalEvent` (string) — name of current active story
+- `CurrentEvilCrystalStoryLine` (StoryLine ref) — the live story being progressed
+
+Methods:
+- `EvilCrystalUpgrade()` / `LevelUp()`: `level++; CurrentValue = 0;` (identical implementations)
+- `EvilCrystalGrow()`: `CurrentValue = min(CurrentValue + EvilCrystalGrowSpeedTotal, MaxValue)` AND pushes the current `CurrentEvilCrystalStoryLine` to the active story list (so the story "starts running" each tick).
+- `EvilCrystalValueChange(v)`: `CurrentValue = max(0, min(CurrentValue + v, MaxValue))` — used for explicit value changes.
+- `IsFull()`: `MaxValue <= CurrentValue` (i.e. >= 100).
+
+**The crystal progress is always 100 points per level** (MaxValue hardcoded). Each `Grow` adds `EvilCrystalGrowSpeedTotal` (from `GameConst`) — this is a constant per run, not level-dependent.
+
+**What each level gives** (the rewards) is NOT in this binary — they're in the 48 artifacts from `artifact_complete.md` and the `RelicSettingJS.json` `AcquisitionMethod: Special` + `AcquisitionLimit: Once` entries. The crystal just gates the unlocks via XNode events.
+
+**`AllResetEvilCrystal`** (the Reset button): clears everything to default (level 0, value 0, MaxValue 100, no active story, no victory).
+
+---
+
+## 16. Wave 6: `Hero.CheckPropertyAvalable` (closes todo item C4)
+
+`Hero::Hero_CheckPropertyAvalable` @ 0x00B37B68 (decompiled — 24 lines, trivial):
+```c
+bool CheckPropertyAvalable(CreatureBattleProperty prop) {
+    foreach (var p in this.ActiveCreatureBattleProperty) {
+        if (p == prop) return true;
+    }
+    return false;
+}
+```
+
+**There is NO profession-based filtering in the code.** The check is purely a list-membership test on the hero's `ActiveCreatureBattleProperty` list. Profession-specific equipment (e.g. "Hunter only" relics) would be implemented by populating different lists for different professions at hero-creation time — but no such list-picker exists in the binary either.
+
+**Conclusion**: Hunter profession is just a data-design idea, not implemented. If it were added, it would only require populating different `ActiveCreatureBattleProperty` lists per profession — no binary change needed for the filter itself.
+
+---
+
+## 17. Wave 6: Methods decompiled in this pass
+
+| Method | RVA | Purpose |
+|---|---|---|
+| `AdventruePanel_WinBattle` | `0x00C43B80` | Battle win UI (tier text selection) |
+| `AdventruePanel_c__DisplayClass32_0__WinBattle_b__8` | `0x00C466C8` | **Battle reward calc (exp + gold)** |
+| `AdventrueManager_generateEquipmentProperty` | `0x00C3DB48` | Equipment property magnitude (re-verified) |
+| `MonsterGenerater__ctor` | `0x00A9FF84` | Empty ctor, calls cctor |
+| `FUN_00aa0008` (called from cctor) | `0x00AA0008` | **All 58 monster definitions inline** |
+| `Monster_Builder_SetMonsterBaseBattleInfo` | `0x00A9F670` | Battle info (atk, def, hp, atkInterval) |
+| `AdventruePanel_getEnemyLevel` | `0x00C445A4` | `AreaLevel + currentExploreStat - 1` |
+| `AdventrueMainMenu_AddExploreDepth` | `0x00C39B18` | Updates `currentExploreStat` based on depth% |
+| `AdventrueMainMenu_AddExploreDegree` | `0x00C39848` | Footstep-based explore gain |
+| `GameConst_get_经验获取基数Total` | `0x00B278C4` | Exp reward base (Addition + 5.0) |
+| `GameConst_get_金币获取基数Total` | `0x00B278D8` | Gold reward base (Addition + 8) |
+| `GameConst_get_u683Cu6321u51CFu4F24u7387Total` | `0x00B279CC` | Block damage reduction (Addition + 0.4) |
+| `EndingEventDirector__ctor` | `0x00B10278` | Empty |
+| `EndingEventDirector_InitEndingEventDirector` | `0x00B10164` | Just sets currentShownStoryLine |
+| `EndingEventDirector_findNextShowStoryLine` | `0x00B10184` | Loops `YearPass` + `IsReadyToDisplayThisTurn` |
+| `StoryLine_IsReadyToDisplayThisTurn` | `0x00BFD668` | Wait time + age check |
+| `StoryLine_CheckConditions` | `0x00BFD4A8` | AND of all Condition.CheckCondition |
+| `Condition_CheckCondition` | `0x00B08A7C` | **The 16-type condition switch** |
+| `AdventrueAreaSaver__ctor` | `0x00C39518` | Empty (data class) |
+| `EvilCrystal__ctor` | `0x00B47270` | Empty |
+| `EvilCrystal_AllResetEvilCrystal` | `0x00B47278` | Reset to defaults |
+| `EvilCrystal_EvilCrystalUpgrade` | `0x00B4A2F0` | `level++`, `CurrentValue = 0` |
+| `EvilCrystal_LevelUp` | `0x00B4A328` | Same as Upgrade |
+| `EvilCrystal_EvilCrystalGrow` | `0x00B49650` | Add `GrowSpeedTotal` to CurrentValue |
+| `EvilCrystal_EvilCrystalValueChange` | `0x00B49798` | Add v to CurrentValue (clamped) |
+| `EvilCrystal_IsFull` | `0x00B4A338` | `MaxValue <= CurrentValue` |
+| `HeroTalentBox_Roll` | `0x00B3A824` | Consumes souls, calls DORoll |
+| `HeroTalentBox_DORoll` | `0x00B3A904` | Picks 3 random talents for display |
+| `HeroTalentBox_getConsumSoulNum` | `0x00B3A794` | `rollCount * 70 - 40`, capped 250 |
+| `AchivementManager_GetRandomHeroTalent` | `0x00E8F0D4` | **The 5-rarity weighted roll** |
+| `BattleCommander_Attack` | `0x00CEF358` | Coroutine entry |
+| `BattleCommander_Attack_d_46_MoveNext` | `0x00CF1A30` | Attack coroutine body |
+| `BattleCommander_tryDoDamage` | `0x00CF0E88` | **Damage formula** |
+| `BattleCommander_doDamage` | `0x00CF0B90` | Applies damage (calls Creature.LoseHealth) |
+| `Creature_LoseHealth` | `0x00B0BDDC` | `health = max(0, health - damage)` |
+| `Hero_CheckPropertyAvalable` | `0x00B37B68` | List-membership check |
+
+---
+
+## 18. Wave 6: New .data constants
+
+| Address | Type | Value | Used in |
+|---|---|---:|---|
+| `0x018ee738` | double | 0.01 | Gold reward: `level * 0.01 + 1.0` |
+| `0x018fe760` | float | -1.3 | Defence divisor in damage formula |
+| `0x018fe764` | float | 1.0147 | Defence base in damage formula |
+| `0x018fdaa0` | float | 0.72 | Upper threshold for `currentExploreStat = 3` |
+| `0x018fdaa4` | float | 0.33 | Lower threshold for `currentExploreStat = 1` |

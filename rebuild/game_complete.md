@@ -181,9 +181,9 @@
 
 - **All properties** (except Defence): `value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd) * 1.05)`
 - **Defence (special)**: `value = Random.Range(base * 0.95, base * 1.05)` where `base = level*4+4` (main) / `level*2+2` (sub) / `level+1` (random)
-- **Per-(property, slot) minMul + maxAdd** is the per-property table; full version in `ghidra_results.md`. Examples:
-  - 攻击 Attack Random: `(0.01, 0.025)` → at lvl 1 ≈ 0.019-0.024; at lvl 20 ≈ 0.19-0.22
-  - 攻击 Attack Sub: `(0.02, 0.07)` → at lvl 1 ≈ 0.087-0.097; at lvl 20 ≈ 0.46-0.51
+- **Per-(property, slot) minMul + maxAdd** is the per-property table; full version in `ghidra_results.md`. Examples (Wave 6 re-verified):
+  - 攻击 Attack Random: `(0.02, 0.07)` → at lvl 1 ≈ 0.085-0.094; at lvl 20 ≈ 0.45-0.50
+  - 攻击 Attack Sub: `(0.01, 0.025)` → at lvl 1 ≈ 0.034-0.037; at lvl 20 ≈ 0.22-0.24
   - 攻击 Attack Main: `(0.04, 0.15)` → at lvl 1 ≈ 0.18-0.20; at lvl 20 ≈ 0.95-1.05
   - 生命 Health Main: `(0.08, 0.4)` → at lvl 1 ≈ 0.46-0.50; at lvl 20 ≈ 1.94-2.15
   - 防御 Defence: absolute (level*4+4) etc., see formula above
