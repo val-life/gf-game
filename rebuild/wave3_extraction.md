@@ -7,6 +7,13 @@
 > field data — IL2CPP builds strip TypeTrees. UnityPy lets us walk the same file,
 > reconstruct what UnityPy's bundled TPK definitions can read, and dump every
 > MonoBehaviour body as raw bytes for pattern-parsing.
+>
+> **Wave 4 (2026-6-10)** upgraded this with Il2CppInspector dummy DLLs so the same AssetStudio
+> pipeline could read TypeTree fields directly — see `extraction_wave4.md`.
+>
+> **Wave 5 (2026-6-10)** went further with Ghidra decompilation of `libil2cpp.so` itself
+> (the IL2CPP symbols are preserved on the ARM64 build, so method bodies were decompiled).
+> See `ghidra_results.md` for the recovered formulas.
 
 ---
 

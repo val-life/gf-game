@@ -2,6 +2,17 @@
 
 ## Game: 异世轮回录 (Unity 2019.4.17f1c1 / il2cpp v264 / AArch64)
 
+> **Wave 5 update (2026-6-10)**: The "EQUIPMENT Random Generation" section below had placeholders
+> (e.g. `rar*(-25)+85-luck`) that didn't match the actual code. The real per-(property, slot)
+> magnitude table and rarity weight formula are now extracted via Ghidra decompilation — see
+> `rebuild_guide.md` §4.8 and `ghidra_results.md` §3. The summary below is updated to point at
+> those.
+>
+> The symbols ARE preserved on the ARM64 `libil2cpp.so`, so the
+> `AdventrueManager_generateEquipment @ 0x00C3CDC0` body was readable in Ghidra. See
+> `ghidra_results.md` for the decompiled C and the full per-(property, slot) minMul/maxAdd
+> table.
+
 ---
 
 # ENUMS (14 found)
@@ -163,14 +174,26 @@
 ## Types: 武器 / 护甲 / 头盔 / 饰品 (all 4)
 ## Rarities: 普通 → 神话 (5 levels)
 
-## Stat formula
-- **MainProperty** = `Random.Range(level*minMul + minAdd, level*maxMul + maxAdd)`
-- **SubProperty** = smaller range (e.g. `level*2+2` for DEF, `level+1` for sub DEF)
-- **RandomProperty** = fixed low values
-- **Rarity weights**: `rar*(-25)+85 - luck` to `rar*4 + luck/3 + 28` (cascading tiers)
-- **DEF**: main `level*4+4`, sub `level*2+2`
-- **ATK**: main `rar*(-25)+85-luck`, sub lower tier
-- **回复/回复率**: main `1.5~2.0`, sub `0.75~1.0`
+## Stat formula (Wave 5: extracted via Ghidra)
+
+> **The full 13-property × 3-slot table is in `rebuild_guide.md` §4.8 and `ghidra_results.md` §3.2.**
+> The placeholders below have been replaced.
+
+- **All properties** (except Defence): `value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd) * 1.05)`
+- **Defence (special)**: `value = Random.Range(base * 0.95, base * 1.05)` where `base = level*4+4` (main) / `level*2+2` (sub) / `level+1` (random)
+- **Per-(property, slot) minMul + maxAdd** is the per-property table; full version in `ghidra_results.md`. Examples:
+  - 攻击 Attack Random: `(0.01, 0.025)` → at lvl 1 ≈ 0.019-0.024; at lvl 20 ≈ 0.19-0.22
+  - 攻击 Attack Sub: `(0.02, 0.07)` → at lvl 1 ≈ 0.087-0.097; at lvl 20 ≈ 0.46-0.51
+  - 攻击 Attack Main: `(0.04, 0.15)` → at lvl 1 ≈ 0.18-0.20; at lvl 20 ≈ 0.95-1.05
+  - 生命 Health Main: `(0.08, 0.4)` → at lvl 1 ≈ 0.46-0.50; at lvl 20 ≈ 1.94-2.15
+  - 防御 Defence: absolute (level*4+4) etc., see formula above
+- **Rarity weights** (sum of 5, weighted by input `rarityLevel`):
+  - `[0] Common    = max(0, 85 - 25*rarityLevel - worldDifficulty)`
+  - `[1] Uncommon  = max(0, 28 + 4*rarityLevel + worldDifficulty/6)`
+  - `[2] Rare      = max(0, 15 + 6*rarityLevel)`
+  - `[3] Epic      = max(0, 5  + 8*rarityLevel)`
+  - `[4] Legendary = max(0, 7*rarityLevel)`
+- **Level bump**: 20% chance to bump effective `level` by 1 (via `RandomTool_CheckRandom(0.2)`) before computing property values — makes some drops "feel stronger than their level"
 
 ---
 

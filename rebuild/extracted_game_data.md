@@ -661,20 +661,36 @@ This is the weighted random table that decides what kind of event card you draw 
 
 ## 9. Method Extraction Notes
 
-### 9.1 RVAs confirmed but bodies are IL2CPP invoker stubs
+### 9.1 RVAs — the IL2CPP invoker stub assumption was wrong for this build
 
-The RVAs in `il2cpp.cs` (e.g. `0x00B36668` for `CaculateBaseAttack`) point to small invoker
-stubs in `libil2cpp.so`, not the actual implementation. The code there calls into the shared
-`Runtime::InvokeMethod` dispatcher. Disassembling those addresses reveals `List<T>`-like
-wrapper code shared across all the Caculate* methods, plus `udf #0x0` padding (IL2CPP inline
-metadata slots).
-
-**Implication**: The actual Caculate* formulas are **runtime-dispatched via metadata**, not
-encoded as native constants. To recover the exact multiplier values (e.g. `lvl * 1.2`),
-options are:
-1. **Frida hook** at runtime - hook `CaculateBaseAttack` with args/return
-2. **AssetStudio dump** of the TypeTree to read static field defaults
-3. **Reimplement by behavior** from talent effect values (most are already in this file)
+> **Wave 5 update (2026-6-10)**: This assumption turned out to be **false** for this ARM64
+> build. The original worry was that the RVAs in `il2cpp.cs` (e.g. `0x00B36668` for
+> `CaculateBaseAttack`) point to small invoker stubs that just call into the shared
+> `Runtime::InvokeMethod` dispatcher — i.e. the C# method body is runtime-dispatched via
+> metadata, not encoded as native code.
+>
+> **In fact, the symbols ARE preserved on this `libil2cpp.so`**: the method names appear as
+> `Hero_CaculateBaseAttack`, `HeroLevel_CaculateNewMaxExp`, `AdventrueManager_generateEquipment`
+> etc. in the symbol table, and the decompiled bodies contain the real formulas. Ghidra
+> decompilation recovered:
+> - Hero attack: `attack = (每点力量攻击力Addition + 0.4 + cruelLevel) * Power + 5`
+> - Hero defence: `defence = (每点体质防御力Addition + 0.5) * Constitution`
+> - XP curve: `MaxExp = (int)(level^1.25 * 100)`
+> - Soul gain: `souls = (reincTime*10 + 200) + (level+1) * ((baseSoul + allHeroSoul) * 0.01)`, cap 20000
+> - Monster scaling: `atk = base * (CW + (pow(L, exp) * 0.15 * (L+1)) / 10 + 0.9)`
+> - Equipment property: per-(prop, slot) `level*minMul + maxAdd` table with ±5% variance
+> - Shop price: `(250 + Addition) * (Rarity+1)`, with 4-condition relicType discount
+>
+> See `ghidra_results.md` for the full extraction (24 KB of formulas + `.data` constants).
+> The `todo.md` items #1, #4, #5, #6, #7, #8 are now RESOLVED.
+>
+> **For the 7 `CaculateBase*` methods that weren't fully traced** (maxHealth, dodge,
+> attackSpeed, blockRate, criticalRate, expGain, relationshipGain), the pattern is the
+> same as attack/defence: `(Addition + const) * stat + floor`. The `.data` constants
+> (`DAT_018ee9c0` etc.) are all in `ghidra_results.md` §6; pulling them in is the next pass.
+>
+> For the more complex methods (CaculateBase*Buff, etc.) Frida hook is still the
+> fallback if Ghidra misses anything.
 
 ### 9.2 String table extraction is the gold mine
 

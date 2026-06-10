@@ -15,6 +15,15 @@
 |---|---|
 | **Hero ATK base** | `attack = (GameConst.每点力量攻击力Addition + 0.4 + cruelLevel) * Power + 5` |
 | **Hero DEF base** | `defence = (GameConst.每点体质防御力Addition + 0.5) * Constitution` |
+| **Hero maxHP base** | `maxHP = (GameConst.每点体质生命值Addition + 6.0) * Constitution` |
+| **Hero critRate base** | `critRate = (GameConst.每点灵巧暴击率Addition + 0.002) * Agile` |
+| **Hero dodge base** | `dodge = (GameConst.每点灵巧闪避率Addition + 0.0) * Agile` |
+| **Hero attackSpeed base** | `atkSpeed = (GameConst.每点敏捷攻击速度提升Addition + 0.003) * Agile` |
+| **Hero blockRate base** | `blockRate = (GameConst.每点灵巧格挡率Addition + 0.003) * Agile` |
+| **Hero expGain base** | `expGain = (GameConst.每点智力经验值提升Addition + 0.035) * Wisdom` |
+| **Hero relationshipGain base** | `relGain = (GameConst.每点魅力好感度获取提升Addition + 0.02) * Charm` |
+| **Money gain (per source)** | `final = (int)(((每点魅力金币获取提升Addition + 0.005) * Charm + 1.0) * value)` (×1.5 if source is 钓鱼/打工 + talent) |
+| **XP gain (per source)** | `gainedExp = (int)((GetAllExpGainImprove + 1.0) * exp)` |
 | **XP curve** | `MaxExp = (int)(level^1.25 * 100)` |
 | **Soul gain** | `souls = (reincTime*10 + 200) + (level+1) * ((baseSoul + totalHeroSoul) * 0.01)`, capped at 20000 |
 | **Monster ATK** | `atk = base * (cruelLevel + (pow(level, atkExp) * 0.15 * (level+1)) / 10 + 0.9)` |
@@ -131,6 +140,62 @@ souls = min(souls, 20000)
 - `allHeroSoul`: accumulated soul from hero aero skills.
 - `baseSoul`: pulled from the manager's internal cache (offset 0xe0 in the manager struct). This is the base soul per level for the current reincarnation.
 - Hard cap: **20,000 souls/run**.
+
+### 1.5 `GameManager_GainMoney` (RVA `0x00B29F34`) — bonus from rewards
+
+```c
+int GameManager_GainMoney(GameManager *this, int value, GainMoneyType type, MethodInfo *method) {
+    GameConst *gc = this->gameConst;
+    Hero *h = this->hero;
+    int iVar4 = (int)(((gc->每点魅力金币获取提升Addition + DAT_018fc900) * (double)h->Charm + 1.0) * (double)value);
+    // Fishing / mining talent gives 1.5x multiplier if hero has the matching talent
+    if ((type == GainMoneyType_Fishing || type == GainMoneyType_Mining) &&
+        Hero_CheckHasTalents(h, matchingTalentName)) {
+        iVar4 = (int)((float)iVar4 * 1.5);
+    }
+    h->Money += iVar4;
+    this->TotalMoneyGain += iVar4;
+    return iVar4;
+}
+```
+
+Formula:
+```
+finalMoney = (int)(((每点魅力金币获取提升Addition + 0.005) * Charm + 1.0) * value)
+if (source is 钓鱼 (fishing) or 打工 (mining) AND has matching talent): finalMoney *= 1.5
+```
+
+Notes:
+- `DAT_018fc900 = 0.005` (so the bonus is `0.5% per Charm` even at base)
+- Default Charm=10 → multiplier is `(0 + 0.005) * 10 + 1.0 = 1.05x` (5% bonus at default)
+- Charm=20 with +20% talent (Addition=0.2) → `(0.2 + 0.005) * 20 + 1.0 = 5.1x` (5.1x bonus at high charm)
+- **NOT a multiplier of `value` from `Hero.familyWealth`** despite the field being on Hero — familyWealth is unused in this formula (it was named "GainMoneyNoFamalyWealth" — the spelling bug is a hint that the original author meant the OTHER one without familyWealth, but the data shows the default `GainMoney` actually does use Charm).
+
+### 1.6 `HeroLevel_AddExp` (RVA `0x00B39E00`) — XP reward formula
+
+```c
+int HeroLevel_AddExp(HeroLevel *this, int exp, MethodInfo *method) {
+    Hero *h = GameManager.hero;
+    double expGainImprove = Hero_GetAllExpGainImprove(h);   // sum of all exp gain talents/relics/equip
+    int iVar2 = (int)((expGainImprove + 1.0) * (double)exp);
+    this->CurrentExp += iVar2;
+    if (this->CurrentLevel > oldLevel) {
+        UIManager_ShowPanel(UpgradePanel, ...);
+    }
+    return iVar2;
+}
+```
+
+Formula:
+```
+gainedExp = (int)((GetAllExpGainImprove + 1.0) * exp)
+```
+
+Notes:
+- `GetAllExpGainImprove()` returns the sum of all exp-gain bonuses (talent `+10%` adds `0.1` to it).
+- Default: gained = 1.0 * exp
+- With +20% talent: gained = 1.2 * exp
+- Hard cap not visible here (AddExp can level up, which then triggers `CaculateNewMaxExp` for next level's cap).
 
 ---
 

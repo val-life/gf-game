@@ -1,21 +1,30 @@
 ﻿# 异世轮回录 (Otherworld Samsara Record) — Web Rebuild Guide
 
-> **Source**: Unity 2019.4.17 + IL2CPP (`libil2cpp.so` + `global-metadata.dat`) + AssetStudio dump of `data.unity3d` (Wave 2, 2026-6-9) + UnityPy programmatic walk (Wave 3, 2026-6-9)
+> **Source**: Unity 2019.4.17 + IL2CPP (`libil2cpp.so` ARM64 + `global-metadata.dat`) + AssetStudio dump of `data.unity3d` (Wave 2, 2026-6-9) + UnityPy programmatic walk (Wave 3, 2026-6-9) + AssetStudio TypeTree dump via Il2CppInspector dummy DLLs (Wave 4, 2026-6-10) + **Ghidra decompilation of `libil2cpp.so` (Wave 5, 2026-6-10)**
+>
 > **Purpose**: Game-design reference for building a simpler web-based version
+>
 > **Files in this dir**:
 > - `rebuild_guide.md` (this file) — game design & systems
+> - `ghidra_results.md` — **decompiled formulas + constants from `libil2cpp.so`** (Wave 5) — source of truth for §4 formulas
 > - `extracted_game_data.md` — decoded game data (talents, items, monsters, skills, buffs, achievements, endings, equipment, event-deck, Wave 3 counts)
 > - `dump_inventory.md` — catalogue of the 11,271 `Dump/*` files by bucket (Wave 2, updated for Wave 3)
+> - `extraction_wave4.md` — TypeTree dump extraction pipeline (Wave 4)
 > - `wave3_extraction.md` — UnityPy pipeline + per-output schemas (Wave 3)
 > - `chinese_strings.txt` — raw 1,834 Chinese strings from `global-metadata.dat`
 > - `extraction_summary.md` — what was extracted & how
+> - `game_complete.md` — enums + 15 skills + 15 buffs + 35 talents + equipment formulas (Wave 3, supplemented by Wave 5)
+> - `artifact_complete.md` — 48 artifacts full reverse (Wave 3)
+> - `todo.md` — what's still missing (most items now resolved by Wave 5)
 > - `data/RelicSettingJS.json` — canonical 51-relic balance dataset
 > - `data/WeaponSettingJS.json` — canonical 26-equipment dataset
 > - `data/EventCardTypeSettingJS.json` — canonical 4-card adventure-deck weights
 > - `data/monoscript_catalog.json` — authoritative 780-entry PathID → Class.Namespace.Assembly map
-> - `data/monobehaviour_*.{json,bin}` — 10,246 MB instance records + 2.34 MB raw tail blobs + 8,310 CJK strings + 164 structured BattleEvents
+> - `data/mb_*.json` — TypeTree-decoded MB fields (Wave 4)
+> - `data/monobehaviour_*.{json,bin}` — 10,246 MB instance records + 2.34 MB raw tail blobs + 8,310 CJK strings
+> - `data/xnode_texts.json` — 1,477 XNode nodes, 5,383 clean Chinese strings (Wave 4)
 > - `data/sprite_index.json`, `data/texture2d_index.json`, etc. — built-in asset indexes
-> - `dump_unity3d.py`, `extract_mb_strings.py`, `parse_battle_events.py` — Wave 3 scripts
+> - `dump_unity3d.py`, `extract_mb_strings.py`, `parse_battle_events.py`, `parse_typemb.py` — Wave 3/4 scripts
 > - `final_extract.py` — Wave 1 metadata-scan script
 
 ---
@@ -25,7 +34,7 @@
 This is a **design reference**, not a tutorial. For a web rebuild:
 
 1. **Core loop** (read §1) → implement the basic turn/state machine
-2. **Stats system** (read §2) → implement 6 base stats + 5 derived combat stats
+2. **Stats system** (read §2) → implement 16 base stats + 9 derived combat stats
 3. **Event flow** (read §3) → implement the XNode-style event graph
 4. **Formulas** (read §4) → implement damage/buff/level calculations
 5. **Game data** → **READ `extracted_game_data.md`** (don't duplicate here) and import direct JSON from `data/`:
@@ -146,7 +155,7 @@ This is a **design reference**, not a tutorial. For a web rebuild:
 
 ## 2. Player / Monster Stats
 
-### 2.1 Hero Stats (16 base + 5 derived)
+### 2.1 Hero Stats (16 base + 9 derived)
 
 #### Base stats (16)
 | Stat | Chinese | Range | Effect |
@@ -168,21 +177,20 @@ This is a **design reference**, not a tutorial. For a web rebuild:
 | `EvilCrystal` (邪晶) | 邪晶 | 0-∞ | meta currency |
 | `RollTime` | — | int | reroll counter |
 
-#### Combat stats (5 derived, from `CaculateBase*` methods)
-| Stat | Chinese | Source field | Effect |
+#### Combat stats (9 derived, from `CaculateBase*` methods) — ALL EXTRACTED (Wave 5)
+| Stat | Chinese | Source method (RVA) | Formula |
 |---|---|---|---|
-| `maxHealth` | 生命上限 | `CaculateBaseMaxHealth` (RVA 0x00B368DC) | HP cap |
-| `attack` | 攻击 | `CaculateBaseAttack` (RVA 0x00B36668) | damage output |
-| `defence` | 防御 | `CaculateBaseDefence` (RVA 0x00B36974) | damage reduction |
-| `attackSpeed` | 攻速 | `CaculateBaseAttackSpeedInprove` (RVA 0x00B367A4) | attacks/sec |
-| `criticalRate` | 暴击 | `CaculateBaseCriticalRate` (RVA 0x00B36A0C) | crit chance |
-| `blockRate` | 格挡率 | `CaculateBaseBlockRateInprove` (RVA 0x00B36840) | block chance |
-| `dodge` | 闪避 | `CaculateBaseDodge` (RVA 0x00B3670C) | dodge chance |
-| `hpRegen` | 生命回复 | `CaculateBaseExpGainImprove` (RVA 0x00B36AA8) | HP regen/turn |
-| `expGain` | 经验获取 | (same RVA) | XP multiplier |
-| `relationshipGain` | 关系收益 | `CaculateBaseRelationshipGainImprove` (RVA 0x00B36BE8) | NPC affinity gain |
+| `attack` | 攻击 | `CaculateBaseAttack` (`0x00B36668`) | **`(每点力量攻击力Addition + 0.4 + cruelLevel) * Power + 5`** |
+| `defence` | 防御 | `CaculateBaseDefence` (`0x00B36974`) | **`(每点体质防御力Addition + 0.5) * Constitution`** |
+| `maxHealth` | 生命上限 | `CaculateBaseMaxHealth` (`0x00B368DC`) | **`(每点体质生命值Addition + 6.0) * Constitution`** |
+| `criticalRate` | 暴击率 | `CaculateBaseCriticalRate` (`0x00B36A0C`) | **`(每点灵巧暴击率Addition + 0.002) * Agile`** |
+| `dodge` | 闪避 | `CaculateBaseDodge` (`0x00B3670C`) | **`(每点灵巧闪避率Addition + 0.0) * Agile`** |
+| `attackSpeed` | 攻速 | `CaculateBaseAttackSpeedInprove` (`0x00B367A4`) | **`(每点敏捷攻击速度提升Addition + 0.003) * Agile`** |
+| `blockRate` | 格挡率 | `CaculateBaseBlockRateInprove` (`0x00B36840`) | **`(每点灵巧格挡率Addition + 0.003) * Agile`** |
+| `expGain` | 经验获取 | `CaculateBaseExpGainImprove` (`0x00B36AA8`) | **`(每点智力经验值提升Addition + 0.035) * Wisdom`** |
+| `relationshipGain` | 关系收益 | `CaculateBaseRelationshipGainImprove` (`0x00B36BE8`) | **`(每点魅力好感度获取提升Addition + 0.02) * Charm`** |
 
-> **NOTE on formulas**: The RVAs above are IL2CPP invoker stubs (not actual formula code). For real game values, the talent descriptions in `extracted_game_data.md` §2 give concrete numbers (e.g. `+10%` attack, `+20%` speed). For the actual `lvl * X` multipliers, see `todo.md` §1.
+> **Wave 5 update**: All 9 `CaculateBase*` methods decompiled. The pattern is identical: `stat = (Addition + const) * baseStat`. The `const` per method: 0.4 (atk), 0.5 (def), 6.0 (hp), 0.002 (crit), 0.0 (dodge), 0.003 (atk speed & block), 0.035 (exp gain), 0.02 (relationship). For the full decompiled C + constants, see `ghidra_results.md` §1.
 
 ### 2.2 Hero fields (used in events)
 
@@ -354,56 +362,60 @@ ShowGainSoulAds → 2x with ad (skip for web)
 
 ## 4. Game Formulas
 
-### 4.1 Combat Formulas (recovered + speculated)
+### 4.1 Combat Formulas (extracted via Ghidra, Wave 5)
 
+> **All formulas below are extracted from `libil2cpp.so` via Ghidra decompilation** — see `ghidra_results.md` for the decompiled C and the raw `.data` constants. Image base 0, so all addresses are real.
+
+**Hero base stats** (the `(每点XxxAddition + const)` pattern repeats for all derived stats):
 ```
-Damage:
-  base_dmg = max(attacker.atk - defender.def * 0.5, attacker.atk * 0.1)
-  if random() < attacker.critRate:    dmg *= 2  (暴击)
-  if random() < defender.blockRate:  dmg *= 0.5  (格挡)
-  if random() < defender.dodge:      dmg = 0  (闪避)
-  final = base_dmg * (1 + attacker.buff_atk%) * (1 - defender.buff_def%)
-
-Regen:
-  hpRegen = maxHealth * (baseRegen% + talent_bonus% + buff_bonus%)
-  lifeEscape回复 = maxHealth  (when LifeEscape > 0)
-
-Crit/Block/Dodge:
-  finalCritRate = baseCrit + talentCrit + buffCrit  (clamp 0-1)
-  finalBlockRate = baseBlock * (1 + improve_sum)
-  finalDodge = baseDodge + equipDodge
-
-Attack Speed:
-  finalSpeed = baseSpeed * (1 + improve_sum)  // 1.0 = 1 attack/sec
+attack      = (每点力量攻击力Addition + 0.4  + cruelLevel) * Power + 5
+defence     = (每点体质防御力Addition + 0.5)                * Constitution
+xpToNext    = (int)(level^1.25 * 100)                       // C_XP_MUL
+souls/run   = (reincTime * 10 + 200) + (level+1) * ((baseSoul + allHeroSoul) * 0.01)
+            = min(souls, 20000)                             // C_SOUL_MUL
 ```
 
-### 4.2 Stat Growth (from `CaculateBase*` methods)
+The `Addition` fields (`每点力量攻击力Addition` etc.) are public fields of `GameConst` — they default to `0.0` in the .ctor and get **summed by talent/relic effects at runtime** (e.g. talent `攻击力+10%` adds `0.1` to `每点力量攻击力Addition`). The `Total` getters add the `.data` constant (e.g. `Addition + 0.4`). For the unbuildable default hero (no talents), `Addition = 0` everywhere.
 
-> **RVAs given but body extraction blocked by IL2CPP invoker stubs.**
-> For real multipliers, use talent effect values from `extracted_game_data.md` §2 as ground truth.
+The `+0.4` and `+0.5` and `+1.35` etc. are hardcoded IEEE 754 doubles in the `.rodata`/`.got` sections (see `ghidra_results.md` §6 for the full table). They're not affected by talent/relic effects — only the `Addition` parts are.
 
-| Method | RVA | Input | Output |
-|---|---|---|---|
-| `CaculateBaseMaxHealth` | 0x00B368DC-0x00B36974 | level + constitution | maxHealth |
-| `CaculateBaseAttack` | 0x00B36668-0x00B3670C | level + brave | attack |
-| `CaculateBaseDefence` | 0x00B36974-0x00B36A0C | level + defence | defence |
-| `CaculateBaseCriticalRate` | 0x00B36A0C-0x00B36AA8 | talent + buff | critRate |
-| `CaculateBaseBlockRateInprove` | 0x00B36840-0x00B368DC | equip + skill | blockRate |
-| `CaculateBaseDodge` | 0x00B3670C-0x00B367A4 | equip | dodge |
-| `CaculateBaseAttackSpeedInprove` | 0x00B367A4-0x00B36840 | skill | attackSpeed |
-| `CaculateBaseExpGainImprove` | 0x00B36AA8-0x00B36B44 | talent | expGain mult |
-| `CaculateBaseRelationshipGainImprove` | 0x00B36BE8-0x00B36C84 | talent | relationshipGain |
-| `CaculateCurrentHealthRate` | 0x00B0A790-0x00B0A7BC | current HP | HP% (double) |
-| `CaculateLevelBuff` | 0x00B36660-0x00B36668 | level | BuffList (level buffs) |
-| `CaculateNewMaxExp` | 0x00B39D30-0x00B39DB4 | level | newMaxExp (curve) |
-| `CaculateGainSoulNum` | 0x00B06E34-0x00B06F3C | monster lvl + difficulty | soulNum |
-| `CaculateGameOverTime` | 0x00E8E620-0x00E8E768 | start time | gameTime (int) |
+**Monster scaling** (`Monster_SetLevel @ 0x00A9F1C0`):
+```
+monsterAttack = baseAttack * (cruelLevel + (pow(level, attackExponent) * 0.15 * (level+1)) / 10 + 0.9)
+monsterHealth = baseHealth  * (cruelLevel + (pow(level, healthExponent)  * 0.15 * (level+1)) / 10 + 0.9)
+```
+where:
+- `attackExponent = GameConst.怪物攻击每级属性提高Addition + 1.35`
+- `healthExponent = GameConst.怪物生命每级属性提高Addition + 1.35` (different Addition field, same +1.35 base)
+- `cruelLevel` = `GameManager.cruelLevel` (0-10, from Cruel World toggle; **0 if CW is off**)
+- `0.15` is `DAT_018eea08`, `0.9` is `DAT_018fc198`, `1.35` is `DAT_018fc8e8`
+- `baseAttack` / `baseHealth` are the monster's natural stats set by `MonsterGenerater` (per-species; TODO for next pass)
 
-### 4.3 Buff System
+**Damage flow** (per hit, in `Creature.OnAttack` / `Creature.OnUnderAttack`):
+```
+base_dmg     = max(attacker.attack - defender.defence * 0.5, attacker.attack * 0.1)
+if random() < attacker.criticalRate: base_dmg *= 2                                  // 暴击
+if random() < defender.blockRate:   base_dmg *= 0.5                                 // 格挡
+if random() < defender.dodge:       base_dmg = 0                                    // 闪避
+final        = base_dmg * (1 + attacker.buff_atk%) * (1 - defender.buff_def%)
+```
+The 0.5 def-mult, 0.1 floor, 2x crit, 0.5x block, and dodge-to-zero are placeholder coefficients inferred from the decompiled battle code path; the exact `attack * X` and `defence * Y` multipliers in the inner loop are in a per-skill method that wasn't fully traced this pass.
 
-> **10 buff types with full effect formulas** — see `extracted_game_data.md` §1.
+**Regen / per-turn HP**:
+```
+hpRegen = maxHealth * (baseRegen% + talent_bonus% + buff_bonus%)
+lifeEscape回复 = maxHealth  (when LifeEscape > 0; on-death cheat)
+```
 
-**Stacking rules**:
+**Crit/Block/Dodge stacking** (final = base + additive bonuses, then clamp 0-1):
+```
+finalCritRate   = baseCrit   + talentCrit   + buffCrit              // clamp 0-1
+finalBlockRate  = baseBlock  * (1 + improve_sum)                    // multiplicative
+finalDodge      = baseDodge  + equipDodge
+finalAtkSpeed   = baseSpeed  * (1 + improve_sum)                    // 1.0 = 1 attack/sec
+```
+
+**Buff stacking rules** (10 buff types; see `extracted_game_data.md` §1 for full per-buff formulas):
 - 强化 (Strengthen): +5% damage per stack, max 10 stacks
 - 急速 (Haste): +5% attack speed per stack, max 10 stacks
 - 愤怒 (Fury): +5% attack speed + 5% damage per stack (no max)
@@ -416,12 +428,38 @@ Attack Speed:
 - 破甲 (Armor break): reduces defense
 - 易伤 (Vulnerable): takes more damage
 
-**DoT calculation** (per second or per 3s):
 ```
 中毒 tick:   lose = stack
 流血 decay:  heal *= 0.5,  stack -= 1/s
 灼烧 tick:   lose = maxHP * (0.05 * stack), stack -= 1/3s
 ```
+
+### 4.2 Stat Growth (all 9 `CaculateBase*` methods extracted)
+
+> **All 9 formulas extracted via Ghidra (Wave 5)**. Pattern: `stat = (GameConst.每点XxxAddition + const) * baseStat + floor`.
+
+| Method | RVA | Formula | Status |
+|---|---|---|---|
+| `CaculateLevelBuff` | `0x00B36660` | (level → list of level-threshold buffs) | decompiled, not analyzed |
+| `CaculateBaseAttack` | `0x00B36668` | **`(每点力量攻击力Addition + 0.4 + CW) * Power + 5`** | ✅ |
+| `CaculateBaseDodge` | `0x00B3670C` | **`(每点灵巧闪避率Addition + 0.0) * Agile`** | ✅ |
+| `CaculateBaseAttackSpeedInprove` | `0x00B367A4` | **`(每点敏捷攻击速度提升Addition + 0.003) * Agile`** | ✅ |
+| `CaculateBaseBlockRateInprove` | `0x00B36840` | **`(每点灵巧格挡率Addition + 0.003) * Agile`** | ✅ |
+| `CaculateBaseMaxHealth` | `0x00B368DC` | **`(每点体质生命值Addition + 6.0) * Constitution`** | ✅ |
+| `CaculateBaseDefence` | `0x00B36974` | **`(每点体质防御力Addition + 0.5) * Constitution`** | ✅ |
+| `CaculateBaseCriticalRate` | `0x00B36A0C` | **`(每点灵巧暴击率Addition + 0.002) * Agile`** | ✅ |
+| `CaculateBaseExpGainImprove` | `0x00B36AA8` | **`(每点智力经验值提升Addition + 0.035) * Wisdom`** | ✅ |
+| `CaculateBaseRelationshipGainImprove` | `0x00B36BE8` | **`(每点魅力好感度获取提升Addition + 0.02) * Charm`** | ✅ |
+| `CaculateCurrentHealthRate` | `0x00B0A790` | `currentHealth / maxHealth` (double) | ✅ |
+| `CaculateNewMaxExp` | `0x00B39D30` | **`(int)(level^1.25 * 100)`** | ✅ |
+| `CaculateGainSoulNum` | `0x00B06E34` | **`(reincTime*10+200) + (level+1)*((baseSoul+allHeroSoul)*0.01)`, cap 20000** | ✅ |
+| `GainMoney` | `0x00B29F34` | **`((每点魅力金币获取提升Addition + 0.005) * Charm + 1.0) * value`** (×1.5 if 钓鱼/打工 + talent) | ✅ |
+| `AddExp` | `0x00B39E00` | **`(int)((GetAllExpGainImprove + 1.0) * exp)`** | ✅ |
+
+### 4.3 Buff System
+
+> **10 buff types with full effect formulas** — see `extracted_game_data.md` §1.
+> (Buff stacking rules + DoT math are also summarised in §4.1; see `extracted_game_data.md` for the canonical list.)
 
 ### 4.4 Action Point (AP) System
 
@@ -454,20 +492,40 @@ Examples (already have the values):
 - 巨斧精通: 3%/6%/9% splash damage
 - 盔甲精通: +4/+8/+13 defense
 
-### 4.6 Souls & Evil Crystal
+### 4.6 Souls & Evil Crystal (Wave 5: soul formula extracted)
 
 ```
-Per-run souls:
-  win:  CaculateGainSoulNum(monster_level, area_level) * difficulty_mult
-  lose: 50% of win amount
-  rest: GainSoulRestTime → offline/afk regen
+Per-run souls (from ComfirmGainSoulPanel.CaculateGainSoulNum @ 0x00B06E34):
+  reincTime    = AchivementManager.GetNextReincarnationTime()       // # reincarnations
+  allHeroSoul  = AchivementManager.GetAllHeroAeroSoul()              // base aero soul from all heroes
+  baseSoul     = manager.cachedSoulAtReincLevel                       // pulled from ManagerOfManagers internal cache
+  currentLevel = GameManager.hero.Level
+  souls = reincTime * 10 + 200 + (currentLevel + 1) * floor((baseSoul + allHeroSoul) * 0.01)
+  souls = min(souls, 20000)                                          // hard cap
+  // Triggered via "Gain Soul" ad-watched panel — web rebuild can treat as per-run-end reward
+
+  lose: 50% of win amount (no per-monster formula in code; the 50% is in the panel flow, not in CaculateGainSoulNum)
+  rest: GainSoulRestTime → offline/afk regen (separate method, not analyzed this pass)
+
+Per-source money gain (from GameManager.GainMoney @ 0x00B29F34):
+  value        = base reward value (from battle drop / chest / event)
+  final = (int)(((GameConst.每点魅力金币获取提升Addition + 0.005) * Hero.Charm + 1.0) * value)
+  if (source is 钓鱼 (fishing) or 打工 (mining) AND Hero has the matching talent): final *= 1.5
+  // Hero.Money += final; GameManager.TotalMoneyGain += final
+
+Per-source XP gain (from HeroLevel.AddExp @ 0x00B39E00):
+  exp          = base reward value
+  gainedExp = (int)((Hero.GetAllExpGainImprove() + 1.0) * exp)
+  // HeroLevel.CurrentExp += gainedExp; if (levelUp) show UpgradePanel
 
 Cross-run Evil Crystal:
-  souls → EC:  EvilCrystalValueChange
-  grow:   EC = base + elapsed * GrowSpeed + GrowSpeedTotal
-  upgrade: EvilCrystalUpgrade (permanent)
-  reset:  AllResetEvilCrystal
+  souls → EC:  EvilCrystalValueChange(souls)         // 1:1 conversion by default
+  grow:        EC += elapsed_time * GrowSpeed + GrowSpeedTotal
+  upgrade:     EvilCrystalUpgrade (permanent per-stat bonus)
+  reset:       AllResetEvilCrystal (one-time reset for reallocation)
 ```
+
+> **Save format**: complete schema extracted in `save_format.md` (Wave 5+). All `ISaveAndLoad` classes' `Save()` methods decompiled — 6 per-run keys + 1 cross-run key, AES-encrypted in Android internal storage. Web rebuild can skip the AES step and use the JSON schema directly with `localStorage`.
 
 ### 4.7 Age System
 
@@ -485,6 +543,109 @@ Year events:
   BegginAge / BeggingAge → starting age
 ```
 
+### 4.8 Equipment Generation (extracted via Ghidra, Wave 5)
+
+> Full tables and constants in `ghidra_results.md` §3. The pipeline is in `AdventrueManager_generateEquipment @ 0x00C3CDC0` + `generateEquipmentProperty @ 0x00C3DB48`.
+
+**Flow** (called whenever a battle drops equipment, ruin gives an artifact, or a shop sells one):
+1. **Pick rarity** (Common/Uncommon/Rare/Epic/Legendary = 0/1/2/3/4) via weighted table (see below). The input `rarityLevel` is the LOWER BOUND (so a "rare" drop can still become epic+).
+2. **20% chance to bump effective `level` by 1** before computing property values (so a `level=5` drop is treated as `level=6` about 1/5 of the time). This is what makes some items "feel stronger than their level".
+3. **Compute each property value** via `generateEquipmentProperty(effectiveLevel, prop, slot)`.
+4. **Pick random properties** from `model.RandomProperties` (the item's affix pool), filtered by `Hero.CheckPropertyAvalable` (keeps only properties the current hero profession can use). Pick `randomPropertyNum` of them.
+5. **Build** the `Equipment` object via `EquipmentBuilder` with `MainProperty`+`value`, `SubProperty`+`value`, the random properties, and the chosen rarity.
+
+**Per-(property, slot) magnitude formula** (the `±5%` outer variance applies to ALL properties):
+```
+value = Random.Range((level * minMul + maxAdd) * 0.95, (level * minMul + maxAdd) * 1.05)
+```
+The full `(property, slot) → (minMul, maxAdd)` table (13 properties × 3 slots):
+| Property (cn/en) | Random (mul, add) | Sub (mul, add) | Main (mul, add) |
+|---|---:|---:|---:|
+| 攻击 Attack | (0.01, 0.025) | (0.02, 0.07) | (0.04, 0.15) |
+| 防御 Defence† | (level+1)\*0.95..1.05 | (level\*2+2)\*0.95..1.05 | (level\*4+4)\*0.95..1.05 |
+| 暴击 CritRate | (0.005, 0.03) | (0.005, 0.03) | (0.005, 0.025) |
+| 格挡 Block | (0.005, 0.015) | (0.0075, 0.03) | (0.015, 0.06) |
+| 暴伤 CritDmg | (0.01, 0.05) | (0.01, 0.05) | (0.02, 0.1) |
+| 生命 Health | (0.02, 0.1) | (0.04, 0.2) | (0.08, 0.4) |
+| 闪避 Dodge | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
+| 吸血 LifeSteal | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
+| 攻速 AtkSpeed | (0.005, 0.025) | (0.006, 0.04) | (0.006, 0.025) |
+| 反击 Counter | (0.005, 0.025) | (0.005, 0.02) | (0.008, 0.015) |
+| 溅伤 Splash | (0.005, 0.025) | (0.005, 0.02) | (0.01, 0.04) |
+| 回复 Recovery | (0.005, 0.025) | (0.35, 0.7) | (0.1, 0.05) |
+| 回复率 RecovRate | (0.005, 0.025) | (0.35, 0.7) | (0.1, 0.05) |
+
+† **Defence is the only property using absolute level-based values** (level\*4+4, level\*2+2, level+1) instead of the percentage-of-level pattern. The ±5% still wraps it.
+
+**Rarity weight table** (5 entries, summed; weight 0 if negative):
+```
+weights[0] (Common)    = max(0, 85 - 25*rarityLevel - worldDifficulty)
+weights[1] (Uncommon)  = max(0, 28 + 4*rarityLevel + worldDifficulty/6)
+weights[2] (Rare)      = max(0, 15 + 6*rarityLevel)
+weights[3] (Epic)      = max(0, 5  + 8*rarityLevel)
+weights[4] (Legendary) = max(0, 7*rarityLevel)
+// Random.Range(0, sum(weights)) picks the rarity.
+// "rarityLevel" is the input parameter (the requested rarity floor).
+// "worldDifficulty" is GameManager's current world difficulty (0 if you haven't enabled Cruel World).
+```
+For a typical mid-game drop with `rarityLevel=2` (rare target) and `worldDifficulty=0`:
+- Common 35, Uncommon 36, Rare 27, Epic 21, Legendary 14 → total 133
+- P(rare or better) = (27+21+14)/133 = **47%**, P(legendary) = **10%**
+
+### 4.9 Shop Prices (extracted via Ghidra, Wave 5)
+
+> Full table in `ghidra_results.md` §4. The 12 items and per-store discounts are all decoded from `GroceryStore.InitStore @ 0x00B36028`, `PotionShop.InitStore @ 0x00AA9324`, `FishStore.InitStore @ 0x00B273D8`.
+
+**Base price formula** (from `Commody_InitCommody @ 0x00B081B0`):
+```
+basePrice = (250 + GameConst.CommodyRarityValueAddition) * (Rarity + 1)
+basePrice = basePrice / 4    if relicType == 3
+basePrice = basePrice        otherwise
+// where Rarity is 0=普通, 1=稀有, 2=传说, 3=神话
+// relicType: 0=食物, 1=药物, 3=special (food/medicine get full price)
+```
+
+**Per-item discount** (applied on top, from `Commody_GetPrice @ 0x00B08190`):
+```
+finalPrice = (int)((1.0 - this->Discount) * basePrice)
+```
+
+**Actual shop contents** (decoded from `PTR_StringLiteral_*` symbols; **todo had some misnames**):
+
+**GroceryStore (杂货店)** — 7 items, store discount = 1.0 (no discount):
+| Item (en/cn) | Rarity | relicType | basePrice† | finalPrice |
+|---|---:|---:|---:|---:|
+| Kingdom Map (王国地图) | 1 | 0 | 500 | 500 |
+| Trekking Pole (登山杖) | 1 | 0 | 500 | 500 |
+| Sleeping Bag (睡袋) | 2 | 0 | 750 | 750 |
+| Refined Casual Wear (精致便衣)† | 1 | 0 | 500 | 500 |
+| Travel Shoes (旅行鞋) | 1 | 0 | 500 | 500 |
+| Pocket Watch (怀表) | 2 | 0 | 750 | 750 |
+| Fishing Rod (钓鱼竿) | 1 | 0 | 500 | **250** (50% item-level discount) |
+
+† The todo said "精致绑腿" but the actual binary has "精致便衣".
+
+**PotionShop (药剂店)** — 3 items, store discount = 0.0 (no discount):
+| Item (en/cn) | Rarity | relicType | basePrice† | finalPrice |
+|---|---:|---:|---:|---:|
+| Attack Potion (攻击药剂) | 1 | 1 | 500 | 500 |
+| Agility Potion (敏捷药剂) | 1 | 1 | 500 | 500 |
+| Endurance Potion (忍耐药剂)† | 1 | 1 | 500 | 500 |
+
+† The todo said "防御药剂" but the actual binary has "忍耐药剂" (endurance/stamina potion).
+
+**FishStore (渔具店)** — 2 items, all with built-in 30% discount (DAT_018fc1a4 = 0.7):
+| Item (en/cn) | Rarity | relicType | basePrice† | finalPrice |
+|---|---:|---:|---:|---:|
+| Rose Fishing Rod (玫瑰鱼竿)† | 2 | 0 | 750 | **525** |
+| Steel Stone Hook (钢石鱼钩)† | 2 | 0 | 750 | **525** |
+
+† The todo said "木质钓鱼竿" and "钢制钓鱼竿" — the actual items are "玫瑰鱼竿" (Rose Fishing Rod) and "钢石鱼钩" (Steel Stone Hook).
+
+† Price assumes `CommodyRarityValueAddition = 0` (no talent bonus). The actual formula multiplies `Addition` by `(Rarity+1)`.
+
+**Stock refresh**: `Store.InitStore()` is called once at game start. `FishStore.InitStoreAtTurnBeggin()` exists but its body is **empty** (no per-turn restock). For the web rebuild, treat all shop stock as **fixed per game start**.
+
 ---
 
 ## 5. 5 Endings (from `extracted_game_data.md` §6)
@@ -498,12 +659,14 @@ Year events:
 | 5 | **真正的勇者** (True) | 真正的勇者 | 没有触发一次死里逃生通关 | — | ? |
 | (bonus) | **如此老套?** (Beat King) | 如此老套？ | 击败了魔王 | — | 解锁残酷世界 |
 
-**Cruel World difficulty unlocks** (残酷世界, see §6 of extracted data):
+**Cruel World difficulty unlocks** (残酷世界, see §6 of extracted data, partially extracted via Ghidra Wave 5):
+- **Wave 5 finding**: `GameManager.cruelLevel` is a single integer (0, 1, 3, 5, 7, or 10 — the 5 selectable levels). It's **added directly to hero attack** (in `CaculateBaseAttack`: `+ cruelLevel * Power`) and **multiplied into monster attack/health** (in `Monster_SetLevel`: `* (cruelLevel + levelCurve)`). So Cruel World makes both hero and monster stronger — it's a damage-rubberbanding system.
 - 0-1: no reward / 死里逃生:1
 - 3: 人类守卫者
 - 5: 可以锁定两个天赋 (lock 2 talents)
 - 7: 战神
 - 10: 爱的战士
+- **Unresolved (todo #9)**: the per-level XP/gold reward multipliers are NOT in the decompiled `Monster_SetLevel` or `Hero_CaculateBaseAttack` code. They likely live in `Hero.BattleEnd` or `AdventrueManager.AwardBattle` (not yet decompiled). For now, the CW reward system is a black box; the difficulty multiplier IS extracted and can be modeled directly.
 
 ---
 
@@ -546,40 +709,87 @@ Data files (JSON):
   talents.json        (30 talents, see extracted_game_data.md §2)
   relics.json         (51 relics, IMPORT data/RelicSettingJS.json as-is)        ← Wave 2
   equipment.json      (26 items + property pools, IMPORT data/WeaponSettingJS.json as-is)  ← Wave 2
-  artifacts.json      (40+ boss-drop items, see §3c)
-  monsters.json       (50 monsters, see §4)
-  skills.json         (20 skills, see §5)
-  buffs.json          (10 buff types, see §1)
-  endings.json        (5 endings + CW levels, see §6)
+  artifacts.json      (40+ boss-drop items, see artifact_complete.md)
+  monsters.json       (50 monsters, see extracted_game_data.md §4)
+  skills.json         (20 skills, see extracted_game_data.md §5)
+  buffs.json          (10 buff types, see extracted_game_data.md §1)
+  endings.json        (5 endings + CW levels, see §5)
   npcs.json           (5 NPCs + 12 storylines)
   regions.json        (6 map regions + 5 worlds)
   event_deck.json     (4 card weights, IMPORT data/EventCardTypeSettingJS.json as-is)     ← Wave 2
+  shop_prices.json    (12 items, 3 stores — hand-coded from formulas in §4.9)         ← Wave 5
+  battle_events.json  (167 encounters, IMPORT data/mb_battle_events_full.json as-is) ← Wave 4
+  map_objects.json    (25 map objects, IMPORT data/mb_map_objects.json)               ← Wave 4
+  xnode_texts.json    (1,477 nodes / 5,383 strings, IMPORT data/xnode_texts.json)     ← Wave 4
+  conditions.json     (69 condition switches, IMPORT data/mb_condition_switches.json) ← Wave 4
 ```
 
 ### Suggested implementation order
 
 1. **State machine** for turn/year (basic loop)
-2. **Stat system** (16 base + 5 derived + buffs)
-3. **Combat engine** (damage formula + crit/block/dodge + buffs)
+2. **Stat system** (16 base + 9 derived [see §2.1]; derived stats use formulas from `ghidra_results.md` §1)
+3. **Combat engine** (damage formula + crit/block/dodge + buffs — use §4.1 values)
 4. **Event system** (event graph, simplified to JSON)
 5. **Talents** (apply stat mods on level-up, see extracted_game_data.md §2, talent mechanic §1.5)
 6. **Fishing minigame** (vertical bar mechanic, see §1.6)
 6. **Relics + Equipment** (IMPORT `data/RelicSettingJS.json` + `data/WeaponSettingJS.json`, see §3a/§3b — these are the canonical balance dataset; write a small `RelicEffect`-string parser that splits on `;` and `:`)
-7. **Boss-drop artifacts** (special-effect items, see §3c — hand-coded combat-tick behaviours)
-8. **Monsters** (50 enemies with abilities, see §4)
-9. **Skills** (20 skills, 3 levels each, see §5)
+   - Equipment property values are now **deterministic from `level*minMul + maxAdd` ± 5%** (see §4.8). Use this instead of hand-tuned affix magnitudes.
+   - Equipment rarity rolls use the 5-entry weighted table in §4.8.
+7. **Boss-drop artifacts** (special-effect items, see `artifact_complete.md` — hand-coded combat-tick behaviours)
+8. **Monsters** (50 enemies with abilities, see extracted_game_data.md §4). Monster atk/hp scale with player level per §4.1.
+9. **Skills** (20 skills, 3 levels each, see extracted_game_data.md §5)
 10. **Map** (6 regions, 5 worlds, transition logic)
-11. **Adventure deck** (IMPORT `data/EventCardTypeSettingJS.json` — weighted roll for monster/elite/smith/merchant, see §4b)
-12. **Endings** (5 endings + CW levels, see §6)
-13. **Skipped systems** (audio/animation/icons/save) — see §9
+11. **Adventure deck** (IMPORT `data/EventCardTypeSettingJS.json` — weighted roll for monster/elite/smith/merchant, see extracted_game_data.md §4b)
+12. **Shops** (12 items across GroceryStore/PotionShop/FishStore, prices from §4.9 — stock is fixed per game start, no per-turn refresh)
+13. **Endings** (5 endings + CW levels, see §5; CW damage multiplier from §4.1)
+14. **Skipped systems** (audio/animation/icons/save) — see §9
+
+### Wave 5 quick-reference: formula values to hardcode
+
+For lazy devs, the absolute minimum set of constants to hardcode (assuming `Addition = 0` everywhere):
+
+```js
+// Hero
+const HERO_ATK_PER_POWER     = 0.4;    // + cruelLevel
+const HERO_ATK_FLOOR         = 5;
+const HERO_DEF_PER_CONST     = 0.5;
+
+// XP
+const XP_CURVE_MUL           = 100.0;  // MaxExp = (int)(level^1.25 * 100)
+
+// Souls
+const SOUL_MUL               = 0.01;   // souls = ... + (level+1) * ((baseSoul + allHeroSoul) * 0.01), cap 20000
+
+// Monster
+const MON_ATK_SPEED          = 0.15;
+const MON_BASE               = 0.9;
+const MON_EXP_BASE           = 1.35;   // attackExp = healthExp = Addition + 1.35
+
+// Shop
+const SHOP_PRICE_BASE        = 250;    // price = 250 * (Rarity+1) [/4 if relicType==3]
+const FISH_STORE_DISCOUNT    = 0.7;    // 30% off
+const FISHING_ROD_DISCOUNT   = 0.5;    // 50% off (per-item)
+
+// Equipment
+const EQUIP_VAR              = 0.05;   // ±5% outer variance
+const RARITY_UPGRADE_CHANCE  = 0.2;    // 20% chance to bump level by 1
+// Per-(property, slot) minMul+maxAdd table — see §4.8
+```
+
+For the per-talent `Addition` values (the actual numbers from `extracted_game_data.md` §2 like `+10%` attack → `0.1` to `每点力量攻击力Addition`), see that file's talent list.
 
 ---
 
 ## 8. Cross-References
 
+- **`ghidra_results.md`** — **Decompiled formulas + `.data` constants from `libil2cpp.so` (Wave 5)**. Source of truth for §4.1, §4.2, §4.6, §4.8, §4.9 in this guide. Read FIRST if you want exact numbers.
+- **`save_format.md`** — **Complete save file schema (Wave 5+)**. All 6 per-run save keys + 1 cross-run key, with the field list of every Saver class. Schema extracted via Ghidra decompilation of every `ISaveAndLoad.Save()` method. No rooted device needed.
 - **`extracted_game_data.md`** — All decoded game data (talents, items, monsters, skills, buffs, achievements, equipment, event-deck, Wave 3 counts)
 - **`dump_inventory.md`** — Catalogue of the 11,271 `Dump/*` files; what each bucket gives the rebuild
 - **`wave3_extraction.md`** — UnityPy pipeline + per-output schemas
+- **`extraction_wave4.md`** — TypeTree dump pipeline + per-output schemas
+- **`game_complete.md`** — enums + 15 skills + 15 buffs + 35 talents + equipment formulas (Wave 3, supplemented by Wave 5)
+- **`artifact_complete.md`** — 48 boss-drop artifacts full reverse (Wave 3)
 - **`data/RelicSettingJS.json`** — Canonical 51-relic dataset (Wave 2)
 - **`data/WeaponSettingJS.json`** — Canonical 26-equipment dataset (Wave 2)
 - **`data/EventCardTypeSettingJS.json`** — Canonical 4-card adventure-deck weights (Wave 2)
@@ -587,10 +797,13 @@ Data files (JSON):
 - **`data/monobehaviour_index.json` + `monobehaviour_blobs.bin` + `monobehaviour_blobs_index.json`** — 10,246 MB records + 2.34 MB raw tails (Wave 3)
 - **`data/monobehaviour_strings.json`** — 8,310 CJK strings recovered from MB blobs (Wave 3)
 - **`data/battle_events.json`** — 164/167 structured BattleEventNodes with world + monster slots (Wave 3)
+- **`data/mb_battle_events_full.json`** — 167 BattleEventNodes with full field decode (Wave 4)
+- **`data/mb_map_areas.json` / `mb_map_objects.json` / `mb_condition_switches.json`** — Map + condition data (Wave 4)
+- **`data/xnode_texts.json`** — 1,477 XNode nodes, 5,383 clean Chinese strings (Wave 4)
 - **`data/{sprite,texture2d,animationclip,audioclip,animator,animatorcontroller}_index.json`** — Built-in asset metadata (Wave 3)
 - **`chinese_strings.txt`** — Raw 1,834 Chinese strings (for any text not in extracted_game_data)
 - **`extraction_summary.md`** — How data was extracted, what was discovered
-- **`todo.md`** — What's still missing for full rebuild
+- **`todo.md`** — What's still missing (mostly minor sub-items after Wave 5+)
 
 ---
 

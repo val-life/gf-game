@@ -3,6 +3,8 @@
 > **Source**: AssetStudio re-dump of `data.unity3d` with the **Il2CppInspector dummy DLLs loaded** so TypeTree fields are fully resolved (`Dump with dll/MonoBehaviour/*.txt`).
 > **Script**: `rebuild/parse_typemb.py`
 > **Result**: 10,243 MB files parsed, 166 classes catalogued, 7 structured per-category JSONs + 1 XNode edge list + 1 decoded-strings corpus written to `rebuild/data/`.
+>
+> **Wave 5 (2026-6-10)**: This was followed up by Ghidra decompilation of `libil2cpp.so` itself. The IL2CPP symbols ARE preserved on the ARM64 build, so method bodies (CaculateBaseAttack, AdventrueManager_generateEquipment, etc.) were decompiled directly. See `ghidra_results.md` for the formulas and `todo.md` for the resolution status. Wave 4 + Wave 5 together cover everything that was in the original todo.
 
 ---
 
@@ -161,14 +163,16 @@ Use this to reconstruct the full XNode event graph for any flow. Edges within th
 
 ## 7. What is still missing (for the next wave)
 
-| Item | Where it lives | How to get |
-|---|---|---|
-| Per-monster HP/ATK/DEF numeric stats | `BattleField` runtime struct, populated by `CaculateBaseAttack` etc. | Frida hook (live values) |
-| Shop prices (`GroceryStore`, `PotionShop`, `FishStore`) | `MB` files for these classes | Locate their class in `typemb_catalog.json` + apply same parser. Not in the current top classes. |
-| 3/167 final-boss multi-stage layouts | `Battle Event #15519/15723/15998...` — they have empty `enemyList` and a complex `SecendBattleStr` blob | Hand-decode the `SecendBattleStr` serialized Unity List<string> with the `parse_unity_string_list` helper |
-| `Monster` per-creature numeric stats | `Monster` MB class (not in top classes — maybe under another namespace) | Search `mb_file_index.json` for class containing `Monster` |
-| EndingEventDirector 5 endings full triggers | Not in current data — look for `Ending*` class | Search by name pattern |
-| Shop merchant price tables | Not yet located | Search `mb_file_index.json` for class with `Store` or `Shop` in name |
-| `CrulWorld` exact modifier effects per level | Class exists (`CrulWorld` or `CruelWorld`); find MB files | Search `mb_file_index.json` |
+> **Wave 5 (2026-6-10) Ghidra pass resolved most of these** — see `ghidra_results.md` and the updated `todo.md` "Resolved in Wave 5" table. Only a few sub-items remain.
 
-The full todo list remains in `rebuild/todo.md`. This wave resolves **High Priority #2** (XNode BattleEventNode body fields are now parseable) and **Medium #6** (per-event item drop chance can be computed from the now-visible `equipmentReward` field for the 44 records that have it).
+| Item | Where it lives | How to get | Status |
+|---|---|---|---|
+| Per-monster HP/ATK/DEF numeric stats | `BattleField` runtime struct, populated by `Monster_SetLevel` | Ghidra decompiled — formula in `ghidra_results.md` §2.1. The per-species baseAttack/baseHealth still need to be pulled (out of scope this pass). | ⚠️ Formula extracted; species base values TODO |
+| Shop prices (`GroceryStore`, `PotionShop`, `FishStore`) | `Commody_InitCommody` + 3 store `InitStore` methods | Ghidra decompiled — full price table in `ghidra_results.md` §4. All 12 items + per-store discounts decoded. | ✅ Wave 5 |
+| 3/167 final-boss multi-stage layouts | `Battle Event #15519/15723/15998...` — empty `enemyList` + complex `SecendBattleStr` blob | Hand-decode `SecendBattleStr` serialized Unity List<string> with the `parse_unity_string_list` helper | ⏳ Not started |
+| `Monster` per-creature numeric stats | `Monster` MB class | Ghidra can decompile `MonsterGenerater`; not done this pass | ⏳ Not started |
+| EndingEventDirector 5 endings full triggers | `Ending*` class | Search by name pattern in il2cpp.cs | ⏳ Not started |
+| Shop merchant price tables | `GroceryStore/PotionShop/FishStore.InitStore` | Ghidra decompiled — see `ghidra_results.md` §4.2 | ✅ Wave 5 |
+| `CrulWorld` exact modifier effects per level | `GameManager.cruelLevel` is added to hero attack + monster atk/hp; per-level reward multipliers not found in decompiled code | Ghidra extracted difficulty multiplier; reward bonuses may live in `Hero.BattleEnd` / `AdventrueManager.AwardBattle` (not decompiled) | ⚠️ Partial (Wave 5) |
+
+The full todo list remains in `rebuild/todo.md`. This wave resolves **High Priority #2** (XNode BattleEventNode body fields are now parseable) and **Medium #6** (per-event item drop chance can be computed from the now-visible `equipmentReward` field for the 44 records that have it). Wave 5 then resolved the Ghidra-decompilable items #1, #4, #5, #6, #7, #8, partial #9.

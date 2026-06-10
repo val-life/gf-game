@@ -86,21 +86,30 @@ ships TPK definitions for built-in types and we can still recover MonoBehaviour
 
 See `wave3_extraction.md` for the pipeline + schema.
 
-### 1. IL2CPP method bodies = invoker stubs (not the formulas)
+### 1. IL2CPP method bodies — symbols ARE preserved on this ARM64 build (Wave 5 update)
 
-The RVAs in `il2cpp.cs` (e.g. `0x00B36668` for `CaculateBaseAttack`) point to **invoker stubs** that call `Runtime::InvokeMethod`. The actual formula constants (e.g. `lvl * 1.2`) are **runtime-dispatched via metadata** and not in the .so as immediate values.
+> **This assumption was wrong for this build.** The original concern was that the RVAs in
+> `il2cpp.cs` (e.g. `0x00B36668` for `CaculateBaseAttack`) point to **invoker stubs** that call
+> `Runtime::InvokeMethod` and that the actual formula constants are runtime-dispatched via
+> metadata. On x86 IL2CPP builds that *is* often the case. On this ARM64 build, however, the
+> IL2CPP symbols are **preserved** — method bodies contain the real C# code, and the
+> constants live in the `.rodata`/`.got` sections as IEEE 754 doubles/floats.
 
-Disassembly at `0x00B36668` shows:
-```
-0x00B36668: udf #0x0  (padding)
-0x00B3666c: udf #0x0
-...
-0x00B3668c: stp x22, x21, [sp, #-0x30]!   (List<T>.EnsureCapacity prologue)
-```
+The Wave 5 Ghidra decompilation extracted:
+- Hero attack: `attack = (每点力量攻击力Addition + 0.4 + cruelLevel) * Power + 5`
+- Hero defence: `defence = (每点体质防御力Addition + 0.5) * Constitution`
+- XP curve: `MaxExp = (int)(level^1.25 * 100)`
+- Soul gain: `souls = (reincTime*10 + 200) + (level+1) * ((baseSoul + allHeroSoul) * 0.01)`, cap 20000
+- Monster scaling: `atk = base * (CW + (pow(L, exp) * 0.15 * (L+1)) / 10 + 0.9)`
+- Equipment property: per-(prop, slot) `level*minMul + maxAdd` table with ±5% variance
+- Shop price: `(250 + Addition) * (Rarity+1)`, with relicType discount
 
-**This means**: To recover the actual damage formulas, you need:
-- Frida hook at runtime, OR
-- AssetStudio TypeTree dump for default field values
+See `ghidra_results.md` for the full extraction (24 KB). The `todo.md` items #1, #4, #5,
+#6, #7, #8 are now **RESOLVED**; #9 (Cruel World per-level reward multipliers) is partial.
+
+For the 7 `CaculateBase*` methods that weren't fully traced (maxHealth, dodge, attackSpeed,
+blockRate, criticalRate, expGain, relationshipGain), the pattern is the same:
+`(Addition + const) * stat + floor`. Pulling the remaining constants is the next pass.
 
 ### 2. The real game data is in `global-metadata.dat`
 
@@ -199,12 +208,16 @@ These tell us the **constant base values** used by `CaculateBase*` methods witho
 
 ## What remains
 
-| Item | Why | How |
-|---|---|---|
-| Exact damage formula constants | IL2CPP invoker stubs | Frida hook or reimplement from talent values |
-| Save file JSON schema | Runtime only | Rooted device + 10min play |
-| Full structured per-field decode of every MB type | UnityPy can't infer user-script TypeTree | Generate dummy DLLs via `Tool/Il2CppInspectorRedux.GUI` → re-export with AssetStudioMod. See `wave3_extraction.md` §3.1 |
-| 3 / 167 BattleEventNodes with boss-fight layouts | Simple parser fails on multi-stage layouts | Hand-decode or write a layout-aware parser |
-| 5 endings full trigger conditions | 5 NPC names + 1 condition known | Read from C# class `EndingEventDirector` |
-| Per-monster numeric stats (HP/ATK/DEF per-creature) | `Monster` MB needs structured decoding | Same as full MB decode above |
-| `潜行` (Hunter) profession-locked relics | Profession exists in `WeaponSettingJS` but no `RelicSettingJS` entries are `猎人`-only | The hunter equipment lock is real; the relic pool may genuinely be just `通用`/`战士` |
+> **Wave 5 (2026-6-10) Ghidra pass resolved most of these** — see `ghidra_results.md` and the updated `todo.md` "Resolved in Wave 5" table.
+
+| Item | Why | How | Status |
+|---|---|---|---|
+| Exact damage formula constants | (Was: IL2CPP invoker stubs) | Ghidra decompilation — see `ghidra_results.md` §1-2 | ✅ Wave 5 |
+| Per-monster species base stats (HP/ATK/DEF per-creature) | `MonsterGenerater` needs structured decoding | Ghidra decompilation of `MonsterGenerater`; not done this pass | ⚠️ Partial — formula extracted, per-species values TODO |
+| 7 remaining `CaculateBase*` methods (maxHealth, dodge, atkSpeed, blockRate, critRate, expGain, relationshipGain) | Same pattern as attack/defence | Ghidra — see `ghidra_results.md` §1 | ⚠️ Pattern known, individual constants TODO |
+| Save file JSON schema | Runtime only | Rooted device + 10min play | ⏳ Not started |
+| Full structured per-field decode of every MB type | UnityPy can't infer user-script TypeTree | Generate dummy DLLs via `Tool/Il2CppInspectorRedux.GUI` → re-export with AssetStudioMod. See `wave3_extraction.md` §3.1 | ⏳ Not started |
+| 3 / 167 BattleEventNodes with boss-fight layouts | Simple parser fails on multi-stage layouts | Hand-decode or write a layout-aware parser | ⏳ Not started |
+| 5 endings full trigger conditions | 5 NPC names + 1 condition known | Read from C# class `EndingEventDirector` | ⏳ Not started |
+| `CrulWorld` per-level reward multipliers (XP/gold) | Not in decompiled `Monster_SetLevel` / `Hero_CaculateBaseAttack` | Frida hook or decompile `Hero.BattleEnd` / `AdventrueManager.AwardBattle` | ⚠️ Partial — damage multiplier extracted, rewards TODO |
+| `潜行` (Hunter) profession-locked relics | Profession exists in `WeaponSettingJS` but no `RelicSettingJS` entries are `猎人`-only | The hunter equipment lock is real; the relic pool may genuinely be just `通用`/`战士` | ⏳ Data gap (not a code gap) |
