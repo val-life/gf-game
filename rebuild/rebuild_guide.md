@@ -857,20 +857,14 @@ For the per-talent `Addition` values (the actual numbers from `extracted_game_da
 
 ## 9. Skipped / Simplified Systems (Web Rebuild Decisions)
 
-> These items were originally "TODO" in `todo.md` but resolved as **SKIP/SIMPLIFY** for the web rebuild.
-> See `todo.md` for the full reasoning.
-
 ### 9.1 Audio
-- **Decision**: **Use generic sounds** (or no audio)
-- **Source data**: `Dump/AudioClip/` has ~10+ audio cues (BGM, SFX for attacks/crits/menus)
-- **Why skipped**: Web rebuild is single-player, casual — no need for custom audio assets
-- **Replacement**: If audio desired, use a few royalty-free SFX (click, hit, level-up)
+- **Decision**: no audio
 
 ### 9.2 Animations
 - **Decision**: **Use simple sprite transitions** (no skeletal anim)
 - **Source data**: `Dump/AnimationClip/` (6 keyframe clips) + `Dump/Animator/` (24 controller refs)
 - **Why skipped**: Animations are state-machine heavy in Unity, costly to port; web rebuild can use sprite-frame swaps
-- **Replacement**: Use fade-in/out, slide-in transitions, simple tweening
+- **Replacement**: Use fade-in/out, slide-in transitions, simple tweening etc.
 
 ### 9.3 Icons / Sprites
 - **Decision**: **Use emoji or color-coded cards** for items
@@ -883,24 +877,13 @@ For the per-talent `Addition` values (the actual numbers from `extracted_game_da
 
 ### 9.4 Save System
 - **Decision**: **Use localStorage** with simplified schema
-- **Source data**: Android `save.json` (un-extracted, requires rooted device)
-- **Why skipped**: Web localStorage is simpler than Android file-based saves
-- **Replacement**: Serialize game state to JSON, store under one localStorage key
-- **Schema** (suggested): `{ souls, evilCrystal, talents, relics, equipment, currentRun }`
 
 ### 9.5 Server / Multiplayer
 - **Decision**: **Single-player only** (no backend)
-- **Why skipped**: Game is single-player by design
-- **Replacement**: If cross-device sync desired, use `Node.js` + simple file-based save (see §7)
 
-### 9.6 3D Models
+### Models
 - **Decision**: **2D pixel art or icon-based** for all sprites
-- **Why skipped**: 3D models are heavyweight and not core to the rebuild
-- **Replacement**: Use 2D icons / illustrations
 
 ### 9.7 Localization
-- **Decision**: **Keep Chinese text** (with optional English toggle)
+- **Decision**: **Translate the simplified chinese to Traditional chinese**
 - **Source data**: `Dump/TextAsset/Zh.txt` is mojibake; use `chinese_strings.txt` (1,834 strings) and `data/monobehaviour_strings.json` (8,310 CJK strings) instead
-- **Why skipped**: Game is designed for Chinese audience; rebuilding localization system is expensive
-- **Replacement**: Hardcode Chinese in JSON data files; if English, do post-processing translation
-- **`il2cpp_extracted.md`** (in original game folder) — Class/field/method signatures from IL2CPP dump
