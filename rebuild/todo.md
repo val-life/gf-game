@@ -41,6 +41,8 @@ This file tracks what we **don't have** for the web rebuild. Items here are bloc
 
 ## TODO: Missing for full rebuild
 
+> Many items originally in this list have been **resolved or skipped** — see `rebuild_guide.md` §1.5 (Talent), §1.6 (Fishing), §9 (Skipped Systems) for decisions.
+
 ### High Priority (blockers)
 
 #### 1. Exact damage formula constants (CaculateBase*)
@@ -85,60 +87,40 @@ This file tracks what we **don't have** for the web rebuild. Items here are bloc
 - **How to get**: Frida hook + log XP table for levels 1-50
 - **For web rebuild**: needed for progression pacing
 
-#### 6. Save file JSON schema
-- **What**: How does the Android save look? What keys/values?
-- **Status**: ✅Not extracted (no rooted device available)
-- **How to get**: Root Android device, play 10 min, `adb pull /data/data/<pkg>/files/save.json`
-- **For web rebuild**: **SKIP** — web uses localStorage with simpler schema
-
-#### 7. Shop prices (GroceryStore, PotionShop, FishStore)
+#### 6. Shop prices (GroceryStore, PotionShop, FishStore)
 - **What**: Cost of each item in each shop, stock refresh rate
 - **Status**: ⚠️ Class names known, prices not extracted
 - **How to get**: Frida hook or AssetStudio TypeTree dump
 - **For web rebuild**: needed for economy balance
 
-#### 8. Soul gain formula (CaculateGainSoulNum RVA 0x00B06E34)
+#### 7. Soul gain formula (CaculateGainSoulNum RVA 0x00B06E34)
 - **What**: How many souls per monster? Difficulty multiplier?
 - **Status**: ✅RVA known, formula unknown
 - **How to get**: Frida hook
 - **For web rebuild**: needed for reincarnation balance
 
-#### 9. Equipment random property generation (AddRandomProperty)
+#### 8. Equipment random property generation (AddRandomProperty)
 - **What**: Pool of stat prefixes (e.g. "+attack", "+defence", "+HP"), weights, rarity-based stat ranges
 - **Status**: ✅**PARTIALLY RESOLVED** — `data/WeaponSettingJS.json` now gives us the per-slot property pool. Each equipment row has `MainProperty` (always rolled), `SubProperty` (always rolled, or `?? for accessories), `SecondProperty` (comma-list of possible random affixes). What's STILL missing: per-rarity stat magnitudes (e.g. how much `?? is `+5` vs `+20`?) and the weighted roll table for affix selection.
 - **How to get**: Frida hook + log generated properties, OR re-extract MonoBehaviour bodies with TypeTree
 - **For web rebuild**: pool structure is enough to start; magnitudes can be tuned from feel
 - **Wave 3 progress**: confirmed via Ghidra that `generateEquipment @ 0xC3CDC0` uses external `DAT_*` constants in `.data` for exact stat formulas. Pattern is `Random.Range(level*minMul+minAdd, level*maxMul+maxAdd)`. DEF base = `level*4+4` (main) / `level*2+2` (sub).
 
-### Low Priority (nice-to-have)
-
-#### 10. Audio cues per event
-- **Status**: Skipped (no audio in web rebuild)
-- **Decision**: use generic sounds
-
-#### 11. Animation states
-- **Status**: Skipped (no animations in web rebuild). Note: `Dump/AnimationClip/` contains 6 keyframe clips and `Dump/Animator/` 24 controller refs if needed later.
-- **Decision**: use simple sprite transitions
-
-#### 12. Icon/sprite per item
-- **Status**: ✅Partially resolved — `Dump/Sprite/` has 568 sprite rect/atlas refs (incl. `EquipmentGrid_Blue/Red/Yellow/Pinple/Withte` for rarity tinting, `*_AdventruePlaceImg*` for area portraits, `*_CharacterHeadPortrait*` for NPCs). Pixel data lives in `resources.assets.resS` and was not exported.
-- **Decision**: use emoji or color-coded cards for the rebuild; the sprite refs are reference-only
-
-#### 13. Exact Cruel World modifier effects
+#### 9. Exact Cruel World modifier effects
 - **What**: When you set Cruel World level 1/3/5/7/10, what specific modifiers apply to enemies and rewards?
 - **Status**: ⚠️ Trigger conditions known, exact modifiers not extracted
 - **How to get**: Read `CrulWorld` class fields in detail + AssetStudio TypeTree dump
 
-#### 14. Talent prerequisites / tree
-- **What**: Are talents locked behind others? Or are they all random rolls?
-- **Status**: ⚠️ From talent data, looks like random roll from ~30 pool, no tree
-- **How to get**: Verify by reading `InitAllHeroTalent` method body
-- **Wave 3 progress**: `HeroTalentGenerator @ 0xB3B2F8` confirmed generates 35 Mythic talents. Mechanism: random roll from pool, no prerequisites visible.
+### Resolved (moved to `rebuild_guide.md`)
 
-#### 15. Fishing mechanics details
-- **What**: 3 fish classes, rarity table, reward table
-- **Status**: ⚠️ Class names known, no balance data. Note: `data/RelicSettingJS.json` has fishing-related items: `?? (unlocks system), `?? (-0.15 difficulty), `?? (-0.3 difficulty), `?? (legend reward unlock).
-- **How to get**: Read `FishArea`, `FishBar`, `FishField` fields + run Frida
+| Old # | Topic | Resolution |
+|---|---|---|
+| 6 | Save file JSON schema | SKIP → `rebuild_guide.md` §9.4 (use localStorage) |
+| 10 | Audio cues per event | SKIP → `rebuild_guide.md` §9.1 (use generic sounds) |
+| 11 | Animation states | SKIP → `rebuild_guide.md` §9.2 (simple sprite transitions) |
+| 12 | Icon/sprite per item | SKIP → `rebuild_guide.md` §9.3 (use emoji or color-coded cards) |
+| 14 | Talent prerequisites / tree | RESOLVED → `rebuild_guide.md` §1.5 (random roll with rarity-tier probability) |
+| 15 | Fishing mechanics | RESOLVED → `rebuild_guide.md` §1.6 (vertical bar with green area + oscillating indicator) |
 
 ---
 

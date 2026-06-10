@@ -100,6 +100,48 @@ This is a **design reference**, not a tutorial. For a web rebuild:
 | **Difficulty** | `CrulWorld` / `CruelWorld` (both spellings exist) | Hard mode (see `extracted_game_data.md` §6) |
 | **Ending** | `EndingEventDirector`, `PrePareEndingEvent` | 5+ endings (see `extracted_game_data.md` §6) |
 
+### 1.5 Talent System (Wave 3)
+
+- **Generator**: `HeroTalentGenerator @ 0xB3B2F8` (all 35 talents in one method)
+- **Pool size**: 35 talents total
+- **Selection mechanism**: **Random roll from pool, no prerequisite tree**
+- **Rarity system**: All 35 talents are `神话` (Mythic) rarity, but **different rarity sub-types exist** with different probability weights (per user note, 2026-6-10)
+- **Implementation for web rebuild**:
+  - Use `Math.random()` weighted selection
+  - Suggested weight buckets (tune from feel):
+    - Common (D-tier): 50% (e.g. 强壮D, 敏捷D, 坚韧D)
+    - Uncommon (A-tier): 30% (e.g. 强壮A, 敏捷A, 坚韧A)
+    - Rare (special): 15% (e.g. 剑之勇者, 盾之勇者, 死亡回归)
+    - Legendary: 5% (e.g. 天才大脑, 有点小帅, 神之子, 母胎单身二十年)
+  - Apply effects on level-up or on birth (per `InitAllHeroTalent`)
+  - See `game_complete.md` §HERO TALENTS for full 35-talent list with effects
+
+### 1.6 Fishing Minigame (Wave 3, per user note 2026-6-10)
+
+**Mechanic** (described by user):
+- **Vertical bar** displayed on screen
+- A **green-highlighted area** inside the bar (the "target zone")
+- An **indicator (cursor)** oscillates left↔right (bouncing), speed is fast and constant
+- Player must **click to stop** the indicator
+- **Result**:
+  - If indicator stops **inside green zone** = successful catch
+  - If outside = miss
+- **Catch rarity** depends on how centered the stop is in the green zone (perfect center = best, near edge = good)
+
+**Implementation for web rebuild** (PixiJS/Phaser):
+- Vertical bar: 200px tall, 40px wide
+- Green zone: 30px tall, position randomized each cast
+- Indicator speed: ~600px/sec, oscillating
+- Click anywhere on the bar to stop
+- Reward: rarity tier × difficulty stat (see `data/RelicSettingJS.json` fishing relics)
+
+**Relics affecting fishing** (from `data/RelicSettingJS.json`):
+- "Fishing Pro" (钓鱼达人): -0.15 difficulty, +income
+- "Fishing Expert" (钓鱼好手): -0.3 difficulty
+- "Legend Reward" (传奇奖励): unlocks highest-tier fish
+
+**Related classes**: `FishArea`, `FishBar`, `FishField`, `FishStore`
+
 ---
 
 ## 2. Player / Monster Stats
@@ -520,7 +562,8 @@ Data files (JSON):
 2. **Stat system** (16 base + 5 derived + buffs)
 3. **Combat engine** (damage formula + crit/block/dodge + buffs)
 4. **Event system** (event graph, simplified to JSON)
-5. **Talents** (apply stat mods on level-up, see extracted_game_data.md §2)
+5. **Talents** (apply stat mods on level-up, see extracted_game_data.md §2, talent mechanic §1.5)
+6. **Fishing minigame** (vertical bar mechanic, see §1.6)
 6. **Relics + Equipment** (IMPORT `data/RelicSettingJS.json` + `data/WeaponSettingJS.json`, see §3a/§3b — these are the canonical balance dataset; write a small `RelicEffect`-string parser that splits on `;` and `:`)
 7. **Boss-drop artifacts** (special-effect items, see §3c — hand-coded combat-tick behaviours)
 8. **Monsters** (50 enemies with abilities, see §4)
@@ -528,6 +571,7 @@ Data files (JSON):
 10. **Map** (6 regions, 5 worlds, transition logic)
 11. **Adventure deck** (IMPORT `data/EventCardTypeSettingJS.json` — weighted roll for monster/elite/smith/merchant, see §4b)
 12. **Endings** (5 endings + CW levels, see §6)
+13. **Skipped systems** (audio/animation/icons/save) — see §9
 
 ---
 
@@ -547,4 +591,55 @@ Data files (JSON):
 - **`chinese_strings.txt`** — Raw 1,834 Chinese strings (for any text not in extracted_game_data)
 - **`extraction_summary.md`** — How data was extracted, what was discovered
 - **`todo.md`** — What's still missing for full rebuild
+
+---
+
+## 9. Skipped / Simplified Systems (Web Rebuild Decisions)
+
+> These items were originally "TODO" in `todo.md` but resolved as **SKIP/SIMPLIFY** for the web rebuild.
+> See `todo.md` for the full reasoning.
+
+### 9.1 Audio
+- **Decision**: **Use generic sounds** (or no audio)
+- **Source data**: `Dump/AudioClip/` has ~10+ audio cues (BGM, SFX for attacks/crits/menus)
+- **Why skipped**: Web rebuild is single-player, casual — no need for custom audio assets
+- **Replacement**: If audio desired, use a few royalty-free SFX (click, hit, level-up)
+
+### 9.2 Animations
+- **Decision**: **Use simple sprite transitions** (no skeletal anim)
+- **Source data**: `Dump/AnimationClip/` (6 keyframe clips) + `Dump/Animator/` (24 controller refs)
+- **Why skipped**: Animations are state-machine heavy in Unity, costly to port; web rebuild can use sprite-frame swaps
+- **Replacement**: Use fade-in/out, slide-in transitions, simple tweening
+
+### 9.3 Icons / Sprites
+- **Decision**: **Use emoji or color-coded cards** for items
+- **Source data**: `Dump/Sprite/` (568 sprite rect/atlas refs) + `Dump/Texture2D/` (200+ textures)
+- **Why skipped**: Pixel data lives in `resources.assets.resS` (not exported as PNG); recreating sprites is expensive
+- **Replacement**:
+  - Equipment rarity → color (gray/blue/purple/orange/red for 普通/稀有/史诗/传说/神话)
+  - Item type → emoji (⚔️ weapon, 🛡️ armor, ⛑️ helmet, 💍 accessory)
+  - Use existing Unicode icons for relics/artifacts
+
+### 9.4 Save System
+- **Decision**: **Use localStorage** with simplified schema
+- **Source data**: Android `save.json` (un-extracted, requires rooted device)
+- **Why skipped**: Web localStorage is simpler than Android file-based saves
+- **Replacement**: Serialize game state to JSON, store under one localStorage key
+- **Schema** (suggested): `{ souls, evilCrystal, talents, relics, equipment, currentRun }`
+
+### 9.5 Server / Multiplayer
+- **Decision**: **Single-player only** (no backend)
+- **Why skipped**: Game is single-player by design
+- **Replacement**: If cross-device sync desired, use `Node.js` + simple file-based save (see §7)
+
+### 9.6 3D Models
+- **Decision**: **2D pixel art or icon-based** for all sprites
+- **Why skipped**: 3D models are heavyweight and not core to the rebuild
+- **Replacement**: Use 2D icons / illustrations
+
+### 9.7 Localization
+- **Decision**: **Keep Chinese text** (with optional English toggle)
+- **Source data**: `Dump/TextAsset/Zh.txt` is mojibake; use `chinese_strings.txt` (1,834 strings) and `data/monobehaviour_strings.json` (8,310 CJK strings) instead
+- **Why skipped**: Game is designed for Chinese audience; rebuilding localization system is expensive
+- **Replacement**: Hardcode Chinese in JSON data files; if English, do post-processing translation
 - **`il2cpp_extracted.md`** (in original game folder) — Class/field/method signatures from IL2CPP dump
