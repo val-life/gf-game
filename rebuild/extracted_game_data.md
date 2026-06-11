@@ -5,9 +5,22 @@
 > **Method**: Decoded StringLiteral table (11,901 entries) with UTF-8 + GB18030
 > **Tool**: Ghidra MCP (libil2cpp.so) + direct metadata binary scan
 
+> **Quick reference numbers** (cross-checked against `game_complete.md`):
+> 15 buff presets in `InitBasicBuffs` (§1) · 35-talent pool with 30 names
+> recovered from string-literal scan (§2) · 48 boss-drop artifacts (§3c) ·
+> 58 monster base stats (§4 + ghidra_results §11) · 15 warrior skills
+> with 3-level scaling (§5) · 5 endings + 1 meta-condition (如此老套?)
+> (§6) · 100+ achievements (§6 table partial — see `todo.md`)
+
 ---
 
-## 1. Buff / Status Effect System (10 buffs)
+## 1. Buff / Status Effect System (15 buffs)
+
+> 15 `InitBasicBuffs` entries registered in `libil2cpp.cs:7122` →
+> `AdventrueManager.InitBasicBuffs`. The `BuffName` enum has 17 values
+> (`il2cpp.cs:975`) — 2 unused (专注 idx=4, 胆怯 idx=6) are kept for
+> save compatibility but never spawned. Per `extracted_game_data.md` §1
+> and `game_complete.md` #BUFFS, the 15 in-use ones are:
 
 | Buff | Effect |
 |---|---|
@@ -29,8 +42,16 @@
 
 ---
 
-## 2. Talents (天赋) - 30+ traits
+## 2. Talents (天赋) - 30 of 35 traits (string-literal recovery)
 
+> The talent pool has **35 talents total** in `HeroTalentGenerator @ 0xB3B2F8`
+> (per `game_complete.md` #HERO TALENTS and `rebuild_guide.md` §1.5). The
+> StringLiteral scan below recovered **30 names + effect strings** (IDs
+> 5481-5542). The 5 missing are mostly the 神话-rarity legendary talents
+> (per `rebuild_guide.md` §1.5 weight buckets): 神之子, 有点小帅, 母胎
+> 单身二十年, plus a couple of mixed-tier entries. See `game_complete.md`
+> for the full list.
+>
 > Format: Name + Full description (1-2 lines, exact effect values extracted)
 
 | ID | Name | Effect |
@@ -193,9 +214,14 @@
 | 25 | 防御戒指 | 饰品 | 战士 | 防御 | 无 | 回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡 |
 | 26 | 格挡戒指 | 饰品 | 战士 | 格挡 | 无 | 回复，攻击，闪避，反击，吸血，攻速，溅伤，防御，格挡 |
 
-### 3c. Boss-drop / special-effect artifacts (string-literal scan)
+### 3c. Boss-drop / special-effect artifacts (48 entries, string-literal scan)
 
-> Imported from earlier `global-metadata.dat` extraction. These have unique combat-tick behaviour that's outside the simple `key:value` effect format used by section 3a. For each artifact, the description in `chinese_strings.txt` is the canonical behaviour text.
+> Imported from earlier `global-metadata.dat` extraction. 48 artifacts
+> registered by `ArtifactGenerater` ctor at `0xCE58A0` (per `artifact_complete.md`
+> and `game_complete.md` #ARTIFACTS). These have unique combat-tick behaviour
+> that's outside the simple `key:value` effect format used by section 3a.
+> For each artifact, the description in `chinese_strings.txt` is the
+> canonical behaviour text.
 
 | ID | Name | Effect |
 |---|---|---|
@@ -259,8 +285,14 @@
 | 1578 | 黄金匕首 | 战斗开始时，你每有300金币，提升你1%的攻击。最高100% |
 | 1581 | 愈合宝珠 | 你免疫流血。 |
 
-## 4. Monsters / Enemies / Bosses (50+ types)
+## 4. Monsters / Enemies / Bosses (50+ / 58 base-stat records)
 
+> 50+ monster names + ability descriptions recovered from string-literal
+> scan (IDs 7557-7809). The full **58 monster base stat records** (atk /
+> def / hp / atkInterval / crit) are extracted via Ghidra in `ghidra_results.md`
+> §11 — use those for combat balance. Per `rebuild_guide.md` §0 / §3.5
+> there are 5 worlds + 3 final boss stages.
+>
 > Format: Name + description + ability(ies)
 
 | ID | Name | Description / Ability |
@@ -420,8 +452,11 @@ Node.graph(12) | Node.position(8) | Node.ports.keys(4) | Node.ports.values(4)
 
 ---
 
-## 5. Skills (技能) - 20+ skills, 3 levels each
+## 5. Skills (技能) - 15 warrior skills, 3 levels each
 
+> The `generateZhanshiSkill` ctor at `0xBF2144` registers 15 warrior skills
+> (per `game_complete.md` #SKILLS). The 14 entries below (9277-9319) cover
+> the warrior-specific set; one more (likely a generic slot) is at ID 9333.
 > Format: Skill Name + 3 tier descriptions (Lv1, Lv2, Lv3)
 
 | ID | Name | Lv1 | Lv2 | Lv3 |
@@ -445,7 +480,18 @@ Node.graph(12) | Node.position(8) | Node.ports.keys(4) | Node.ports.values(4)
 
 ## 6. Achievements / Endings / Cruel World Levels
 
+> Partial recovery (string-literal scan recovered 50 rows out of 100+
+> achievements registered by `AchivementManager.InitAchivements` @ 0xE8C25C).
+> The 5 endings + 1 meta-condition are fully extracted and verified via
+> Ghidra (see `rebuild_guide.md` §5).
+>
 > Format: Name + trigger condition + reward (e.g. 灵魂:2)
+>
+> **The table below is the partial scan** — some columns may be misaligned
+> because the StringLiteral table interleaves name / trigger / reward /
+> description with other system strings. Use `AchivementManagerSaver.
+> achivementSavers` from a real save (per `save_format.md` §2.1) as the
+> authoritative source for production use.
 
 | ID | Name | Trigger | Reward |
 |---|---|---|---|

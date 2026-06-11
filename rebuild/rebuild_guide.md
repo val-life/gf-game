@@ -8,7 +8,7 @@
 > - `rebuild_guide.md` (this file) — game design & systems
 > - `ghidra_results.md` — **decompiled formulas + constants from `libil2cpp.so`** (Wave 5) — source of truth for §4 formulas
 > - `extracted_game_data.md` — decoded game data (talents, items, monsters, skills, buffs, achievements, endings, equipment, event-deck, Wave 3 counts)
-> - `UI_DESIGN.md` — **extracted UI layout / panel flow** (title screen → new game → continue → in-game panels). Source: `il2cpp.cs` `FDPanel` classes.
+> - `../web_game/UI_DESIGN.md` — **extracted UI layout / panel flow** (title screen → new game → continue → in-game panels). Source: `il2cpp.cs` `FDPanel` classes. **This is the authoritative UI doc.**
 > - `dump_inventory.md` — catalogue of the 11,271 `Dump/*` files by bucket (Wave 2, updated for Wave 3)
 > - `extraction_wave4.md` — TypeTree dump extraction pipeline (Wave 4)
 > - `wave3_extraction.md` — UnityPy pipeline + per-output schemas (Wave 3)
@@ -16,10 +16,12 @@
 > - `extraction_summary.md` — what was extracted & how
 > - `game_complete.md` — enums + 15 skills + 15 buffs + 35 talents + equipment formulas (Wave 3, supplemented by Wave 5)
 > - `artifact_complete.md` — 48 artifacts full reverse (Wave 3)
+> - `save_format.md` — complete save schema (6 per-run keys + 1 cross-run key)
 > - `todo.md` — what's still missing (most items now resolved by Wave 5)
 > - `data/RelicSettingJS.json` — canonical 51-relic balance dataset
 > - `data/WeaponSettingJS.json` — canonical 26-equipment dataset
 > - `data/EventCardTypeSettingJS.json` — canonical 4-card adventure-deck weights
+> - `data/aero_skills.json` — **TODO**: cross-run permanent skills (populate from `AchivementManager.InitHeroAeroSkills` `il2cpp.cs:42530`)
 > - `data/monoscript_catalog.json` — authoritative 780-entry PathID → Class.Namespace.Assembly map
 > - `data/mb_*.json` — TypeTree-decoded MB fields (Wave 4)
 > - `data/monobehaviour_*.{json,bin}` — 10,246 MB instance records + 2.34 MB raw tail blobs + 8,310 CJK strings
@@ -59,20 +61,31 @@ This is a **design reference**, not a tutorial. For a web rebuild:
 
 - **Genre**: Roguelike + narrative + turn-based card-style combat
 - **Theme**: "Otherworld" + "Reincarnation" — each game = new world, on death → reincarnate (choose birth)
-- **Resource loop**: each run earns **Souls (灵魂)**, spent in **Evil Crystal (邪晶)** for permanent upgrades
+- **Resource loop**: each run earns **Souls (灵魂)**, spent in two places:
+  1. **Hero Aero Skills (英雄光环)** — permanent cross-run stat boosts (the actual stat-spend sink)
+  2. **Evil Crystal (邪晶) meter** — fills up automatically, gates story-event unlocks; NOT a stat-spend sink. See §3.4 + §4.6 for the distinction.
 
 ### 1.2 Core Loop
 
+> **Reading**: `[Start]` = the moment a new run begins (i.e. the player just
+> clicked 新的轮回 on the title screen and confirmed the goddess scene).
+> The full app boot path (title screen → new game → goddess → region → maze)
+> is documented in `../web_game/UI_DESIGN.md` §8.1.
+
 ```
-[Start] → SelectBirthOption → Choose region (Region)
+[Start] → SelectBirthOption (pick 1 of 5 talents + 残酷世界 level)
   ↓
 [Per turn] → ActionPoint (AP) → Event triggered → Combat/Choice/Rest
   ↓
 [Per year] → TimeFlow / YearPass → Year-end event
   ↓
-[Clear] → Kill Demon King (KillDemonKingAtAge) → Souls settled
+[Run end] → Game over (either Kill Demon King OR death) → CaculateGainSoulNum
   ↓
-[Reincarnate] → Spend Souls on Evil Crystal → New cycle
+[Reincarnate] → GameResultPanel → ComfirmGainSoulPanel → ReturnToTitle
+  ↓
+[Hero Aero] (title 英雄光环) → spend 灵魂 on cross-run permanent skills
+  ↓
+[New cycle] → repeat from [Start]
 ```
 
 ### 1.3 Currency Tiers
@@ -80,8 +93,8 @@ This is a **design reference**, not a tutorial. For a web rebuild:
 | Currency | Scope | Earned by | Spent on |
 |---|---|---|---|
 | `Gold` (金币) | In-run | Combat, gold mine events, fishing | Shops, items, repairs |
-| `Souls` (灵魂) | Cross-run | End-of-run settlement, soul grave, ad boost | Evil Crystal upgrades |
-| `EvilCrystal` (邪晶) | Meta (permanent) | Souls → EC conversion (`EvilCrystalValueChange`) | Permanent stat boosts |
+| `Souls` (灵魂) | Cross-run | End-of-run settlement (`CaculateGainSoulNum`), soul grave, ad boost | **Hero Aero Skills** (permanent stat boosts — see §4.6.1) |
+| `EvilCrystal` (邪晶) | Meta (gates story) | `EvilCrystalValueChange` + `EvilCrystalGrow` (auto-fills) | Unlocks story events via `EvilCrystalUpgrade` — **NOT** a stat-spend sink. See §4.6. |
 | `AdventureActionPoint` (AP) | Per turn | Reset to max each turn | Each action consumes 1 AP |
 
 ### 1.4 Core System List (67 game classes)
@@ -106,16 +119,18 @@ This is a **design reference**, not a tutorial. For a web rebuild:
 | **Fishing** | `FishArea`, `FishBar`, `FishField` | Minigame |
 | **Time** | `TimeSystem`, `TimeFlowPanel`, `DiscreteTime`, `AgeStage` | Year/age system |
 | **Achievement** | `Achivement` (spelling bug), `AchivementManager` | Unlockables (see `extracted_game_data.md` §6) |
-| **Evil Crystal** | `EvilCrystal`, `EvilCrystalUpgrade` | Meta progression |
-| **Difficulty** | `CrulWorld` / `CruelWorld` (both spellings exist) | Hard mode (see `extracted_game_data.md` §6) |
+| **Evil Crystal** | `EvilCrystal`, `EvilCrystalUpgrade`, `EvilCrystalDisplay` | Meta progression (story-event unlock meter) |
+| **Hero Aero Skills** | `HeroAeroSkill`, `HeroAeroSkillDisplay`, `InitHeroAeroSkills` | Cross-run permanent stat upgrades — where 灵魂 actually gets spent (see §4.6.1) |
+| **Difficulty** | `CrulWorld` / `CruelWorld` (both spellings exist), `CrulWordToggle` | Hard mode (see `extracted_game_data.md` §6) |
 | **Ending** | `EndingEventDirector`, `PrePareEndingEvent` | 5+ endings (see `extracted_game_data.md` §6) |
 
-### 1.5 Talent System (Wave 3)
+### 1.5 Talent System (Wave 3 + Ghidra Wave 6)
 
-- **Generator**: `HeroTalentGenerator @ 0xB3B2F8` (all 35 talents in one method)
-- **Pool size**: 35 talents total
-- **Selection mechanism**: **Random roll from pool, no prerequisite tree**
-- **Rarity system**: All 35 talents are `神话` (Mythic) rarity, but **different rarity sub-types exist** with different probability weights (per user note, 2026-6-10)
+- **Generator**: `HeroTalentGenerator @ 0xB3B2F8` + `AchivementManager.InitAllHeroTalent` (`il2cpp.cs:42530`)
+- **Pool size**: **35 talents total** (see `game_complete.md` #HERO TALENTS for the full list)
+- **String-literal recovery**: 30 of 35 names + effect strings recovered via StringLiteral scan (see `extracted_game_data.md` §2, IDs 5481-5542). The 5 missing are mostly 神话-rarity legendaries.
+- **Selection mechanism**: **Random roll from pool, no prerequisite tree** (player picks 1 of 5 shown)
+- **Rarity system**: All 35 talents are `神话` (Mythic) rarity, but **different rarity sub-types exist** with different probability weights (per user note, 2026-6-10, and `ghidra_results.md` §14)
 - **Implementation for web rebuild**:
   - Use `Math.random()` weighted selection
   - Suggested weight buckets (tune from feel):
@@ -124,7 +139,9 @@ This is a **design reference**, not a tutorial. For a web rebuild:
     - Rare (special): 15% (e.g. 剑之勇者, 盾之勇者, 死亡回归)
     - Legendary: 5% (e.g. 天才大脑, 有点小帅, 神之子, 母胎单身二十年)
   - Apply effects on level-up or on birth (per `InitAllHeroTalent`)
-  - See `game_complete.md` §HERO TALENTS for full 35-talent list with effects
+  - See `game_complete.md` for full 35-talent list with effects
+  - UI: `HeroTalentBox` (`il2cpp.cs:53673`) renders the 5 draft cards;
+    see `../web_game/UI_DESIGN.md` §2.1 for wireframe
 
 ### 1.6 Fishing Minigame (Wave 3, per user note 2026-6-10)
 
@@ -326,21 +343,39 @@ Turn end:
 ComfirmGainSoulPanel → confirm soul gain
 ShowGainSoulAds → 2x with ad (skip for web)
   ↓
-[Evil Crystal]
-  ├ EvilCrystalValueChange → EC = souls
-  ├ EvilCrystalGrow / GrowSpeed → passive growth
-  ├ EvilCrystalUpgrade → permanent stat boost
-  └ AllResetEvilCrystal → reset option
+LoadScene.ReturnToMainMenu() → back to title screen
+  ↓
+[Title screen 英雄光环 button] → HeroAeroSkillDisplay
+  ├ HeroAeroSkill.UpgradeThisSkill()   // per-skill level up, costs 灵魂
+  ├ HeroAeroSkill.ResetThisSkill()     // refund
+  └ AllResetEvilCrystal (Settings)     // nuke everything, start over
+  ↓
+[Evil Crystal — visual only on goddess scene]
+  ├ EvilCrystalValueChange → EC += delta (clamp 0..MaxValue=100)
+  ├ EvilCrystalGrow     → EC += EvilCrystalGrowSpeedTotal per tick
+  ├ EvilCrystalUpgrade  → CurrentEvilCrystalLevel += 1; CurrentValue = 0
+  │                       (triggers CurrentEvilCrystalStoryLine)
+  └ AllResetEvilCrystal → clears level + value + story ref
   ↓
 [Next run]
-  SelectBirthOptionPanel → choose birth
-  FirstTimeSeeGodnessSelectBirthOptionPanel → first time
+  SelectBirthOptionPanel → choose birth (talent + 残酷世界 level)
+  FirstTimeSeeGodnessSelectBirthOptionPanel → first time only
   ↓
 [Cruel World]
-  CrulWorldIsOpen → toggle
-  CurrentCrulLevel / MaxCruelLevel → level
-  CrulWordToggle → toggle word modifiers
+  CrulWorldIsOpen → toggle (only after 如此老套? ending)
+  CurrentCrulLevel / MaxCruelLevel → level (0/1/3/5/7/10 per extracted_game_data.md §6)
+  CrulWordToggle.ToLastLevel / ToNextLevel → level picker
 ```
+
+> **Key clarification**: `EvilCrystal` and `HeroAeroSkill` are TWO
+> different systems. The web rebuild can confuse them:
+> - `EvilCrystal` is a progress meter that gates **story events** (per
+>   `artifact_complete.md` and `rebuild_guide.md` §4.6). The UI is a bar
+>   on the goddess scene (`EvilCrystalDisplay`, see UI_DESIGN §2.1).
+> - `HeroAeroSkill` is where the actual **cross-run permanent power**
+>   lives. The UI is the title screen's `英雄光环` button
+>   (`HeroAeroSkillDisplay`, see UI_DESIGN §7.4). The player spends
+>   灵魂 here, NOT on the EC meter.
 
 ### 3.5 5 Worlds + 3 Final Stages (extracted structure)
 
@@ -354,10 +389,21 @@ ShowGainSoulAds → 2x with ad (skip for web)
 | **兽人山脉 (Orc Mountain)** | 13860 | 兽人, 兽人战士, 地狱犬, 牛头人 | 剑圣 卡里摩多 / 牛头将军 |
 | **墓地/魔域 (Cemetery)** | 13861 | 骷髅, 幽灵, 僵尸, 吸血鬼 | 骑士团长 卡拉多格 / 魔将 卜里奥 |
 
-**3 Final Boss stages**:
-- 魔王I (史莱姆形) - 再生, 急速成长
-- 魔王II (史莱姆形) - 崩坏, 多重拟态
-- 魔王眷属 - 极再生 3%/秒
+**3 Final Boss monster categories** (extracted from `extracted_game_data.md`
+§4; the 2-event sequence per `extracted_game_data.md` §4c is detailed
+below):
+- 魔王眷属 (Demon King Minion) — 极再生 3%/秒. Spawns as a side enemy
+  on the final-boss map (`extracted_game_data.md` §4c stage 1 includes
+  `魔王眷属` as one of the 6 enemy slots).
+- 魔王I (史莱姆形, stage 1 of the final boss event) — 再生, 急速成长
+- 魔王II (史莱姆形, stage 2 of the final boss event) — 崩坏, 多重拟态
+
+**2-event final boss structure** (per `extracted_game_data.md` §4c
+`mb_final_boss_layouts.json`):
+- pid 13989 + 14504 both have `is_final_boss_event=true` and
+  `sec_enemies` (stage 2) populated. The 2-stage event is
+  `魔王I → 魔王II`.
+- 11 elite bosses are single-stage with relic drops.
 
 ---
 
@@ -461,8 +507,9 @@ finalAtkSpeed   = baseSpeed  * (1 + improve_sum)                    // 1.0 = 1 a
 
 ### 4.3 Buff System
 
-> **10 buff types with full effect formulas** — see `extracted_game_data.md` §1.
-> (Buff stacking rules + DoT math are also summarised in §4.1; see `extracted_game_data.md` for the canonical list.)
+> **15 buff presets with full effect formulas** — see `extracted_game_data.md` §1
+> (10 active + 5 ultimate). Buff stacking rules + DoT math are also
+> summarised in §4.1; see `extracted_game_data.md` for the canonical list.
 
 ### 4.4 Action Point (AP) System
 
@@ -549,6 +596,43 @@ Cross-run Evil Crystal (Wave 6 schema extracted — `EvilCrystal` class @ 0x00B4
   // and in relics with `AcquisitionMethod: Special` + `AcquisitionLimit: Once` (see artifact_complete.md).
   // Per-tick grow rate is `EvilCrystalGrowSpeedTotal` from GameConst (addition-based; default 0).
 ```
+
+> **Important**: `EvilCrystal` is a STORY-UNLOCK meter, not a stat-spend
+> sink. The actual cross-run **stat boosts** the player spends 灵魂 on
+> live in the `HeroAeroSkill` system (see §4.6.1). Don't conflate them.
+
+### 4.6.1 Hero Aero Skills — where 灵魂 actually gets spent
+
+This is the cross-run permanent skill tree.
+
+`HeroAeroSkill` (`il2cpp.cs:53531`):
+```ts
+{
+  AeroSkillName:  string;     // e.g. "剑之勇者传承"
+  AeroSkillEffect: string;    // 1-line effect text
+  currentLevel:   int;        // 0..N (per-skill max)
+  begginValue:    int;        // 灵魂 cost to reach level 1
+  PowerValue:     double;     // strength scalar (per-level)
+  effectType:     EffectType; // Event | Value
+}
+```
+
+Operations (`il2cpp.cs:53546-53552`):
+- `GetUpgradeValueNeed()` → 灵魂 cost for next level
+- `GetTargetLevelNeed(level)` → cumulative 灵魂 cost to reach `level`
+- `GetCurrentValueNeed()` → cost to level-up from current
+- `GetAllSoulConsum()` → total 灵魂 spent on this skill
+- `ResetHeroAeroSkill()` → refund (subtract from AllGameSouls)
+- `GetEffectStr()` → effect text at current level
+- `DoEffect()` → apply on next run start
+
+UI: `HeroAeroSkillDisplay` (`il2cpp.cs:53555`) — see `../web_game/UI_DESIGN.md`
+§7.4 for the wireframe. Triggered from title screen via
+`LoadScene.ShowHeroAeroPanel()` (`il2cpp.cs:77500`).
+
+> **Web rebuild budget**: hard-code the 15+ skills in
+> `rebuild/data/aero_skills.json`. The original game's skill roster is
+> populated in `AchivementManager.InitHeroAeroSkills` (`il2cpp.cs:42530`).
 
 > **Save format**: complete schema extracted in `save_format.md` (Wave 5+). All `ISaveAndLoad` classes' `Save()` methods decompiled — 6 per-run keys + 1 cross-run key, AES-encrypted in Android internal storage. Web rebuild can skip the AES step and use the JSON schema directly with `localStorage`.
 
@@ -685,16 +769,29 @@ finalPrice = (int)((1.0 - this->Discount) * basePrice)
 | (bonus) | **如此老套?** (Beat King) | 如此老套？ | 击败了魔王 | — | 解锁残酷世界 |
 
 **Cruel World difficulty unlocks** (残酷世界, extracted via Ghidra Wave 5 + 6):
-- **Wave 6 finding**: `GameManager.cruelLevel` is a single integer (0, 1, 3, 5, 7, or 10 — the 5 selectable levels). It is **read in exactly 2 places** in the binary:
+- **Wave 6 finding**: `GameManager.cruelLevel` is a single integer. The
+  5 selectable levels are **0, 1, 3, 5, 7, 10** (no 2/4/6/8/9 — see
+  `extracted_game_data.md` §6). The picker UI is in
+  `CrulWordToggle` (`il2cpp.cs:26542`) with `LastLevel` / `NextLevel`
+  buttons; see `../web_game/UI_DESIGN.md` §2.1 for wireframe.
+- It is **read in exactly 2 places** in the binary:
   1. `Hero_CaculateBaseAttack` @ 0x00B36668: `attack = (Addition + 0.4 + cruelLevel) * Power + 5` — adds `+cruelLevel` per Power point.
   2. `Monster_SetLevel` @ 0x00A9F1C0: `attack = base * (cruelLevel + (level-curve) + 0.9)` — adds `cruelLevel` to the multiplier (NOT multiplicative).
 - So Cruel World makes both hero and monster stronger — it's a damage-rubberbanding system.
-- 0-1: no reward / 死里逃生:1
-- 3: 人类守卫者
-- 5: 可以锁定两个天赋 (lock 2 talents)
-- 7: 战神
-- 10: 爱的战士
+
+| Level | Reward |
+|---:|---|
+| 0 (off) | none |
+| 1 | 死里逃生:1 (death-escape +1 per run) |
+| 3 | 人类守卫者 |
+| 5 | 可以锁定两个天赋 (lock 2 talents) |
+| 7 | 战神 |
+| 10 | 爱的战士 |
+
 - **Crucially**: `GameManager_GainMoney`, `HeroLevel_AddExp`, and `CaculateGainSoulNum` do **NOT** read `cruelLevel`. The battle reward formulas (`exp = (expBase) * expReward * (level+1)`, `gold = floor((level*0.01+1.0) * goldReward * goldBase)`) are independent of CW. Higher CW = stronger monsters, same rewards.
+- **Cruel World is gated**: locked until the `如此老套?` ending is achieved
+  (beat the Demon King). `CrulWordToggle.MaxCruelLevel` returns 0 when
+  locked, 10 when unlocked.
 
 ---
 
@@ -734,14 +831,14 @@ Backend:     none (or Node.js for cross-device save)
 
 Data files (JSON):
   events.json         (1,477 XNode events, simplified)
-  talents.json        (30 talents, see extracted_game_data.md §2)
+  talents.json        (35 talents, see extracted_game_data.md §2 + game_complete.md #HERO TALENTS)
   relics.json         (51 relics, IMPORT data/RelicSettingJS.json as-is)        ← Wave 2
   equipment.json      (26 items + property pools, IMPORT data/WeaponSettingJS.json as-is)  ← Wave 2
-  artifacts.json      (40+ boss-drop items, see artifact_complete.md)
+  artifacts.json      (48 boss-drop items, see artifact_complete.md)
   monsters.json       (58 monsters, base atk/hp/atkInterval/crit from `ghidra_results.md` §11; abilities from extracted_game_data.md §4)
-  skills.json         (20 skills, see extracted_game_data.md §5)
-  buffs.json          (10 buff types, see extracted_game_data.md §1)
-  endings.json        (5 endings + CW levels, see §5)
+  skills.json         (15 warrior skills with 3 levels, see extracted_game_data.md §5)
+  buffs.json          (15 buff presets, see extracted_game_data.md §1)
+  endings.json        (5 endings + 6 CW levels, see §5)
   npcs.json           (5 NPCs + 12 storylines)
   regions.json        (6 map regions + 5 worlds)
   event_deck.json     (4 card weights, IMPORT data/EventCardTypeSettingJS.json as-is)     ← Wave 2
@@ -750,28 +847,31 @@ Data files (JSON):
   map_objects.json    (25 map objects, IMPORT data/mb_map_objects.json)               ← Wave 4
   xnode_texts.json    (1,477 nodes / 5,383 strings, IMPORT data/xnode_texts.json)     ← Wave 4
   conditions.json     (69 condition switches, IMPORT data/mb_condition_switches.json) ← Wave 4
+  aero_skills.json    (15+ cross-run permanent skills — see §4.6.1; populate from AchivementManager.InitHeroAeroSkills @ il2cpp.cs:42530)
 ```
 
 ### Suggested implementation order
 
 1. **State machine** for turn/year (basic loop)
 2. **Stat system** (16 base + 9 derived [see §2.1]; derived stats use formulas from `ghidra_results.md` §1)
-3. **Combat engine** (damage formula + crit/block/dodge + buffs — use §4.1 values)
+3. **Combat engine** (damage formula + crit/block/dodge + 15 buffs — use §4.1 values)
 4. **Event system** (event graph, simplified to JSON)
-5. **Talents** (apply stat mods on level-up, see extracted_game_data.md §2, talent mechanic §1.5)
+5. **Talents** (35 talents from pool, apply stat mods on level-up, see extracted_game_data.md §2 + game_complete.md #HERO TALENTS, mechanic §1.5)
 6. **Fishing minigame** (vertical bar mechanic, see §1.6)
-6. **Relics + Equipment** (IMPORT `data/RelicSettingJS.json` + `data/WeaponSettingJS.json`, see §3a/§3b — these are the canonical balance dataset; write a small `RelicEffect`-string parser that splits on `;` and `:`)
-   - Equipment property values are now **deterministic from `level*minMul + maxAdd` ± 5%** (see §4.8). Use this instead of hand-tuned affix magnitudes.
-   - Equipment rarity rolls use the 5-entry weighted table in §4.8.
-7. **Boss-drop artifacts** (special-effect items, see `artifact_complete.md` — hand-coded combat-tick behaviours)
-8. **Monsters** (58 enemies with abilities, see `ghidra_results.md` §11 for full base stat table + extracted_game_data.md §4 for abilities). Monster atk/hp scale with player level per §4.1.
-9. **Skills** (20 skills, 3 levels each, see extracted_game_data.md §5)
-10. **Map** (6 regions, 5 worlds, transition logic)
-11. **Adventure deck** (IMPORT `data/EventCardTypeSettingJS.json` — weighted roll for monster/elite/smith/merchant, see extracted_game_data.md §4b)
-12. **Shops** (12 items across GroceryStore/PotionShop/FishStore, prices from §4.9 — stock is fixed per game start, no per-turn refresh)
-13. **Endings** (5 endings + CW levels, see §5; CW damage multiplier from §4.1)
-14. **Skipped systems** (audio/animation/icons/save) — see §9
-15. **UI panels** — see `UI_DESIGN.md` for the extracted `FDPanel` layout (title screen, goddess scene, in-game map, combat, settings, game-over). Each panel = one DOM view mounted via a `panelStack`.
+7. **Relics + Equipment** (IMPORT `data/RelicSettingJS.json` + `data/WeaponSettingJS.json`, see §3a/§3b — these are the canonical balance dataset; write a small `RelicEffect`-string parser that splits on `;` and `:`)
+    - Equipment property values are now **deterministic from `level*minMul + maxAdd` ± 5%** (see §4.8). Use this instead of hand-tuned affix magnitudes.
+    - Equipment rarity rolls use the 5-entry weighted table in §4.8.
+8. **Boss-drop artifacts** (48 special-effect items, see `artifact_complete.md` — hand-coded combat-tick behaviours)
+9. **Monsters** (58 enemies with abilities, see `ghidra_results.md` §11 for full base stat table + extracted_game_data.md §4 for abilities). Monster atk/hp scale with player level per §4.1.
+10. **Skills** (15 warrior skills, 3 levels each, see extracted_game_data.md §5)
+11. **Map** (6 regions, 5 worlds, transition logic)
+12. **Adventure deck** (IMPORT `data/EventCardTypeSettingJS.json` — weighted roll for monster/elite/smith/merchant, see extracted_game_data.md §4b)
+13. **Shops** (12 items across GroceryStore/PotionShop/FishStore, prices from §4.9 — stock is fixed per game start, no per-turn refresh)
+14. **Endings** (5 endings + 6 CW levels, see §5; CW damage multiplier from §4.1)
+15. **Hero Aero Skills** (cross-run permanent skill upgrades, see §4.6.1; UI is `HeroAeroSkillDisplay` via title `英雄光环` button)
+16. **Evil Crystal** (story-unlock meter on goddess scene, see §4.6 + `EvilCrystalDisplay` — IMPORTANT: not a stat-spend sink, just gates story events; the 灵魂 actually goes to Aero Skills)
+17. **Skipped systems** (audio/animation/icons/save) — see §9
+18. **UI panels** — see `../web_game/UI_DESIGN.md` for the extracted `FDPanel` layout (title screen, goddess scene, in-game map, combat, settings, game-over, hero-aero). Each panel = one DOM view mounted via a `panelStack`.
 
 ### Wave 5 quick-reference: formula values to hardcode
 
