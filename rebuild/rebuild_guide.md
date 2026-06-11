@@ -8,6 +8,7 @@
 > - `rebuild_guide.md` (this file) — game design & systems
 > - `ghidra_results.md` — **decompiled formulas + constants from `libil2cpp.so`** (Wave 5) — source of truth for §4 formulas
 > - `extracted_game_data.md` — decoded game data (talents, items, monsters, skills, buffs, achievements, endings, equipment, event-deck, Wave 3 counts)
+> - `UI_DESIGN.md` — **extracted UI layout / panel flow** (title screen → new game → continue → in-game panels). Source: `il2cpp.cs` `FDPanel` classes.
 > - `dump_inventory.md` — catalogue of the 11,271 `Dump/*` files by bucket (Wave 2, updated for Wave 3)
 > - `extraction_wave4.md` — TypeTree dump extraction pipeline (Wave 4)
 > - `wave3_extraction.md` — UnityPy pipeline + per-output schemas (Wave 3)
@@ -770,6 +771,7 @@ Data files (JSON):
 12. **Shops** (12 items across GroceryStore/PotionShop/FishStore, prices from §4.9 — stock is fixed per game start, no per-turn refresh)
 13. **Endings** (5 endings + CW levels, see §5; CW damage multiplier from §4.1)
 14. **Skipped systems** (audio/animation/icons/save) — see §9
+15. **UI panels** — see `UI_DESIGN.md` for the extracted `FDPanel` layout (title screen, goddess scene, in-game map, combat, settings, game-over). Each panel = one DOM view mounted via a `panelStack`.
 
 ### Wave 5 quick-reference: formula values to hardcode
 
@@ -832,6 +834,7 @@ For the per-talent `Addition` values (the actual numbers from `extracted_game_da
 
 - **`ghidra_results.md`** — **Decompiled formulas + `.data` constants from `libil2cpp.so` (Wave 5 + 6)**. Source of truth for §4.1, §4.2, §4.6, §4.8, §4.9 in this guide. Read FIRST if you want exact numbers.
 - **`save_format.md`** — **Complete save file schema (Wave 5+)**. All 6 per-run save keys + 1 cross-run key, with the field list of every Saver class. Schema extracted via Ghidra decompilation of every `ISaveAndLoad.Save()` method. No rooted device needed.
+- **`UI_DESIGN.md`** — **Extracted UI layout / panel flow**. Every `FDPanel` class (title `LoadScene`, goddess `SelectBirthOptionPanel`, in-game `MapAreaPanel` / `AdventruePanel` / `EventDisplayPanel` / `BattleFightPanel`, modals) with field list, wireframe, and web-rebuild mapping. Source: `il2cpp.cs` lines (referenced in the doc).
 - **`extracted_game_data.md`** — All decoded game data (talents, items, monsters, skills, buffs, achievements, equipment, event-deck, Wave 3 counts)
 - **`dump_inventory.md`** — Catalogue of the 11,271 `Dump/*` files; what each bucket gives the rebuild
 - **`wave3_extraction.md`** — UnityPy pipeline + per-output schemas
